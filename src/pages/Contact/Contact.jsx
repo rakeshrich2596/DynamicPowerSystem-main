@@ -55,6 +55,12 @@ const contactInfo = [
     link: "tel:+919003085357",
   },
   {
+    Icon: Phone,
+    label: "Office Number",
+    value: "044 42044405",
+    link: "tel:04442044405",
+  },
+  {
     Icon: Mail,
     label: "Admin",
     value: "admin@dynamicsolar.in",
