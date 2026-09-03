@@ -148,9 +148,9 @@ function About() {
                         </div>
                         <div className="about-stats-panel fade-in-up delay-2">
                             {[
-                                { val: "15+", lbl: "Years Experience" },
-                                { val: "500+", lbl: "Projects Completed" },
-                                { val: "1 MW+", lbl: "Capacity Installed" },
+                                { val: "30+", lbl: "Years Experience" },
+                                { val: "1500+", lbl: "Projects Completed" },
+                                { val: "20 MW+", lbl: "Capacity Installed" },
                                 { val: "98%", lbl: "Client Satisfaction" },
                             ].map((s, i) => (
                                 <div className="about-stat" key={i}>
