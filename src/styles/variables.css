@@ -1,0 +1,48 @@
+:root {
+    /* ── Brand Colors ── */
+    --primary-orange: #f47b20;
+    --primary-orange-dark: #d9670f;
+    --primary-orange-light: #fef0e3;
+
+    --secondary-blue: #0b5ed7;
+    --secondary-blue-dark: #084298;
+    --secondary-blue-light: #e8f0fd;
+
+    /* ── Neutrals ── */
+    --black: #111111;
+    --dark: #1a1a1a;
+    --dark-gray: #333333;
+    --gray: #666666;
+    --light-gray: #f5f5f5;
+    --border: #e8e8e8;
+    --white: #ffffff;
+
+    /* ── Section backgrounds ── */
+    --bg-dark: #0f1117;
+    --bg-charcoal: #1c2030;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.10);
+    --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.14);
+    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.18);
+    --shadow-orange: 0 8px 24px rgba(244, 123, 32, 0.30);
+
+    /* ── Border Radius ── */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+
+    /* ── Transitions ── */
+    --transition: all 0.3s ease;
+    --transition-slow: all 0.5s ease;
+
+    /* ── Typography ── */
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+
+    /* ── Spacing ── */
+    --section-padding: 90px 0;
+    --navbar-height: 100px;
+}

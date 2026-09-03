@@ -1,0 +1,88 @@
+.solar-benefits {
+    background: transparent;
+}
+
+.sb-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.sb-card {
+    background: var(--card-bg, #fff7ed);
+    border-radius: var(--radius-md);
+    padding: 2.2rem 2rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.sb-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--primary-orange);
+    border-radius: 0 3px 3px 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.35s ease;
+}
+
+.sb-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.sb-card:hover::after {
+    transform: scaleY(1);
+}
+
+.sb-icon-wrap {
+    width: 58px;
+    height: 58px;
+    background: rgba(244, 123, 32, 0.12);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    color: var(--primary-orange);
+    transition: var(--transition);
+}
+
+.sb-card:hover .sb-icon-wrap {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: scale(1.06) rotate(-3deg);
+}
+
+.sb-title {
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.sb-desc {
+    font-size: 0.97rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .sb-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .sb-grid {
+        grid-template-columns: 1fr;
+    }
+}

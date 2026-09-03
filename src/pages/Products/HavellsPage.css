@@ -1,0 +1,437 @@
+/* ── Havells Page Hero ── */
+.havells-hero {
+    background:
+        linear-gradient(135deg, rgba(30, 5, 5, 0.82) 0%, rgba(120, 10, 10, 0.55) 55%, rgba(10, 5, 5, 0.88) 100%),
+        url("../../assets/images/hero/hero2.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: 0;
+}
+
+/* ── Sticky Category Nav — Havells red bar ── */
+.hv-cat-nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: #c41217;
+    box-shadow: 0 4px 20px rgba(196, 18, 23, 0.35);
+}
+
+.hv-cat-inner {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    min-height: 54px;
+    width: 100%;
+}
+
+.hv-cat-btn {
+    flex: 1 0 auto;
+    padding: 0 20px;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.88);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    letter-spacing: 0.2px;
+}
+
+.hv-cat-btn:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hv-cat-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.hv-cat-btn--active {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.18);
+    font-weight: 700;
+}
+
+.hv-cat-btn--active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px 2px 0 0;
+}
+
+/* ── Product Sections ── */
+.hv-prod-section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.hv-prod-section:nth-child(odd) {
+    background: var(--white);
+}
+
+.hv-prod-section:nth-child(even) {
+    background: #fafafa;
+}
+
+/* ── Product List (sticky stacking cards) ── */
+.hv-prod-list {
+    position: relative;
+    margin-top: 2.5rem;
+}
+
+.hv-prod-list-spacer {
+    height: 60px;
+}
+
+/* ── Product Card ── */
+.hv-prod-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 28px 28px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: sticky;
+    min-height: 320px;
+}
+
+.hv-prod-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: #c41217;
+}
+
+/* ── Badge ── */
+.hv-prod-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: #c41217;
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 30px;
+}
+
+/* ── Product Image ── */
+.hv-prod-img-wrap {
+    width: 320px;
+    min-width: 280px;
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #fdf0f0 0%, #fae4e4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.hv-prod-img {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.hv-prod-card:hover .hv-prod-img {
+    transform: scale(1.05);
+}
+
+.hv-prod-img-fallback {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #fde8e8, #fff4f4);
+}
+
+.hv-prod-img-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.hv-prod-img-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #c41217;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ── Card Body ── */
+.hv-prod-body {
+    padding: 2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+    justify-content: center;
+}
+
+.hv-prod-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #c41217;
+    margin: 0;
+}
+
+.hv-prod-name {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* ── Capacity Info Box ── */
+.hv-prod-info-boxes {
+    display: flex;
+    gap: 14px;
+    margin: 4px 0 2px;
+    flex-wrap: wrap;
+}
+
+.hv-prod-info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    min-width: 140px;
+    flex: 0 1 auto;
+}
+
+.hv-prod-info-box--capacity {
+    background: #7a0b0e;
+    color: #fff;
+}
+
+.hv-prod-info-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #ff9a9c;
+}
+
+.hv-prod-info-box > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.hv-prod-info-value {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ff9a9c;
+    line-height: 1.15;
+}
+
+.hv-prod-info-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+/* ── Description ── */
+.hv-prod-desc {
+    font-size: 0.87rem;
+    color: var(--gray);
+    line-height: 1.78;
+    margin: 0;
+}
+
+/* ── Specs Table ── */
+.hv-prod-specs {
+    list-style: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: 4px 0;
+}
+
+.hv-prod-spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+}
+
+.hv-prod-spec-row:last-child {
+    border-bottom: none;
+}
+
+.hv-prod-spec-row:nth-child(even) {
+    background: #fafafa;
+}
+
+.hv-prod-spec-label {
+    color: var(--gray);
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.hv-prod-spec-value {
+    color: var(--dark);
+    font-weight: 600;
+    text-align: right;
+}
+
+/* ── Highlights — Havells dash style ── */
+.hv-prod-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.hv-prod-highlights li {
+    font-size: 0.84rem;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+}
+
+.hv-highlight-dash {
+    color: #c41217;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 1rem;
+}
+
+/* ── View Details Button ── */
+.hv-view-details-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 28px;
+    border: 2px solid #c41217;
+    border-radius: 50px;
+    background: transparent;
+    color: #c41217;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.22s ease, color 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+    align-self: flex-start;
+}
+
+.hv-view-details-btn:hover {
+    background: #c41217;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(196, 18, 23, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .hv-prod-img-wrap {
+        width: 260px;
+        min-width: 220px;
+    }
+
+    .hv-prod-name {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .hv-prod-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .hv-prod-card {
+        position: relative !important;
+        top: auto !important;
+        flex-direction: column;
+        min-height: unset;
+        border-radius: 20px;
+    }
+
+    .hv-prod-img-wrap {
+        width: 100%;
+        min-width: unset;
+        height: 240px;
+        padding: 16px;
+    }
+
+    .hv-prod-img {
+        max-height: 200px;
+    }
+
+    .hv-prod-body {
+        padding: 1.6rem;
+    }
+
+    .hv-prod-name {
+        font-size: 1.2rem;
+    }
+
+    .hv-prod-section {
+        padding: 60px 0;
+    }
+
+    .hv-cat-btn {
+        padding: 9px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .hv-prod-body {
+        padding: 1.2rem;
+    }
+
+    .hv-prod-name {
+        font-size: 1.1rem;
+    }
+
+    .hv-prod-info-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hv-prod-info-box {
+        min-width: unset;
+        width: 100%;
+    }
+}

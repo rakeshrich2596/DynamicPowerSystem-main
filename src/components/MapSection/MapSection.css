@@ -1,0 +1,181 @@
+/* MapSection.css */
+.map-section {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    overflow: hidden;
+}
+
+/* ── Header ── */
+.map-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0;
+}
+
+.map-header h2 span {
+    color: #f47b20;
+}
+
+/* ── Layout ── */
+.map-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* ── Map Image Area ── */
+.map-image-wrap {
+    flex: 1.2;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Stats Area ── */
+.map-stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 450px;
+}
+
+
+
+/* Hero card — orange gradient */
+.map-stat-hero {
+    background: linear-gradient(135deg, #f47b20 0%, #c25c0c 100%);
+    border-radius: 14px;
+    padding: 2.2rem 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 0.4rem;
+    box-shadow: 0 15px 35px rgba(244, 123, 32, 0.35);
+}
+
+.map-stat-hero-number {
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+    letter-spacing: -0.5px;
+}
+
+.map-stat-hero-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.map-stat-hero-sub {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 400;
+}
+
+/* Stat cards — light orange tint background, same style as light-blue in reference */
+.map-stat-card {
+    background: #fff6ee;
+    border-radius: 12px;
+    padding: 1.3rem 1.6rem;
+    text-align: center;
+    border: 1px solid rgba(244, 123, 32, 0.15);
+    box-shadow: 0 3px 12px rgba(244, 123, 32, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(244, 123, 32, 0.15);
+}
+
+.map-stat-card-label {
+    color: #888888;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.3px;
+}
+
+.map-stat-card-value {
+    color: #c25c0c;
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ── Responsive ── */
+@media (max-width: 992px) {
+    .map-content {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .map-image-wrap {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .map-stats {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .map-section {
+        padding: 3rem 0;
+    }
+
+    .map-stat-hero {
+        padding: 2rem 1.5rem;
+    }
+
+    .map-stat-hero-number {
+        font-size: 2.4rem;
+    }
+
+    .map-stat-card-value {
+        font-size: 1.6rem;
+    }
+}
+
+/* ── Intersection Animations ── */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s;
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s ease-out 0.4s, transform 0.8s ease-out 0.4s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translate(0);
+}

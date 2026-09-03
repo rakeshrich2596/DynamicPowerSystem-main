@@ -1,0 +1,871 @@
+/* =========================================================
+   CONTACT HERO
+========================================================= */
+
+.contact-hero {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10, 22, 40, 0.85) 0%,
+            rgba(28, 32, 48, 0.75) 50%,
+            rgba(15, 23, 42, 0.9) 100%
+        ),
+        url("../../assets/images/hero/hero1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+
+.contact-section {
+    width: 100%;
+    padding: 65px 0 80px;
+    background: transparent;
+}
+
+
+/* =========================================================
+   CENTER INTRO
+========================================================= */
+
+.contact-intro {
+    width: min(92%, 900px);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.contact-intro .section-tag {
+    display: inline-block;
+}
+
+
+.contact-info-heading {
+    font-family: var(--font-heading);
+
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+
+    font-weight: 800;
+
+    color: var(--dark);
+
+    line-height: 1.25;
+
+    margin: 14px 0 14px;
+}
+
+
+.contact-info-heading span {
+    color: var(--primary-orange);
+}
+
+
+.contact-info-body {
+    font-size: 0.95rem;
+
+    color: var(--gray);
+
+    line-height: 1.85;
+
+    max-width: 780px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ADDRESS SECTION
+
+   IMPORTANT:
+   padding-top  = space ABOVE address cards
+   padding-bottom = space BELOW address cards
+========================================================= */
+
+.contact-address-section {
+    width: 100%;
+
+    display: block;
+
+    margin: 0;
+
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+/* =========================================================
+   ADDRESS GRID
+========================================================= */
+
+.contact-address-grid {
+    width: min(92%, 1280px);
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   ADDRESS CARD
+========================================================= */
+
+.contact-address-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    min-width: 0;
+
+    background: var(--light-gray);
+
+    border: 1.5px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    padding: 22px 20px;
+
+    transition: var(--transition);
+}
+
+
+.contact-address-card:hover {
+    border-color: var(--primary-orange);
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateY(-3px);
+}
+
+
+.contact-address-content {
+    min-width: 0;
+}
+
+
+.contact-address-card .contact-card-label {
+    margin-bottom: 6px;
+}
+
+
+.contact-address-card .contact-card-value {
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   MAIN CONTACT GRID
+========================================================= */
+
+.contact-main-grid {
+    width: min(92%, 1280px);
+
+    display: grid;
+
+    grid-template-columns:
+        0.9fr 1.1fr;
+
+    gap: 5rem;
+
+    align-items: start;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LEFT CONTACT DETAILS
+========================================================= */
+
+.contact-details-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 28px;
+
+    min-width: 0;
+
+    margin-top: 10px;
+}
+
+
+.contact-cards {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   CONTACT CARD
+========================================================= */
+
+.contact-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 16px;
+
+    background: var(--light-gray);
+
+    border: 1.5px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    padding: 18px 20px;
+
+    transition: var(--transition);
+}
+
+
+.contact-card:hover {
+    border-color: var(--primary-orange);
+
+    box-shadow: var(--shadow-sm);
+
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.contact-card-icon {
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: var(--primary-orange);
+
+    display: flex;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.contact-card-label {
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.2px;
+
+    color: var(--primary-orange);
+
+    margin-bottom: 4px;
+
+    font-family: var(--font-heading);
+}
+
+
+/* =========================================================
+   VALUE
+========================================================= */
+
+.contact-card-value {
+    font-size: 0.9rem;
+
+    color: var(--dark-gray);
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+.contact-card-link {
+    text-decoration: none;
+
+    color: var(--dark-gray);
+
+    transition: color 0.25s ease;
+
+    display: block;
+}
+
+
+.contact-card-link:hover {
+    color: var(--primary-orange);
+}
+
+
+/* =========================================================
+   SOCIAL
+========================================================= */
+
+.contact-social {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+
+.contact-social-label {
+    font-size: 0.82rem;
+
+    font-weight: 600;
+
+    color: var(--gray);
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.contact-social-btn {
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background: var(--light-gray);
+
+    border: 1.5px solid var(--border);
+
+    color: var(--dark-gray);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 0.82rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+
+.contact-social-btn:hover {
+    background: var(--primary-orange);
+
+    border-color: var(--primary-orange);
+
+    color: var(--white);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   FORM PANEL
+
+   IMPORTANT:
+   margin-top MUST stay 0.
+========================================================= */
+
+.contact-form-panel {
+    background: transparent;
+
+    margin-top: 0;
+
+    width: 100%;
+
+    min-width: 0;
+}
+
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   FORM HEADER
+========================================================= */
+
+.form-header {
+    margin-bottom: 4px;
+}
+
+
+.form-title {
+    font-family: var(--font-heading);
+
+    font-size: 1.4rem;
+
+    font-weight: 800;
+
+    color: var(--dark);
+
+    margin: 0 0 8px;
+}
+
+
+.form-subtitle {
+    font-size: 0.88rem;
+
+    color: var(--gray);
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   FORM ROW
+========================================================= */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.form-group label {
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    color: var(--dark-gray);
+
+    font-family: var(--font-heading);
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 16px;
+
+    border: 1.5px solid var(--border);
+
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-body);
+
+    font-size: 0.92rem;
+
+    color: var(--dark);
+
+    background: var(--light-gray);
+
+    transition: var(--transition);
+
+    outline: none;
+
+    resize: vertical;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-orange);
+
+    background: var(--white);
+
+    box-shadow:
+        0 0 0 3px rgba(244, 123, 32, 0.1);
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.form-group--error input,
+.form-group--error select,
+.form-group--error textarea {
+    border-color: #ef4444;
+}
+
+
+.form-error {
+    font-size: 0.78rem;
+
+    color: #ef4444;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.form-group select {
+    appearance: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    background-repeat: no-repeat;
+
+    background-position:
+        right 16px center;
+
+    padding-right: 40px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.form-submit {
+    width: 100%;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    font-size: 1rem;
+}
+
+
+.form-note {
+    font-size: 0.78rem;
+
+    color: var(--gray);
+
+    text-align: center;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   SUCCESS
+========================================================= */
+
+.contact-success {
+    background: var(--light-gray);
+
+    border: 1.5px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    padding: 3.5rem 2.5rem;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.success-icon {
+    font-size: 3.5rem;
+}
+
+
+.contact-success h3 {
+    font-family: var(--font-heading);
+
+    font-size: 1.6rem;
+
+    font-weight: 800;
+
+    color: var(--dark);
+
+    margin: 0;
+}
+
+
+.contact-success p {
+    font-size: 0.95rem;
+
+    color: var(--gray);
+
+    line-height: 1.85;
+
+    max-width: 380px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   MAP
+========================================================= */
+
+.contact-map-placeholder {
+    height: 340px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--bg-charcoal),
+            var(--bg-dark)
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.contact-map-placeholder::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(244, 123, 32, 0.1) 0%,
+            transparent 65%
+        );
+}
+
+
+.map-overlay-text {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: var(--white);
+}
+
+
+.map-overlay-text span {
+    font-size: 2.5rem;
+}
+
+
+.map-overlay-text strong {
+    font-family: var(--font-heading);
+
+    font-size: 1.1rem;
+
+    font-weight: 700;
+}
+
+
+.map-directions-btn {
+    display: inline-block;
+
+    margin-top: 6px;
+
+    background: var(--primary-orange);
+
+    color: var(--white);
+
+    padding: 10px 24px;
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.88rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: var(--transition);
+
+    font-family: var(--font-body);
+}
+
+
+.map-directions-btn:hover {
+    background: var(--primary-orange-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-orange);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Address cards */
+
+    .contact-address-section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .contact-address-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+
+
+    /* Main content */
+
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+
+        margin-bottom: 45px;
+    }
+
+
+    .contact-form-panel {
+        margin-top: 0;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .contact-address-section {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+
+    .contact-address-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .contact-address-card {
+        padding: 18px;
+    }
+
+
+    .contact-main-grid {
+        width: 92%;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+    .contact-section {
+        padding: 50px 0 60px;
+    }
+
+
+    .contact-intro {
+        width: 92%;
+    }
+
+
+    .contact-address-grid {
+        width: 92%;
+    }
+
+
+    .contact-main-grid {
+        width: 92%;
+    }
+
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-address-card,
+    .contact-card {
+        padding: 16px;
+    }
+
+
+    .contact-info-heading {
+        font-size: 1.6rem;
+    }
+}

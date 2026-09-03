@@ -1,0 +1,169 @@
+.bhv-section {
+    background-color: var(--primary-orange);
+    padding: 60px 20px;
+    font-family: var(--font-body);
+}
+
+.bhv-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bhv-header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.bhv-header h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.bhv-header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.bhv-content {
+    display: flex;
+    gap: 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    align-items: stretch;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bhv-image-wrapper {
+    flex: 1.2;
+    overflow: hidden;
+    min-height: 100%;
+}
+
+.bhv-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bhv-form-wrapper {
+    flex: 1;
+    background: #ffffff;
+    padding: 40px;
+}
+
+.bhv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bhv-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.bhv-input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.bhv-input-group input[type="text"],
+.bhv-input-group input[type="tel"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.bhv-input-group input:focus {
+    border-color: var(--primary-orange);
+}
+
+.bhv-radio-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.bhv-radio-buttons button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    background: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+    transition: all 0.2s;
+}
+
+.bhv-radio-buttons button:hover {
+    background: #f0f0f0;
+}
+
+.bhv-radio-buttons button.active {
+    background: var(--primary-orange-light);
+    border-color: var(--primary-orange);
+    color: var(--primary-orange);
+    font-weight: 600;
+}
+
+.bhv-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #666;
+    cursor: pointer;
+    text-align: left;
+}
+
+.bhv-checkbox-group input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.bhv-submit-btn {
+    background: var(--primary-orange);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 10px;
+}
+
+.bhv-submit-btn:hover {
+    background: var(--primary-orange-dark);
+}
+
+@media (max-width: 900px) {
+    .bhv-content {
+        flex-direction: column;
+    }
+    
+    .bhv-image-wrapper,
+    .bhv-form-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .bhv-radio-buttons {
+        flex-direction: column;
+    }
+}

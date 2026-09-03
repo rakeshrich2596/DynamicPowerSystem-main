@@ -1,0 +1,155 @@
+/* ── Blog Post Page ── */
+.blogpost-body {
+    background: transparent;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
+
+.blogpost-body .container {
+    width: min(820px, 92%);
+}
+
+/* ── Hero Image ── */
+.blogpost-hero-image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 36px;
+}
+
+.blogpost-hero-image img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+
+.blogpost-hero-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 16px;
+    border-radius: 30px;
+    backdrop-filter: blur(6px);
+}
+
+/* ── Header ── */
+.blogpost-header {
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1.5px solid var(--border);
+}
+
+.blogpost-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 900;
+    color: var(--dark);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+/* ── Meta Bar ── */
+.blogpost-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.blogpost-date,
+.blogpost-read {
+    font-size: 0.92rem;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.blogpost-dot {
+    color: var(--border);
+    font-size: 1.2rem;
+}
+
+/* ── Article Content ── */
+.blogpost-article {
+    margin-bottom: 48px;
+}
+
+.blogpost-paragraph {
+    font-size: 1.08rem;
+    line-height: 1.95;
+    color: var(--dark-gray);
+    margin-bottom: 24px;
+}
+
+.blogpost-paragraph strong {
+    color: var(--dark);
+    font-weight: 700;
+}
+
+.blogpost-paragraph em {
+    font-style: italic;
+    color: var(--gray);
+}
+
+/* ── Inline Image ── */
+.blogpost-inline-image {
+    margin: 40px 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.blogpost-inline-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.blogpost-inline-image:hover img {
+    transform: scale(1.03);
+}
+
+/* ── Back Button ── */
+.blogpost-back {
+    margin-bottom: 20px;
+}
+
+.blogpost-back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+    text-decoration: none;
+    padding: 14px 28px;
+    border: 2px solid var(--primary-orange);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.blogpost-back-btn:hover {
+    background: var(--primary-orange);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .blogpost-hero-image img {
+        height: 260px;
+    }
+
+    .blogpost-inline-image img {
+        height: 240px;
+    }
+}

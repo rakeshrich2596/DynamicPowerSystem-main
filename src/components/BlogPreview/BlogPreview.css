@@ -1,0 +1,215 @@
+/* ── Typewriter ── */
+@keyframes bpCursorBlink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+@keyframes bpCardReveal {
+    0%   { opacity: 0; transform: translateY(48px) scale(0.95); }
+    60%  { transform: translateY(-6px) scale(1.01); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bp-typewriter-heading {
+    min-height: 3.5rem;
+}
+
+.bp-cursor {
+    display: inline-block;
+    color: var(--primary-orange);
+    font-weight: 300;
+    margin-left: 2px;
+    animation: bpCursorBlink 0.75s step-end infinite;
+}
+
+.bp-subtitle-fade {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s;
+}
+
+.bp-subtitle-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.blog-preview {
+    background: transparent;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 48px;
+}
+
+/* ── Blog Card ── */
+.blog-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hidden state before scroll triggers */
+.bp-card-hidden {
+    opacity: 0;
+    transform: translateY(48px) scale(0.95);
+}
+
+/* Visible state — fires the entrance animation with stagger via --card-delay */
+.bp-card-visible {
+    animation: bpCardReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--card-delay, 0s) both;
+}
+
+.blog-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    border-color: transparent;
+}
+
+/* Image area */
+.blog-card-img-wrap {
+    position: relative;
+    height: 200px;
+    background: var(--card-bg, #fff7ed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.blog-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-img {
+    transform: scale(1.08);
+}
+
+.blog-card-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--card-accent, #FF6B1A);
+    color: var(--white);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* Body */
+.blog-card-body {
+    padding: 1.8rem 1.6rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.blog-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--gray);
+    font-family: var(--font-body);
+}
+
+.blog-meta-dot {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.blog-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--dark);
+    line-height: 1.45;
+    transition: color 0.25s ease;
+}
+
+.blog-card:hover .blog-card-title {
+    color: var(--primary-orange);
+}
+
+.blog-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.78;
+    flex: 1;
+}
+
+.blog-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary-orange);
+    text-decoration: none;
+    margin-top: auto;
+    transition: gap 0.25s ease;
+}
+
+.blog-read-more span {
+    transition: transform 0.25s ease;
+}
+
+.blog-read-more:hover span {
+    transform: translateX(4px);
+}
+
+/* CTA Row */
+.blog-cta-row {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--dark);
+    padding: 14px 36px;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-body);
+    border: 2px solid var(--dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-outline-dark:hover {
+    background: var(--dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}

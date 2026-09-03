@@ -1,0 +1,648 @@
+/* ══════════════════════════════════════════════════════
+   Hero Banner – Eastman Solar–inspired full-screen slider
+   ══════════════════════════════════════════════════════ */
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 960px;
+    min-height: 620px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+/* ── Background Slides ── */
+.hero-banner__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.hero-banner__slide--active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.hero-banner__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1);
+    transition: transform 12s ease-out;
+}
+
+.hero-banner__slide--active .hero-banner__bg {
+    transform: scale(1.06);
+}
+
+
+/* ── Dark overlay gradient (regular slides) ── */
+.hero-banner__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: linear-gradient(
+        120deg,
+        rgba(10, 22, 50, 0.85) 0%,
+        rgba(10, 22, 50, 0.65) 35%,
+        rgba(10, 22, 50, 0.35) 60%,
+        rgba(10, 22, 50, 0.15) 100%
+    );
+}
+
+/* ── Subsidy slide overlay – light left so dark text reads, transparent right so person shows ── */
+.hero-banner__overlay--subsidy {
+    background: linear-gradient(
+        to right,
+        rgba(235, 242, 255, 0.82) 0%,
+        rgba(220, 235, 255, 0.70) 40%,
+        rgba(200, 220, 255, 0.35) 62%,
+        rgba(180, 210, 255, 0.05) 100%
+    );
+}
+
+/* ── Subsidy bg image: show right side (where the person stands) ── */
+.hero-banner__bg--subsidy {
+    object-position: right center;
+}
+
+/* ══════════════════════════════════════════════════════════
+   SUBSIDY SLIDE (4th) – Full custom layout
+   ══════════════════════════════════════════════════════════ */
+
+/* Outer wrapper – fills the whole banner, holds all subsidy elements */
+.hero-banner__subsidy-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+.hero-banner__subsidy-wrap.hero-banner__content--visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ── Left content column ── */
+.hero-banner__subsidy-content {
+    position: absolute;
+    top: 15%; /* Start lower to clear the nav bar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 60px 70px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    box-sizing: border-box;
+}
+
+.hero-banner__subsidy-content > * {
+    max-width: 480px;
+}
+
+/* ── MNRE badge ── */
+.hero-banner__mnre-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #0d2257;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1.5px solid rgba(13, 34, 87, 0.25);
+    border-radius: 4px;
+    padding: 5px 14px;
+    margin-bottom: 14px;
+    letter-spacing: 0.2px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+}
+
+/* ── Main heading ── */
+.hero-banner__subsidy-heading {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    color: #0d2257;
+    line-height: 1.05;
+    margin: 0 0 10px 0;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.hero-banner__subsidy-solar {
+    color: #f47b20;
+}
+
+/* ── Tagline ── */
+.hero-banner__subsidy-tagline {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: clamp(0.92rem, 1.6vw, 1.12rem);
+    font-weight: 600;
+    color: #1a3a6e;
+    margin: 6px 0 16px;
+    line-height: 1.4;
+}
+
+/* ── Subsidy info box ── */
+.hero-banner__subsidy-box {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1.5px solid rgba(13, 34, 87, 0.15);
+    border-radius: 8px;
+    padding: 12px 20px 10px;
+    margin-bottom: 18px;
+    min-width: 220px;
+    box-shadow: 0 4px 20px rgba(13, 34, 87, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.hero-banner__subsidy-box-label {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #0d2257;
+    margin: 0;
+}
+
+.hero-banner__subsidy-box-amount {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    color: #f47b20;
+    margin: 0;
+    line-height: 1.05;
+}
+
+.hero-banner__subsidy-box-amount sup {
+    font-size: 0.5em;
+    vertical-align: super;
+    color: #f47b20;
+}
+
+.hero-banner__subsidy-box-days {
+    display: inline-block;
+    background: #0a2057;
+    color: #ffffff;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: 20px;
+    letter-spacing: 0.3px;
+    width: fit-content;
+}
+
+.hero-banner__subsidy-box-note {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.76rem;
+    color: #4a5a7a;
+    margin: 2px 0 0;
+}
+
+/* ── CTA button ── */
+.hero-banner__subsidy-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f47b20;
+    color: #ffffff;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 18px rgba(244, 123, 32, 0.45);
+}
+
+.hero-banner__subsidy-cta:hover {
+    background: #d96b10;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(244, 123, 32, 0.55);
+}
+
+/* ── Top-right Govt Subsidy Badge (absolute) ── */
+.hero-banner__govt-badge {
+    position: absolute;
+    top: 100px; /* Shifted down to clear nav bar */
+    right: 0;
+    background: #0a2057;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    min-width: 180px;
+    z-index: 15;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 12% 50%);
+    padding-left: 28px;
+}
+
+.hero-banner__govt-badge-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.hero-banner__govt-badge-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.hero-banner__govt-badge-title {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hero-banner__govt-badge-sub {
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.3px;
+}
+
+.hero-banner__govt-badge-amount {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #ffd700;
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+
+/* ── Full-width bottom bar (absolute, pinned to bottom) ── */
+.hero-banner__subsidy-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0a2057;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 13px 24px;
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    z-index: 15;
+}
+
+.hero-banner__subsidy-bar strong {
+    color: #f5a623;
+}
+
+/* Responsive – subsidy slide */
+@media (max-width: 900px) {
+    .hero-banner__subsidy-content {
+        max-width: 100%;
+        padding: 0 40px 70px 40px;
+        top: 18%; /* Adjust for mobile/tablet */
+    }
+    .hero-banner__subsidy-heading {
+        font-size: clamp(1.6rem, 5vw, 2.8rem);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-banner__subsidy-content {
+        max-width: 100%;
+        padding: 100px 20px 80px; /* Add safe top padding for nav bar */
+        top: 0;
+        left: 0;
+        transform: none;
+        justify-content: flex-start;
+    }
+    .hero-banner__govt-badge {
+        clip-path: none;
+        padding: 10px 14px;
+        min-width: unset;
+    }
+    .hero-banner__govt-badge-amount {
+        font-size: 1.1rem;
+    }
+}
+
+/* ── Hexagonal honeycomb pattern (left side) ── */
+.hero-banner__hex-pattern {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 420px;
+    height: 100%;
+    z-index: 4;
+    pointer-events: none;
+    opacity: 0.7;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.4) 60%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.4) 60%,
+        transparent 100%
+    );
+}
+
+.hero-banner__hex-pattern svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ── Content wrapper ── */
+.hero-banner__content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.hero-banner__content--visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-banner__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 200px 60px 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.hero-banner__container--center {
+    align-items: center;
+    text-align: center;
+}
+
+.hero-banner__container--compact {
+    padding-top: 110px;
+}
+
+/* ── Title block ── */
+.hero-banner__title {
+    max-width: 700px;
+}
+
+.hero-banner__title--centered {
+    max-width: 100%;
+    text-align: center;
+}
+
+/* ── Main heading ── */
+.hero-banner__heading {
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+    padding-bottom: 20px;
+    border-bottom: 5px solid #f5a623;
+    display: inline-block;
+}
+
+.hero-banner__heading--underline {
+    border-bottom: 5px solid #f5a623;
+}
+
+.hero-banner__heading--no-border {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.hero-banner__heading--hashtag-main {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* ── CTA Button ── */
+.hero-banner__action {
+    margin-top: 28px;
+}
+
+.hero-banner__btn {
+    display: inline-block;
+    background: var(--primary-orange, #f47b20);
+    color: #ffffff;
+    font-family: var(--font-body, 'Poppins', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(244, 123, 32, 0.35);
+}
+
+.hero-banner__btn:hover {
+    background: var(--primary-orange-dark, #d9670f);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(244, 123, 32, 0.5);
+}
+
+/* ── Hashtag (#TheWiseChoice) ── */
+.hero-banner__hashtag {
+    margin-top: 40px;
+    font-family: var(--font-heading, 'Inter', sans-serif);
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    font-weight: 800;
+    font-style: italic;
+    color: #ffffff;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-banner__wise {
+    color: #f5a623;
+}
+
+/* ── Dot Navigation ── */
+.hero-banner__dots {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.hero-banner__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    padding: 0;
+}
+
+.hero-banner__dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.hero-banner__dot--active {
+    background: var(--primary-orange, #f47b20);
+    border-color: var(--primary-orange, #f47b20);
+    transform: scale(1.15);
+    box-shadow: 0 0 12px rgba(244, 123, 32, 0.6);
+}
+
+/* ══════════════════════════════
+   Responsive
+   ══════════════════════════════ */
+
+@media (max-width: 1024px) {
+    .hero-banner__container {
+        padding: 180px 40px 140px;
+    }
+
+    .hero-banner__hex-pattern {
+        width: 280px;
+        opacity: 0.5;
+    }
+
+    .hero-banner__hashtag {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-banner {
+        min-height: 500px;
+        max-height: 700px;
+    }
+
+    .hero-banner__container {
+        padding: 160px 24px 120px;
+        min-height: 50vh;
+    }
+
+    .hero-banner__heading {
+        font-size: clamp(2rem, 8vw, 3rem);
+        padding-bottom: 14px;
+        border-bottom-width: 4px;
+    }
+
+    .hero-banner__heading--hashtag-main {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+    }
+
+    .hero-banner__hex-pattern {
+        width: 180px;
+        opacity: 0.3;
+    }
+
+    .hero-banner__hashtag {
+        margin-top: 24px;
+        font-size: 1.1rem;
+    }
+
+    .hero-banner__btn {
+        padding: 12px 28px;
+        font-size: 0.88rem;
+    }
+
+    .hero-banner__dots {
+        bottom: 24px;
+        gap: 10px;
+    }
+
+    .hero-banner__dot {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-banner {
+        min-height: 420px;
+        max-height: 600px;
+    }
+
+    .hero-banner__container {
+        padding: 50px 18px 100px;
+    }
+
+    .hero-banner__heading {
+        font-size: clamp(1.6rem, 9vw, 2.4rem);
+        padding-bottom: 10px;
+        border-bottom-width: 3px;
+    }
+
+    .hero-banner__heading--hashtag-main {
+        font-size: clamp(1.8rem, 10vw, 2.8rem);
+    }
+
+    .hero-banner__hex-pattern {
+        display: none;
+    }
+
+    .hero-banner__hashtag {
+        margin-top: 18px;
+        font-size: 0.95rem;
+    }
+
+    .hero-banner__action {
+        margin-top: 20px;
+    }
+
+    .hero-banner__btn {
+        padding: 10px 24px;
+        font-size: 0.82rem;
+    }
+
+    .hero-banner__dots {
+        bottom: 18px;
+        gap: 8px;
+    }
+
+    .hero-banner__dot {
+        width: 9px;
+        height: 9px;
+    }
+}

@@ -1,0 +1,490 @@
+/* ── About Hero ── */
+.about-hero {
+    background: linear-gradient(135deg, rgba(10, 22, 40, 0.85) 0%, rgba(28, 32, 48, 0.75) 50%, rgba(15, 23, 42, 0.9) 100%),
+                url("../../assets/images/hero/hero3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* ── Container Override ── */
+.about-vm .container,
+.about-intro-grid.container,
+.about-values .container,
+.about-timeline .container,
+.about-team .container {
+    width: min(98%, 1280px);
+}
+
+/* ── Vision & Mission ── */
+.about-vm {
+    background: transparent;
+    padding: var(--section-padding);
+}
+
+.vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.vm-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2.8rem 2.4rem;
+    box-shadow: var(--shadow-sm);
+    border: 1.5px solid var(--border);
+    transition: var(--transition);
+}
+
+.vm-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.vm-vision {
+    border-top: 4px solid var(--primary-orange);
+}
+
+.vm-mission {
+    border-top: 4px solid var(--secondary-blue);
+}
+
+.vm-icon {
+    margin-bottom: 16px;
+    display: flex;
+    color: var(--primary-orange);
+}
+
+.vm-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 14px;
+}
+
+.vm-card p {
+    color: var(--gray);
+    line-height: 1.85;
+    font-size: 0.97rem;
+}
+
+/* ── Who We Are ── */
+.about-intro {
+    background: transparent;
+    padding: var(--section-padding);
+}
+
+.about-intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.about-intro-text .section-title {
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.about-body {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-bottom: 16px;
+}
+
+.about-certifications {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.cert-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--light-gray);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+}
+
+.cert-icon {
+    flex-shrink: 0;
+    color: var(--primary-orange);
+    display: flex;
+    align-items: center;
+}
+
+.cert-badge strong {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--dark);
+    font-family: var(--font-heading);
+}
+
+.cert-badge small {
+    font-size: 0.78rem;
+    color: var(--gray);
+}
+
+.about-intro-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.about-image-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.about-image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%);
+    pointer-events: none;
+}
+
+.about-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.about-image-wrap:hover .about-image {
+    transform: scale(1.04);
+}
+
+.about-stats-panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+}
+
+.about-stat {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 2.4rem 1.6rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.about-stat:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--primary-orange);
+}
+
+.about-stat-val {
+    font-family: var(--font-heading);
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--primary-orange);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.about-stat-lbl {
+    font-size: 0.85rem;
+    color: var(--gray);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ── Values ── */
+.about-values {
+    background: transparent;
+    padding: var(--section-padding);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.8rem;
+}
+
+.value-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2.2rem 2rem;
+    box-shadow: var(--shadow-sm);
+    border: 1.5px solid var(--border);
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+}
+
+.value-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background: var(--primary-orange-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    color: var(--primary-orange);
+    transition: var(--transition);
+}
+
+.value-card:hover .value-icon {
+    background: var(--primary-orange);
+    color: var(--white);
+}
+
+.value-title {
+    font-family: var(--font-heading);
+    font-size: 1.12rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.value-desc {
+    font-size: 0.97rem;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+/* ── Timeline ── */
+.about-timeline {
+    background: transparent;
+    padding: var(--section-padding);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-orange), var(--border));
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* We can trigger the line scale when the timeline wrapper section enters view */
+.about-timeline.visible .timeline-line {
+    transform: translateX(-50%) scaleY(1);
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: calc(50% + 40px);
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.timeline-item--right {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: calc(50% + 40px);
+}
+
+.timeline-content {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.8rem 2rem;
+    box-shadow: var(--shadow-sm);
+    max-width: 380px;
+    width: 100%;
+    
+    /* Animation state initially hidden - slower transition */
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-item--left .timeline-content {
+    transform: translateX(-50px);
+}
+
+.timeline-item--right .timeline-content {
+    transform: translateX(50px);
+}
+
+/* When the AnimSection parent wrapper gains the visible class */
+.timeline-item.visible .timeline-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-content:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px) !important;
+    border-color: var(--primary-orange);
+}
+
+.timeline-year {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: var(--primary-orange);
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.timeline-desc {
+    font-size: 0.88rem;
+    color: var(--gray);
+    line-height: 1.75;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-orange);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--primary-orange);
+    transform: translateX(-50%) scale(0);
+    z-index: 2;
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-item.visible .timeline-dot {
+    transform: translateX(-50%) scale(1);
+}
+
+/* ── Team ── */
+.about-team {
+    background: transparent;
+    padding: var(--section-padding);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+}
+
+.team-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 2.4rem 1.6rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    border: 1.5px solid var(--border);
+    transition: var(--transition);
+}
+
+.team-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    border-color: var(--primary-orange);
+}
+
+.team-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin: 0 auto 16px;
+    letter-spacing: 1px;
+}
+
+.team-name {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+}
+
+.team-role {
+    font-size: 0.82rem;
+    color: var(--gray);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .vm-grid,
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item,
+    .timeline-item--right {
+        padding-right: 0;
+        padding-left: 60px;
+        justify-content: flex-start;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .values-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hero {
+        height: 360px;
+    }
+
+    .about-stats-panel {
+        grid-template-columns: 1fr 1fr;
+    }
+}

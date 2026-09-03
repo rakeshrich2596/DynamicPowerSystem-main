@@ -1,0 +1,437 @@
+﻿/* ── V-Guard Page Hero ── */
+.vguard-hero {
+    background:
+        linear-gradient(135deg, rgba(5, 20, 45, 0.85) 0%, rgba(10, 50, 110, 0.6) 55%, rgba(5, 15, 35, 0.9) 100%),
+        url("../../assets/images/hero/hero2.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: 0;
+}
+
+/* ── Sticky Category Nav — V-Guard Blue ── */
+.vg-cat-nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    background: #003d7c;
+    box-shadow: 0 4px 20px rgba(0, 61, 124, 0.35);
+}
+
+.vg-cat-inner {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    min-height: 54px;
+    width: 100%;
+}
+
+.vg-cat-btn {
+    flex: 1 0 auto;
+    padding: 0 20px;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.88);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    letter-spacing: 0.2px;
+}
+
+.vg-cat-btn:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vg-cat-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #ffcc00; /* V-Guard Yellow accents */
+}
+
+.vg-cat-btn--active {
+    color: #ffcc00;
+    background: rgba(0, 0, 0, 0.18);
+    font-weight: 700;
+}
+
+.vg-cat-btn--active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ffcc00;
+    border-radius: 2px 2px 0 0;
+}
+
+/* ── Product Sections ── */
+.vg-prod-section {
+    padding: 90px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.vg-prod-section:nth-child(odd) {
+    background: var(--white);
+}
+
+.vg-prod-section:nth-child(even) {
+    background: #fafafa;
+}
+
+/* ── Product List (sticky stacking cards) ── */
+.vg-prod-list {
+    position: relative;
+    margin-top: 2.5rem;
+}
+
+.vg-prod-list-spacer {
+    height: 60px;
+}
+
+/* ── Product Card ── */
+.vg-prod-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 28px 28px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: sticky;
+    min-height: 320px;
+}
+
+.vg-prod-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: #003d7c;
+}
+
+/* ── Badge ── */
+.vg-prod-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    background: #ffcc00;
+    color: #003d7c;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 30px;
+}
+
+/* ── Product Image ── */
+.vg-prod-img-wrap {
+    width: 320px;
+    min-width: 280px;
+    flex-shrink: 0;
+    background: linear-gradient(145deg, #f0f4fa 0%, #e6effa 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.vg-prod-img {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.vg-prod-card:hover .vg-prod-img {
+    transform: scale(1.05);
+}
+
+.vg-prod-img-fallback {
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #e6effa, #f0f4fa);
+}
+
+.vg-prod-img-icon {
+    font-size: 4rem;
+    line-height: 1;
+}
+
+.vg-prod-img-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #003d7c;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ── Card Body ── */
+.vg-prod-body {
+    padding: 2rem 2.2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+    justify-content: center;
+}
+
+.vg-prod-subtitle {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #003d7c;
+    margin: 0;
+}
+
+.vg-prod-name {
+    font-family: var(--font-heading);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--dark);
+    line-height: 1.25;
+    margin: 0;
+}
+
+/* ── Capacity Info Box ── */
+.vg-prod-info-boxes {
+    display: flex;
+    gap: 14px;
+    margin: 4px 0 2px;
+    flex-wrap: wrap;
+}
+
+.vg-prod-info-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: var(--radius-sm);
+    min-width: 140px;
+    flex: 0 1 auto;
+}
+
+.vg-prod-info-box--capacity {
+    background: #003d7c;
+    color: #fff;
+}
+
+.vg-prod-info-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: #ffcc00;
+}
+
+.vg-prod-info-box > div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.vg-prod-info-value {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #ffcc00;
+    line-height: 1.15;
+}
+
+.vg-prod-info-label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+/* ── Description ── */
+.vg-prod-desc {
+    font-size: 0.87rem;
+    color: var(--gray);
+    line-height: 1.78;
+    margin: 0;
+}
+
+/* ── Specs Table ── */
+.vg-prod-specs {
+    list-style: none;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin: 4px 0;
+}
+
+.vg-prod-spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border);
+    gap: 8px;
+}
+
+.vg-prod-spec-row:last-child {
+    border-bottom: none;
+}
+
+.vg-prod-spec-row:nth-child(even) {
+    background: #fafafa;
+}
+
+.vg-prod-spec-label {
+    color: var(--gray);
+    font-weight: 500;
+    flex-shrink: 0;
+}
+
+.vg-prod-spec-value {
+    color: var(--dark);
+    font-weight: 600;
+    text-align: right;
+}
+
+/* ── Highlights — V-Guard style ── */
+.vg-prod-highlights {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+}
+
+.vg-prod-highlights li {
+    font-size: 0.84rem;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.5;
+}
+
+.vg-highlight-bullet {
+    color: #ffcc00;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+    font-size: 1rem;
+}
+
+/* ── View Details Button ── */
+.vg-view-details-btn {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 10px 28px;
+    border: 2px solid #003d7c;
+    border-radius: 50px;
+    background: transparent;
+    color: #003d7c;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.22s ease, color 0.22s ease, transform 0.18s ease, box-shadow 0.22s ease;
+    align-self: flex-start;
+}
+
+.vg-view-details-btn:hover {
+    background: #003d7c;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 61, 124, 0.3);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+    .vg-prod-img-wrap {
+        width: 260px;
+        min-width: 220px;
+    }
+
+    .vg-prod-name {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 820px) {
+    .vg-prod-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .vg-prod-card {
+        position: relative !important;
+        top: auto !important;
+        flex-direction: column;
+        min-height: unset;
+        border-radius: 20px;
+    }
+
+    .vg-prod-img-wrap {
+        width: 100%;
+        min-width: unset;
+        height: 240px;
+        padding: 16px;
+    }
+
+    .vg-prod-img {
+        max-height: 200px;
+    }
+
+    .vg-prod-body {
+        padding: 1.6rem;
+    }
+
+    .vg-prod-name {
+        font-size: 1.2rem;
+    }
+
+    .vg-prod-section {
+        padding: 60px 0;
+    }
+
+    .vg-cat-btn {
+        padding: 9px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .vg-prod-body {
+        padding: 1.2rem;
+    }
+
+    .vg-prod-name {
+        font-size: 1.1rem;
+    }
+
+    .vg-prod-info-boxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .vg-prod-info-box {
+        min-width: unset;
+        width: 100%;
+    }
+}

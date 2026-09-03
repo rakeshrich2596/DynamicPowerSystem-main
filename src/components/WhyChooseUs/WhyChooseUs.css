@@ -1,0 +1,449 @@
+/* ═══════════════════════════════════════════════════════
+   Counter Band
+   ═══════════════════════════════════════════════════════ */
+.wcu-counter-band {
+    background: linear-gradient(135deg, var(--bg-dark, #0f172a) 0%, var(--bg-charcoal, #1e293b) 100%);
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wcu-counter-band::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -10%;
+    width: 120%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(244, 123, 32, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.wcu-counters {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+
+.wcu-counter {
+    position: relative;
+    padding: 10px;
+}
+
+.wcu-counter::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    right: 0;
+    width: 1px;
+    height: 70%;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.wcu-counter:last-child::after { display: none; }
+
+.wcu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: var(--primary-orange, #f47b20);
+    opacity: 0.95;
+}
+
+.wcu-number {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: var(--primary-orange, #f47b20);
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.wcu-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Section Wrapper
+   ═══════════════════════════════════════════════════════ */
+.wcu-section {
+    background: transparent;
+    padding: 90px 0 100px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Header
+   ═══════════════════════════════════════════════════════ */
+.wcu-header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.wcu-title {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: #0f2a5e;
+    margin: 0 0 12px;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+}
+
+.wcu-title span {
+    color: var(--primary-orange, #f47b20);
+}
+
+.wcu-subtitle {
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.wcu-cta-btn-wrap {
+    display: inline-block;
+    position: relative;
+}
+
+.wcu-cta-btn {
+    display: inline-block;
+    background: var(--primary-orange, #f47b20);
+    color: #ffffff;
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 12px 36px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 14px rgba(244, 123, 32, 0.25);
+    border: none;
+    letter-spacing: 0.2px;
+}
+
+.wcu-cta-btn:hover {
+    background: var(--primary-dark, #cc6317);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(244, 123, 32, 0.35);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Bento Grid Layout (matching reference image)
+   ═══════════════════════════════════════════════════════ */
+.wcu-bento-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.wcu-bento-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Base card styling */
+.wcu-bento-card {
+    border-radius: 24px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 16px rgba(15, 23, 42, 0.04);
+}
+
+.wcu-bento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.1);
+}
+
+/* ═══════════════════════════════════════════════════════
+   Card 1 — Big Expert Installation Card (Left, Tall)
+   ═══════════════════════════════════════════════════════ */
+.wcu-card-big {
+    background: linear-gradient(180deg, #ffeadb 0%, #fff1e5 50%, #fff8f2 100%);
+    border: 1px solid rgba(244, 123, 32, 0.2);
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wcu-card-top-text {
+    padding: 36px 36px 0 36px;
+    position: relative;
+    z-index: 2;
+}
+
+.wcu-card-title-dark {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-dark, #b45511);
+    margin: 0 0 12px;
+    letter-spacing: -0.3px;
+}
+
+.wcu-card-desc-dark {
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 380px;
+}
+
+.wcu-card-person-img {
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Card 2 — 0% EMI Financing Card (Right Top, Short)
+   ═══════════════════════════════════════════════════════ */
+.wcu-card-emi {
+    background: linear-gradient(135deg, #ffeadb 0%, #ffd6b8 100%);
+    border: 1px solid rgba(244, 123, 32, 0.3);
+    padding: 32px 32px;
+    min-height: 170px;
+    display: flex;
+    align-items: center;
+}
+
+.wcu-emi-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.wcu-emi-zero-graphic {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wcu-3d-zero {
+    filter: drop-shadow(0 8px 16px rgba(244, 123, 32, 0.15));
+}
+
+.wcu-emi-text-block {
+    flex: 1;
+}
+
+.wcu-emi-title {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0f2a5e;
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+}
+
+.wcu-emi-desc {
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 0.92rem;
+    color: #3b4e6b;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Card 3 — Maintenance Card (Right Bottom, Tall)
+   ═══════════════════════════════════════════════════════ */
+.wcu-card-maintain {
+    background: linear-gradient(180deg, #fff1e5 0%, #fff8f2 60%, #ffffff 100%);
+    border: 1px solid rgba(244, 123, 32, 0.2);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.wcu-maintain-text {
+    padding: 36px 36px 0 36px;
+    text-align: right;
+}
+
+.wcu-maintain-title {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #0f2a5e;
+    margin: 0 0 10px;
+    letter-spacing: -0.3px;
+    font-style: italic;
+}
+
+.wcu-maintain-desc {
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 0.92rem;
+    color: #475569;
+    line-height: 1.65;
+    margin: 0;
+}
+
+.wcu-maintain-img {
+    width: 100%;
+    height: auto;
+    margin-top: auto;
+    display: block;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Card 4 — Wind proof & Corrosion Free Card (Bottom Left, Short)
+   ═══════════════════════════════════════════════════════ */
+.wcu-card-weather {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.wcu-weather-icon-wrap {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #fff3ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.wcu-card-weather:hover .wcu-weather-icon-wrap {
+    background: var(--primary-orange, #f47b20);
+}
+
+.wcu-card-weather:hover .wcu-weather-icon-wrap svg path {
+    stroke: #ffffff;
+}
+
+.wcu-weather-body {
+    flex: 1;
+}
+
+.wcu-weather-title {
+    font-family: var(--font-heading, "Inter", sans-serif);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0f2a5e;
+    margin: 0 0 8px;
+    letter-spacing: -0.2px;
+}
+
+.wcu-weather-desc {
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 0.9rem;
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   Scroll/Fade Animations
+   ═══════════════════════════════════════════════════════ */
+.fade-in-left,
+.fade-in-right,
+.fade-in-up {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-left  { transform: translateX(-40px); }
+.fade-in-right { transform: translateX(40px); }
+.fade-in-up    { transform: translateY(30px); }
+
+.fade-in-left.visible,
+.fade-in-right.visible,
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translate(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.25s; }
+
+/* ═══════════════════════════════════════════════════════
+   Responsive Media Queries
+   ═══════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+    .wcu-counters {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .wcu-counter::after { display: none; }
+
+    .wcu-bento-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .wcu-card-big {
+        min-height: 420px;
+    }
+
+    .wcu-card-maintain {
+        min-height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .wcu-section {
+        padding: 60px 0 70px;
+    }
+
+    .wcu-counters {
+        gap: 1rem;
+    }
+
+    .wcu-card-top-text,
+    .wcu-maintain-text {
+        padding: 28px 28px 0 28px;
+    }
+
+    .wcu-card-emi,
+    .wcu-card-weather {
+        padding: 20px;
+    }
+
+    .wcu-emi-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .wcu-3d-zero {
+        width: 100px;
+        height: 75px;
+    }
+
+    .wcu-card-weather {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+}
