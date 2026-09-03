@@ -21,7 +21,7 @@ const addresses = [
     Icon: MapPin,
     label: "Address 2",
     value:
-      "No.20 Priya Nagar, Amin Road,\nUrapakkam, Chennai – 603210",
+      "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
   },
   {
     Icon: MapPin,
@@ -69,8 +69,8 @@ const contactInfo = [
   {
     Icon: Mail,
     label: "Enquiry Email",
-    value: "enquiry@dynamicsolar.in",
-    link: "mailto:enquiry@dynamicsolar.in",
+    value: "Enquiry@dynamicsolar.in",
+    link: "mailto:Enquiry@dynamicsolar.in",
   },
   {
     Icon: Clock,
