@@ -26,10 +26,10 @@ const timeline = [
 ];
 
 const team = [
-    { name: "Arjun Murugan", role: "Founder & CEO", initials: "AM", color: "#FF6B1A" },
-    { name: "Kavitha Rajan", role: "Head of Engineering", initials: "KR", color: "#0284C7" },
-    { name: "Senthil Kumar", role: "Director of Operations", initials: "SK", color: "#16A34A" },
-    { name: "Deepa Krishnan", role: "Client Relations Manager", initials: "DK", color: "#7C3AED" },
+    { name: "", role: "Founder & CEO", initials: "AM", color: "#FF6B1A" },
+    { name: "", role: "Head of Engineering", initials: "KR", color: "#0284C7" },
+    { name: "", role: "Director of Operations", initials: "SK", color: "#16A34A" },
+    { name: "", role: "Client Relations Manager", initials: "DK", color: "#7C3AED" },
 ];
 
 function AnimSection({ children, className = "" }) {

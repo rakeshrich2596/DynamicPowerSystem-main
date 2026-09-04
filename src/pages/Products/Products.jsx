@@ -46,13 +46,13 @@ const BRANDS = [
         desc:  'Energy-efficient solar water heaters and complementary products for every Indian home.',
         link:  '/products/racold',
     },
-    {
-        slug:  'crompton',
-        name:  'Crompton',
-        logo:  cromptonLogo,
-        desc:  'Premium quality solar water heaters and durable pumping systems from Crompton.',
-        link:  '/products/crompton',
-    },
+    // {
+    //     slug:  'crompton',
+    //     name:  'Crompton',
+    //     logo:  cromptonLogo,
+    //     desc:  'Premium quality solar water heaters and durable pumping systems from Crompton.',
+    //     link:  '/products/crompton',
+    // },
 ];
 
 function BrandCard({ brand, delay = 0 }) {

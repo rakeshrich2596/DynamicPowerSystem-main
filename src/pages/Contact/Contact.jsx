@@ -13,19 +13,19 @@ import "./Contact.css";
 const addresses = [
   {
     Icon: MapPin,
-    label: "Address 1",
+    label: "Tambaram Address",
     value:
-      "Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
+      "1,Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
   },
   {
     Icon: MapPin,
-    label: "Address 2",
+    label: "Urapakkam Address",
     value:
       "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
   },
   {
     Icon: MapPin,
-    label: "Address 3",
+    label: "Kanchipuram Address",
     value:
       "Pallikkoodathan St,\nKanchipuram, Tamilnadu – 631501",
   },
@@ -840,7 +840,7 @@ function Contact() {
           <span>📍</span>
 
           <strong>
-            Gandhi Rd, Tambaram West, Chennai
+            1, Gandhi Rd, Tambaram West, Chennai
           </strong>
 
           <a

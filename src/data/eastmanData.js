@@ -22,7 +22,7 @@ export const EASTMAN_SECTIONS = [
         products: [
             {
                 id:          'gridxcel-1ph',
-                name:        'GridXcel Single Phase',
+                name:        'Single Phase Grid Tie Inverter',
                 subtitle:    'Grid Tie Solar Inverter',
                 badge:       'Bestseller',
                 range:       '3kW – 6kW',
@@ -48,7 +48,7 @@ export const EASTMAN_SECTIONS = [
             },
             {
                 id:          'solarlink-3ph',
-                name:        'SolarLink Three Phase',
+                name:        'Three Phase Grid Tie Inverter',
                 subtitle:    'Grid Tie Solar Inverter',
                 badge:       'Commercial',
                 range:       '30kW – 110kW',
@@ -83,7 +83,7 @@ export const EASTMAN_SECTIONS = [
         products: [
             {
                 id:          'sunbridge-1ph-lv',
-                name:        'SunBridge Single Phase (IP65)',
+                name:        'Single Phase Hybrid Inverter (IP65)',
                 subtitle:    'Hybrid Solar Inverter',
                 badge:       'Top Pick',
                 range:       '3kW & 5kW',
@@ -109,7 +109,7 @@ export const EASTMAN_SECTIONS = [
             },
             {
                 id:          'optigrid-3ph-lv',
-                name:        'OptiGrid Three Phase (IP65)',
+                name:        'Three Phase Hybrid Inverter (IP65)',
                 subtitle:    'Hybrid Solar Inverter',
                 badge:       'Commercial',
                 range:       '5kW & 10kW',
@@ -145,7 +145,7 @@ export const EASTMAN_SECTIONS = [
         products: [
             {
                 id:          'sunbridge-3ph-hv',
-                name:        'SunBridge Three Phase HV',
+                name:        'Three Phase High Voltage Hybrid Inverter',
                 subtitle:    'High Voltage Hybrid Solar Inverter',
                 badge:       'Industrial',
                 range:       '5kW – 15kW',
@@ -180,7 +180,7 @@ export const EASTMAN_SECTIONS = [
         products: [
             {
                 id:          'solar-smart-pwm',
-                name:        'Solar Smart PWM',
+                name:        'PWM Off-Grid Solar Inverter',
                 subtitle:    'Off-Grid PCU Inverter',
                 badge:       null,
                 range:       '500VA – 2,500VA',
@@ -205,7 +205,7 @@ export const EASTMAN_SECTIONS = [
             },
             {
                 id:          'solar-smart-max-mppt',
-                name:        'Solar Smart Max MPPT',
+                name:        'MPPT Off-Grid Solar Inverter',
                 subtitle:    'Off-Grid PCU Inverter',
                 badge:       'Popular',
                 range:       '500VA – 10,000VA',
@@ -230,7 +230,7 @@ export const EASTMAN_SECTIONS = [
             },
             {
                 id:          'solar-prime-pwm',
-                name:        'Solar Prime PWM',
+                name:        'PWM Off-Grid Solar Inverter - Prime Series',
                 subtitle:    'Off-Grid PCU Inverter',
                 badge:       null,
                 range:       '1,000VA – 5,000VA',
@@ -254,7 +254,7 @@ export const EASTMAN_SECTIONS = [
             },
             {
                 id:          'solar-prime-max-mppt',
-                name:        'Solar Prime Max MPPT',
+                name:        'MPPT Off-Grid Solar Inverter - Prime Series',
                 subtitle:    'Off-Grid PCU Inverter',
                 badge:       null,
                 range:       '1,000VA – 10,000VA',

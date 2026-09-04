@@ -92,7 +92,7 @@ function Footer() {
                         <ul className="footer-contact-list">
                             <li>
                                 <span className="footer-contact-icon"><MapPin size={16} strokeWidth={1.8} /></span>
-                                <span>Gandhi Rd, Tambaram West,<br />Tambaram, Chennai – 600045</span>
+                                <span>1, Gandhi Rd, Tambaram West,<br />Tambaram, Chennai – 600045</span>
                             </li>
                             <li>
                                 <span className="footer-contact-icon"><Phone size={16} strokeWidth={1.8} /></span>

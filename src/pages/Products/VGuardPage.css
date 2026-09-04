@@ -232,6 +232,11 @@
     color: #fff;
 }
 
+.vg-prod-info-box--warranty {
+    background: #003d7c;
+    color: #fff;
+}
+
 .vg-prod-info-icon {
     width: 32px;
     height: 32px;

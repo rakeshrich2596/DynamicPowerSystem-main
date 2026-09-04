@@ -8,7 +8,7 @@ const BRANDS = [
     { slug: 'havells',   label: 'Havells'    },
     { slug: 'vguard',    label: 'V-Guard'    },
     { slug: 'racold',    label: 'Racold'     },
-    { slug: 'crompton',  label: 'Crompton'   },
+    // { slug: 'crompton',  label: 'Crompton'   },
 ];
 
 function Navbar() {

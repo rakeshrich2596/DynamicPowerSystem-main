@@ -1,32 +1,79 @@
 /* ── V-Guard Heat Pump Water Heaters Product Data ── */
 /* Source: https://www.vguard.in/product-categories/vguard-heat-pump-water-heaters */
 
+import imgvguard1 from '../assets/images/vguard/vguard1.png';
+import imgvguard2 from '../assets/images/vguard/vguard2.png';
+import imgvguard3 from '../assets/images/vguard/vguard3.png';
+import imgvguard4 from '../assets/images/vguard/vguard4.png';
+import imgvguard5 from '../assets/images/vguard/vguard5.png';
+import imgvguard6 from '../assets/images/vguard/vguard6.png';
+
+
 export const VGUARD_NAV = [
-    { id: 'section-heat-pumps',    label: 'Heat Pump Water Heaters' },
-    { id: 'section-solar-heaters', label: 'Solar Water Heaters' },
+    {
+        id: 'section-heat-pumps',
+        label: 'Heat Pump Water Heaters'
+    },
+    {
+        id: 'section-solar-heaters',
+        label: 'Solar Water Heaters'
+    },
 ];
+
 
 export const VGUARD_SECTIONS = [
     {
-        id:      'section-heat-pumps',
-        tag:     'V-Guard Heat Pumps',
-        title:   'Heat Pump Water Heaters',
-        tagline: 'Energy-efficient and innovative heat pump water heating solutions for domestic, commercial, swimming pool, and extreme cold climate applications',
+        id: 'section-heat-pumps',
+
+        tag: 'V-Guard Heat Pumps',
+
+        title: 'Heat Pump Water Heaters',
+
+        tagline:
+            'Energy-efficient and innovative heat pump water heating solutions for domestic, commercial, swimming pool, and extreme cold climate applications',
+
         products: [
+
+            /* ─────────────────────────────
+               1. DOMESTIC HEAT PUMP
+            ───────────────────────────── */
             {
-                id:       'domestic-heat-pump-series',
-                name:     'Domestic Heat Pump Series',
+                id: 'domestic-heat-pump-series',
+
+                name: 'Domestic Heat Pump Series',
+
                 subtitle: 'Heat Pump Water Heater',
-                badge:    'Domestic',
-                capacity: 'Hot Water Round the Clock',
-                image:    'https://www.vguard.in/uploads/product/domestic-heat-pump-v3-bg.jpg',
-                description: 'This series of Domestic Heat Pump Water Heaters is designed to give you and your family hot water round the clock. Comes with a 5-year warranty for the tank and compressor and a 3-year warranty for the heat pump.',
+
+                badge: 'Domestic',
+
+                capacity: '24/7 Hot Water',
+
+                warranty: '5 Years',
+
+                image: imgvguard1,
+
+                description:
+                    'This series of Domestic Heat Pump Water Heaters is designed to give you and your family hot water round the clock. Comes with a 5-year warranty for the tank and compressor and a 3-year warranty for the heat pump.',
+
                 specs: [
-                    { label: 'Tank & Compressor Warranty', value: '5 Years' },
-                    { label: 'Heat Pump Warranty',         value: '3 Years' },
-                    { label: 'Application',                value: 'Residential' },
-                    { label: 'Operation',                  value: 'Round the Clock' },
+                    {
+                        label: 'Tank & Compressor Warranty',
+                        value: '5 Years'
+                    },
+                    {
+                        label: 'Heat Pump Warranty',
+                        value: '3 Years'
+                    },
+                    {
+                        label: 'Application',
+                        value: 'Residential'
+                    },
+                    {
+                        label: 'Operation',
+                        value: 'Round the Clock'
+                    },
                 ],
+
                 highlights: [
                     'Hot water round the clock',
                     '5-year warranty for tank and compressor',
@@ -34,20 +81,46 @@ export const VGUARD_SECTIONS = [
                     'Energy-efficient domestic solution',
                 ],
             },
+
+
+            /* ─────────────────────────────
+               2. COMMERCIAL HEAT PUMP
+            ───────────────────────────── */
             {
-                id:       'commercial-heat-pump-series',
-                name:     'Commercial Heat Pump Series',
+                id: 'commercial-heat-pump-series',
+
+                name: 'Commercial Heat Pump Series',
+
                 subtitle: 'Heat Pump Water Heater',
-                badge:    'Commercial',
+
+                badge: 'Commercial',
+
                 capacity: 'ASHPWH',
-                image:    'https://www.vguard.in/uploads/product/CommercialHeatPumpSeries-sm.jpg',
-                description: 'For commercial environments like Hospitals, Hostels, Hotels etc. easy access to hot water is mandatory. This series is both energy-efficient and innovative equally. An Air Source Heat Pump Water Heater (ASHPWH) from V-Guard is the go-to solution for readily available hot water.',
+
+                image: imgvguard2,
+
+                description:
+                    'For commercial environments like Hospitals, Hostels, Hotels etc. easy access to hot water is mandatory. This series is both energy-efficient and innovative equally. An Air Source Heat Pump Water Heater (ASHPWH) from V-Guard is the go-to solution for readily available hot water.',
+
                 specs: [
-                    { label: 'Application',    value: 'Hospitals, Hostels, Hotels' },
-                    { label: 'Type',           value: 'Air Source Heat Pump (ASHPWH)' },
-                    { label: 'Efficiency',     value: 'Energy-efficient' },
-                    { label: 'Hot Water',      value: 'Readily Available' },
+                    {
+                        label: 'Application',
+                        value: 'Hospitals, Hostels, Hotels'
+                    },
+                    {
+                        label: 'Type',
+                        value: 'Air Source Heat Pump (ASHPWH)'
+                    },
+                    {
+                        label: 'Efficiency',
+                        value: 'Energy-efficient'
+                    },
+                    {
+                        label: 'Hot Water',
+                        value: 'Readily Available'
+                    },
                 ],
+
                 highlights: [
                     'Designed for commercial environments',
                     'Energy-efficient and innovative',
@@ -55,20 +128,48 @@ export const VGUARD_SECTIONS = [
                     'Ideal for Hospitals, Hostels, Hotels',
                 ],
             },
+
+
+            /* ─────────────────────────────
+               3. SWIMMING POOL HEAT PUMP
+            ───────────────────────────── */
             {
-                id:       'swimming-pool-heat-pumps-series',
-                name:     'Swimming Pool Heat Pumps Series',
+                id: 'swimming-pool-heat-pumps-series',
+
+                name: 'Swimming Pool Heat Pumps Series',
+
                 subtitle: 'Heat Pump Water Heater',
-                badge:    'Swimming Pool',
+
+                badge: 'Swimming Pool',
+
                 capacity: 'Pool Heating',
-                image:    'https://www.vguard.in/uploads/product/swimming-pool-hp.jpg',
-                description: 'This series of swimming pool heat pumps is designed to give you the comfort of Heated Swimming Pool round the clock. Comes with a 2 year warranty for the heat pump.',
+
+                warranty: '2 Years',
+
+                image: imgvguard3,
+
+                description:
+                    'This series of swimming pool heat pumps is designed to give you the comfort of Heated Swimming Pool round the clock. Comes with a 2 year warranty for the heat pump.',
+
                 specs: [
-                    { label: 'Application',          value: 'Swimming Pool' },
-                    { label: 'Heat Pump Warranty',   value: '2 Years' },
-                    { label: 'Operation',            value: 'Round the Clock' },
-                    { label: 'Comfort',              value: 'Heated Pool' },
+                    {
+                        label: 'Application',
+                        value: 'Swimming Pool'
+                    },
+                    {
+                        label: 'Heat Pump Warranty',
+                        value: '2 Years'
+                    },
+                    {
+                        label: 'Operation',
+                        value: 'Round the Clock'
+                    },
+                    {
+                        label: 'Comfort',
+                        value: 'Heated Pool'
+                    },
                 ],
+
                 highlights: [
                     'Heated Swimming Pool round the clock',
                     '2 year warranty for the heat pump',
@@ -76,20 +177,46 @@ export const VGUARD_SECTIONS = [
                     'Energy-efficient pool heating',
                 ],
             },
+
+
+            /* ─────────────────────────────
+               4. EVI HEAT PUMP
+            ───────────────────────────── */
             {
-                id:       'evi-heat-pumps-series',
-                name:     'EVI Heat Pumps Series',
+                id: 'evi-heat-pumps-series',
+
+                name: 'EVI Heat Pumps Series',
+
                 subtitle: 'Heat Pump Water Heater',
-                badge:    'EVI Tech',
+
+                badge: 'EVI Tech',
+
                 capacity: 'Extreme Cold',
-                image:    'https://www.vguard.in/uploads/product/evi-hp.jpg',
-                description: 'This series of EVI heat pumps is designed to deliver the hot water at even the lowest temperature of -30 deg C temperature.',
+
+                image: imgvguard4,
+
+                description:
+                    'This series of EVI heat pumps is designed to deliver the hot water at even the lowest temperature of -30 deg C temperature.',
+
                 specs: [
-                    { label: 'Technology',     value: 'Enhanced Vapor Injection (EVI)' },
-                    { label: 'Working Temp',   value: 'Down to -30°C' },
-                    { label: 'Application',    value: 'Extreme Cold Climates' },
-                    { label: 'Hot Water',      value: 'All Weather Delivery' },
+                    {
+                        label: 'Technology',
+                        value: 'Enhanced Vapor Injection (EVI)'
+                    },
+                    {
+                        label: 'Working Temp',
+                        value: 'Down to -30°C'
+                    },
+                    {
+                        label: 'Application',
+                        value: 'Extreme Cold Climates'
+                    },
+                    {
+                        label: 'Hot Water',
+                        value: 'All Weather Delivery'
+                    },
                 ],
+
                 highlights: [
                     'Works at temperatures as low as -30°C',
                     'Enhanced Vapor Injection technology',
@@ -99,26 +226,61 @@ export const VGUARD_SECTIONS = [
             },
         ],
     },
+
+
+    /* ═════════════════════════════════════
+       SOLAR WATER HEATERS
+    ═════════════════════════════════════ */
     {
-        id:      'section-solar-heaters',
-        tag:     'V-Guard Solar Heaters',
-        title:   'Solar Water Heaters',
-        tagline: 'High-efficiency evacuated tube solar water heaters for every home — consistent hot water with zero electricity cost',
+        id: 'section-solar-heaters',
+
+        tag: 'V-Guard Solar Heaters',
+
+        title: 'Solar Water Heaters',
+
+        tagline:
+            'High-efficiency evacuated tube solar water heaters for every home — consistent hot water with zero electricity cost',
+
         products: [
+
+            /* ─────────────────────────────
+               5. TRU-HOT DAF
+            ───────────────────────────── */
             {
-                id:       'truhot-daf',
-                name:     'TRU-HOT DAF',
+                id: 'truhot-daf',
+
+                name: 'TRU-HOT DAF',
+
                 subtitle: 'Solar Water Heater',
-                badge:    'Non-Pressurized',
+
+                badge: 'Non-Pressurized',
+
                 capacity: '100–300 LPD',
-                image:    '/src/assets/images/vguard-truhot-daf.jpg',
-                description: 'A hot shower is more than just a routine; it\'s comfort, relief, and the perfect way to recharge. That everyday need for consistent, comforting hot water without worrying about rising power bills, is exactly what the V-Guard Tru-Hot DAF Solar Water Heater is built to deliver.',
+
+                image: imgvguard5,
+
+                description:
+                    'A hot shower is more than just a routine; it\'s comfort, relief, and the perfect way to recharge. That everyday need for consistent, comforting hot water without worrying about rising power bills, is exactly what the V-Guard Tru-Hot DAF Solar Water Heater is built to deliver.',
+
                 specs: [
-                    { label: 'Type',          value: 'Evacuated Tube Collector (ETC)' },
-                    { label: 'Capacity',      value: '100 – 300 LPD' },
-                    { label: 'System',        value: 'Non-Pressurized' },
-                    { label: 'Electricity',   value: 'Zero Running Cost' },
+                    {
+                        label: 'Type',
+                        value: 'Evacuated Tube Collector (ETC)'
+                    },
+                    {
+                        label: 'Capacity',
+                        value: '100 – 300 LPD'
+                    },
+                    {
+                        label: 'System',
+                        value: 'Non-Pressurized'
+                    },
+                    {
+                        label: 'Electricity',
+                        value: 'Zero Running Cost'
+                    },
                 ],
+
                 highlights: [
                     'Solar-powered hot water at zero electricity cost',
                     'Double-walled evacuated glass tubes for efficiency',
@@ -126,20 +288,46 @@ export const VGUARD_SECTIONS = [
                     'BIS-certified and corrosion-resistant tank',
                 ],
             },
+
+
+            /* ─────────────────────────────
+               6. TRU-HOT PRO
+            ───────────────────────────── */
             {
-                id:       'truhot-pro',
-                name:     'TRU-HOT PRO',
+                id: 'truhot-pro',
+
+                name: 'TRU-HOT PRO',
+
                 subtitle: 'Solar Water Heater',
-                badge:    'Non-Pressurized',
+
+                badge: 'Non-Pressurized',
+
                 capacity: '150–500 LPD',
-                image:    '/src/assets/images/vguard-truhot-pro.jpg',
-                description: 'A hot shower is more than just routine, it\'s comfort, relief, and the perfect way to unwind. And while water heaters make this everyday comfort possible, heating water regularly does add to your electricity bill, especially during colder months when hot water usage increases.',
+
+                image: imgvguard5,
+
+                description:
+                    'A hot shower is more than just routine, it\'s comfort, relief, and the perfect way to unwind. And while water heaters make this everyday comfort possible, heating water regularly does add to your electricity bill, especially during colder months when hot water usage increases.',
+
                 specs: [
-                    { label: 'Type',          value: 'Evacuated Tube Collector (ETC)' },
-                    { label: 'Capacity',      value: '150 – 500 LPD' },
-                    { label: 'System',        value: 'Non-Pressurized' },
-                    { label: 'Tank',          value: 'SS Inner & Outer' },
+                    {
+                        label: 'Type',
+                        value: 'Evacuated Tube Collector (ETC)'
+                    },
+                    {
+                        label: 'Capacity',
+                        value: '150 – 500 LPD'
+                    },
+                    {
+                        label: 'System',
+                        value: 'Non-Pressurized'
+                    },
+                    {
+                        label: 'Tank',
+                        value: 'SS Inner & Outer'
+                    },
                 ],
+
                 highlights: [
                     'Higher capacity for larger households',
                     'Stainless steel inner and outer tank',
@@ -147,20 +335,46 @@ export const VGUARD_SECTIONS = [
                     'Minimal maintenance, long service life',
                 ],
             },
+
+
+            /* ─────────────────────────────
+               7. V-HOT AL-8 PR
+            ───────────────────────────── */
             {
-                id:       'vhot-al8-pr',
-                name:     'V-HOT AL-8 PR',
+                id: 'vhot-al8-pr',
+
+                name: 'V-HOT AL-8 PR',
+
                 subtitle: 'Pressurized Solar Water Heater',
-                badge:    'Pressurized',
+
+                badge: 'Pressurized',
+
                 capacity: '100–300 LPD',
-                image:    '/src/assets/images/vguard-vhot-al8pr.jpg',
-                description: 'Ever stepped into the shower expecting a strong, relaxing flow, only to be greeted by low pressure? The V-HOT AL-8 PR pressurized solar water heater system ensures continuous and uniform hot water flow at all outlets — no compromise on pressure.',
+
+                image: imgvguard6,
+
+                description:
+                    'Ever stepped into the shower expecting a strong, relaxing flow, only to be greeted by low pressure? The V-HOT AL-8 PR pressurized solar water heater system ensures continuous and uniform hot water flow at all outlets — no compromise on pressure.',
+
                 specs: [
-                    { label: 'Type',          value: 'Pressurized ETC System' },
-                    { label: 'Capacity',      value: '100 – 300 LPD' },
-                    { label: 'Pressure',      value: 'Up to 8 kg/cm²' },
-                    { label: 'Tank Material', value: 'Aluminium Inner Tank' },
+                    {
+                        label: 'Type',
+                        value: 'Pressurized ETC System'
+                    },
+                    {
+                        label: 'Capacity',
+                        value: '100 – 300 LPD'
+                    },
+                    {
+                        label: 'Pressure',
+                        value: 'Up to 8 kg/cm²'
+                    },
+                    {
+                        label: 'Tank Material',
+                        value: 'Aluminium Inner Tank'
+                    },
                 ],
+
                 highlights: [
                     'Continuous and uniform hot water at all outlets',
                     'Withstands up to 8 kg/cm² pressure',

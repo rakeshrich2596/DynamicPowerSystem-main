@@ -1,6 +1,12 @@
 import { useEffect, useRef } from "react";
 import {
-    Home, FileText, ClipboardList, Zap, Plug, BadgeCheck
+    Home,
+    FileText,
+    Landmark,
+    ClipboardList,
+    Zap,
+    Plug,
+    BadgeCheck,
 } from "lucide-react";
 import "./SolarSteps.css";
 
@@ -21,31 +27,38 @@ const steps = [
     },
     {
         id: 3,
-        Icon: ClipboardList,
-        title: "Govt Paperwork & Subsidy Assistance",
-        desc: "We handle all paperwork for you and help for a smooth coordination with the local EB office.",
+        Icon: Landmark,
+        title: "Solar Loan Assistance",
+        desc: "We help you explore suitable solar loan options and guide you through the loan application process.",
         side: "left",
     },
     {
         id: 4,
-        Icon: Zap,
-        title: "High-Quality Installation in 24 hours",
-        desc: "Your rooftop solar system will be installed promptly, cleanly, and professionally.",
+        Icon: ClipboardList,
+        title: "Govt Paperwork & Subsidy Assistance",
+        desc: "We handle the required government paperwork and assist you with the subsidy process for a smooth installation.",
         side: "right",
     },
     {
         id: 5,
-        Icon: Plug,
-        title: "Connection to the Grid",
-        desc: "We assist you with the nearest EB office to integrate your system with the power grid to install your new electricity meter.",
+        Icon: Zap,
+        title: "High-Quality Installation in 24 hours",
+        desc: "Your rooftop solar system will be installed promptly, cleanly, and professionally.",
         side: "left",
     },
     {
         id: 6,
-        Icon: BadgeCheck,
-        title: "Redeem your Subsidy",
-        desc: "Your solar system is now active. Use it to power your home and start saving on your electricity bills from day one.",
+        Icon: Plug,
+        title: "Connection to the Grid",
+        desc: "We assist you with the nearest EB office to integrate your system with the power grid and install your new electricity meter.",
         side: "right",
+    },
+    {
+        id: 7,
+        Icon: BadgeCheck,
+        title: "Receive Your Subsidy",
+        desc: "Once the required verification is completed, receive your eligible subsidy and start saving on your electricity bills.",
+        side: "left",
     },
 ];
 
@@ -58,25 +71,38 @@ function SolarSteps() {
                 entries.forEach((e) => {
                     if (e.isIntersecting) {
                         e.target.classList.add("visible");
-                        const animatedElements = e.target.querySelectorAll(
-                            ".ss-card-left, .ss-card-right, .ss-node, .fade-in-up"
-                        );
+
+                        const animatedElements =
+                            e.target.querySelectorAll(
+                                ".ss-card-left, .ss-card-right, .ss-node, .fade-in-up"
+                            );
+
                         if (animatedElements.length > 0) {
-                            animatedElements.forEach((el) => el.classList.add("visible"));
-                        } else if (e.target.classList.contains("ss-header")) {
+                            animatedElements.forEach((el) =>
+                                el.classList.add("visible")
+                            );
+                        } else if (
+                            e.target.classList.contains("ss-header")
+                        ) {
                             e.target.classList.add("visible");
                         }
                     }
                 });
             },
-            { threshold: 0.25 }
+            {
+                threshold: 0.25,
+            }
         );
 
         if (sectionRef.current) {
-            const rows = sectionRef.current.querySelectorAll(".ss-row");
+            const rows =
+                sectionRef.current.querySelectorAll(".ss-row");
+
             rows.forEach((row) => observer.observe(row));
-            
-            const header = sectionRef.current.querySelector(".ss-header");
+
+            const header =
+                sectionRef.current.querySelector(".ss-header");
+
             if (header) observer.observe(header);
         }
 
@@ -84,55 +110,99 @@ function SolarSteps() {
     }, []);
 
     return (
-        <section className="solar-steps-section" ref={sectionRef}>
+        <section
+            className="solar-steps-section"
+            ref={sectionRef}
+        >
             {/* Background decorative blobs */}
-            <div className="ss-blob ss-blob-1" aria-hidden="true" />
-            <div className="ss-blob ss-blob-2" aria-hidden="true" />
+            <div
+                className="ss-blob ss-blob-1"
+                aria-hidden="true"
+            />
+
+            <div
+                className="ss-blob ss-blob-2"
+                aria-hidden="true"
+            />
 
             <div className="container">
+
                 {/* Header */}
                 <div className="section-header ss-header fade-in-up">
-                    <span className="section-tag">How It Works</span>
+
+                    <span className="section-tag">
+                        How It Works
+                    </span>
+
                     <h2 className="section-title">
                         Get Solar Installed in{" "}
-                        <span>6 Easy Steps</span>
+                        <span>7 Easy Steps</span>
                     </h2>
+
                     <p className="section-subtitle">
-                        We provide end-to-end support from design, installation,
-                        maintenance along with complete subsidy paperwork.
+                        We provide end-to-end support from design,
+                        installation, maintenance along with complete
+                        subsidy and loan assistance.
                     </p>
+
                 </div>
 
                 {/* Timeline */}
                 <div className="ss-timeline">
-                    {/* Vertical line */}
-                    <div className="ss-line" aria-hidden="true" />
 
-                    {steps.map((step, idx) => {
+                    {/* Vertical line */}
+                    <div
+                        className="ss-line"
+                        aria-hidden="true"
+                    />
+
+                    {steps.map((step) => {
                         const { Icon } = step;
+
                         const animClass =
-                            step.side === "left" ? "ss-card-left" : "ss-card-right";
+                            step.side === "left"
+                                ? "ss-card-left"
+                                : "ss-card-right";
+
                         return (
                             <div
                                 className={`ss-row ss-row-${step.side}`}
                                 key={step.id}
                             >
+
                                 {/* Card */}
-                                <div className={`ss-card ${animClass}`}>
+                                <div
+                                    className={`ss-card ${animClass}`}
+                                >
                                     <div className="ss-card-icon">
-                                        <Icon size={22} strokeWidth={1.8} />
+                                        <Icon
+                                            size={22}
+                                            strokeWidth={1.8}
+                                        />
                                     </div>
-                                    <h3 className="ss-card-title">{step.title}</h3>
-                                    <p className="ss-card-desc">{step.desc}</p>
+
+                                    <h3 className="ss-card-title">
+                                        {step.title}
+                                    </h3>
+
+                                    <p className="ss-card-desc">
+                                        {step.desc}
+                                    </p>
                                 </div>
 
                                 {/* Centre node */}
-                                <div className={`ss-node ss-node-${step.side}`}>
-                                    <span className="ss-node-number">{step.id}</span>
+                                <div
+                                    className={`ss-node ss-node-${step.side}`}
+                                >
+                                    <span className="ss-node-number">
+                                        {step.id}
+                                    </span>
                                 </div>
+
                             </div>
                         );
                     })}
+
                 </div>
             </div>
         </section>

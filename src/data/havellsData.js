@@ -2,6 +2,10 @@
 /* Source: havells.com/business/for-industrial/solar/solar-residential.html */
 
 const IMG_CACHE = 'https://havells.com/media/catalog/product/cache/bebb556ccaa04236261d8ba5676ddf4d';
+import imghavells1 from '../assets/images/havells/havells10.png';
+import imghavells2 from '../assets/images/havells/havells20.png';
+import imghavells3 from '../assets/images/havells/havells30.png';
+import imghavells4 from '../assets/images/havells/havells40.png';
 
 export const HAVELLS_NAV = [
     { id: 'section-solar-panels',   label: 'Solar Panels'          },
@@ -24,7 +28,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Panel',
                 badge:    null,
                 capacity: '550 Wp',
-                image:    `${IMG_CACHE}/s/o/solar_pv_module_mono_perc_crystalline_1__1.jpg`,
+                image:    imghavells1,
                 description: 'High-efficiency MonoPERC solar panel delivering 550 Wp peak power with multi busbar technology for superior energy harvest and excellent low-light performance on residential rooftops.',
                 specs: [
                     { label: 'Peak Power',  value: '550 Wp'      },
@@ -44,7 +48,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Panel',
                 badge:    'Latest Technology',
                 capacity: '595 Wp',
-                image:    `${IMG_CACHE}/s/o/solar_pv_module_topcon_1__1.jpg`,
+                image:    imghavells4,
                 description: 'Next-generation TOPCon solar panel with 595 Wp peak power, featuring multi busbar cell technology for higher efficiency and superior low-light performance.',
                 specs: [
                     { label: 'Peak Power',  value: '595 Wp'      },
@@ -74,7 +78,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    null,
                 capacity: '1.1 kW',
-                image:    `${IMG_CACHE}/e/n/enviro_gti_1100_ng.jpg`,
+                image:    imghavells2,
                 description: 'BIS and IEC certified residential solar inverter with built-in zero export functionality, ideal for homes looking to harness rooftop solar energy efficiently and safely.',
                 specs: [
                     { label: 'Rated Power',   value: '1.1 kW'                    },
@@ -94,7 +98,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    null,
                 capacity: '2.2 kW',
-                image:    `${IMG_CACHE}/b/a/base_images_13__2_1.jpg`,
+                image:    imghavells2,
                 description: 'Reliable solar power conversion with a 10-year warranty and built-in zero export protection, perfect for small to medium residential solar installations.',
                 specs: [
                     { label: 'Rated Power',   value: '2.2 kW'                    },
@@ -114,7 +118,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    null,
                 capacity: '3.3 kW',
-                image:    `${IMG_CACHE}/b/a/base_images_13__2_1_2.jpg`,
+                image:    imghavells2,
                 description: 'Designed for medium-size residential rooftops, combining BIS/IEC certification with built-in zero export for a safe, efficient and warranty-backed solar solution.',
                 specs: [
                     { label: 'Rated Power',   value: '3.3 kW'                    },
@@ -134,7 +138,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    'Popular',
                 capacity: '4 kW',
-                image:    `${IMG_CACHE}/e/n/enviro_gti_4000_d.jpg`,
+                image:    imghavells2,
                 description: 'One of the most popular choices for residential solar setups, combining 4 kW output with a 10-year warranty, full certifications, and built-in zero export protection.',
                 specs: [
                     { label: 'Rated Power',   value: '4 kW'                      },
@@ -164,8 +168,8 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    null,
                 capacity: '5.5 kW',
-                image:    `${IMG_CACHE}/e/n/enviro_gti_5500_tx-ng_1.jpg`,
-                description: 'A powerful 5.5 kW residential solar inverter with BIS and IEC certifications and an optional separate zero export device for added installation flexibility.',
+                    image:    imghavells3,
+                    description: 'A powerful 5.5 kW residential solar inverter with BIS and IEC certifications and an optional separate zero export device for added installation flexibility.',
                 specs: [
                     { label: 'Rated Power',   value: '5.5 kW'                     },
                     { label: 'Warranty',      value: '10 Year Standard'             },
@@ -184,7 +188,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    null,
                 capacity: '6 kW',
-                image:    `${IMG_CACHE}/e/n/enviro_6000_tx_ng.jpg`,
+                image:    imghavells3,
                 description: '6 kW reliable solar power conversion with full BIS and IEC certifications and a 10-year warranty, backed by optional zero export protection.',
                 specs: [
                     { label: 'Rated Power',   value: '6 kW'                       },
@@ -204,7 +208,7 @@ export const HAVELLS_SECTIONS = [
                 subtitle: 'Solar Inverter',
                 badge:    'High Power',
                 capacity: '8.8 kW',
-                image:    `${IMG_CACHE}/e/n/enviro_gti_8800_tx-ng_1.jpg`,
+                image:   imghavells3,
                 description: 'The flagship 8.8 kW residential solar inverter for larger rooftops, offering full BIS and IEC certification, a 10-year warranty, and optional zero export as a separate device.',
                 specs: [
                     { label: 'Rated Power',   value: '8.8 kW'                     },

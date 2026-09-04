@@ -149,7 +149,7 @@ function Hero() {
                         <div className="hero-banner__subsidy-box" style={{alignItems: "center", textAlign: "center", padding: "16px 30px"}}>
                             <p className="hero-banner__subsidy-box-label" style={{fontSize: "1rem"}}>Get Subsidy up to</p>
                             <p className="hero-banner__subsidy-box-amount" style={{margin: "4px 0"}}>₹78,000<sup>*</sup></p>
-                            <span className="hero-banner__subsidy-box-days" style={{margin: "6px 0"}}>in 15 days</span>
+                            {/* <span className="hero-banner__subsidy-box-days" style={{margin: "6px 0"}}>in 15 days</span> */}
                             <p className="hero-banner__subsidy-box-note" style={{fontSize: "0.85rem", fontWeight: 600}}>End to end services with no tension</p>
                         </div>
 
