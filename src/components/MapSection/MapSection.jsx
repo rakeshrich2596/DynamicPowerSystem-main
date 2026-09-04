@@ -44,7 +44,7 @@ function StatCard({ stat, active }) {
 function MapSection() {
     const sectionRef = useRef(null);
     const [visible, setVisible] = useState(false);
-    const projectCount = useCounter(500, 2000, visible);
+    const projectCount = useCounter(1500, 2000, visible);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
