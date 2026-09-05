@@ -1,137 +1,400 @@
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import "./Footer.css";
 
+/* =========================================================
+   IMPORTANT PRODUCTS ONLY
+========================================================= */
+
 const services = [
-    "Solar Power Plant",
-    "Solar Water Heater",
-    "Solar Water Pumping",
-    "Solar Street Lights",
-    "Solar Home UPS",
-    "Inverter & Battery",
-    "Online UPS",
-    "RO Systems",
+  "Solar Power Plant",
+  "Solar Water Heater",
+  "Solar Water Pumping",
+  "Solar Street Lights",
+  "Solar Home UPS",
 ];
+
+/* =========================================================
+   QUICK LINKS
+========================================================= */
 
 const quickLinks = [
-    { label: "Home", to: "/" },
-    { label: "About Us", to: "/about" },
-    { label: "Products", to: "/products" },
-    { label: "Solar Calculator", to: "/solar-calculator" },
-    { label: "Blog", to: "/blog" },
-    { label: "Contact", to: "/contact" },
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about" },
+  { name: "Products", path: "/products" },
+  { name: "Solar Calculator", path: "/solar-calculator" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact", path: "/contact" },
 ];
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
 
 const socials = [
-    { label: "Facebook", icon: "f", href: "#" },
-    { label: "Instagram", icon: "in", href: "#" },
-    { label: "YouTube", icon: "▶", href: "#" },
-    { label: "LinkedIn", icon: "li", href: "#" },
+  {
+    name: "Facebook",
+    short: "f",
+    link: "#",
+  },
+  {
+    name: "Instagram",
+    short: "in",
+    link: "#",
+  },
+  {
+    name: "YouTube",
+    short: "▶",
+    link: "#",
+  },
+  {
+    name: "LinkedIn",
+    short: "li",
+    link: "#",
+  },
 ];
 
-function Footer() {
-    return (
-        <footer className="footer">
-            <div className="footer-top">
-                <div className="container footer-grid">
+/* =========================================================
+   PHONE NUMBERS
+========================================================= */
 
-                    {/* Brand Column */}
-                    <div className="footer-col footer-brand">
-                        <Link to="/" className="footer-logo">
-                            <img src="/logo.png" alt="Dynamic Power Systems Logo" className="footer-logo-img" />
-                        </Link>
-                        <p className="footer-tagline">
-                            Discover a Sustainable Lifestyle with cutting-edge power systems.
-                            Empowering Tamil Nadu with clean, affordable solar energy since 1995.
-                        </p>
-                        <div className="footer-socials">
-                            {socials.map((s) => (
-                                <a
-                                    key={s.label}
-                                    href={s.href}
-                                    className="footer-social-btn"
-                                    aria-label={s.label}
-                                    rel="noopener noreferrer"
-                                    target="_blank"
-                                >
-                                    {s.icon}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
+const contactNumbers = [
+  {
+    label: "Sales",
+    number: "+91 72999 85357",
+    link: "tel:+917299985357",
+  },
+  {
+    label: "Support",
+    number: "+91 98416 85357",
+    link: "tel:+919841685357",
+  },
+  {
+    label: "Enquiry",
+    number: "+91 90030 85357",
+    link: "tel:+919003085357",
+  },
+];
 
-                    {/* Quick Links */}
-                    <div className="footer-col">
-                        <h4 className="footer-col-title">Quick Links</h4>
-                        <ul className="footer-list">
-                            {quickLinks.map((l) => (
-                                <li key={l.to}>
-                                    <NavLink to={l.to} end={l.to === "/"}>
-                                        {l.label}
-                                    </NavLink>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+/* =========================================================
+   EMAILS
+========================================================= */
 
-                    {/* Services */}
-                    <div className="footer-col">
-                        <h4 className="footer-col-title">Our Products</h4>
-                        <ul className="footer-list">
-                            {services.map((s) => (
-                                <li key={s}>
-                                    <Link to="/products">{s}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+const emails = [
+  {
+    label: "Admin",
+    email: "admin@dynamicsolar.in",
+    link: "mailto:admin@dynamicsolar.in",
+  },
+  {
+    label: "Enquiry",
+    email: "Enquiry@dynamicsolar.in",
+    link: "mailto:Enquiry@dynamicsolar.in",
+  },
+];
 
-                    {/* Contact */}
-                    <div className="footer-col">
-                        <h4 className="footer-col-title">Contact Us</h4>
-                        <ul className="footer-contact-list">
-                            <li>
-                                <span className="footer-contact-icon"><MapPin size={16} strokeWidth={1.8} /></span>
-                                <span>1, Gandhi Rd, Tambaram West,<br />Tambaram, Chennai – 600045</span>
-                            </li>
-                            <li>
-                                <span className="footer-contact-icon"><Phone size={16} strokeWidth={1.8} /></span>
-                                <a href="https://wa.me/919841582874" target="_blank" rel="noopener noreferrer">+91 98415 82874</a>
-                            </li>
-                            <li>
-                                <span className="footer-contact-icon"><Mail size={16} strokeWidth={1.8} /></span>
-                                <a href="mailto:info@dynamicsolar.in">info@dynamicsolar.in</a>
-                            </li>
-                            <li>
-                                <span className="footer-contact-icon"><Clock size={16} strokeWidth={1.8} /></span>
-                                <span>Mon – Sat: 9:00 AM – 6:00 PM</span>
-                            </li>
-                        </ul>
-                        <Link to="/contact" className="footer-quote-btn">
-                            Get a Free Quote →
-                        </Link>
-                    </div>
+/* =========================================================
+   FOOTER
+========================================================= */
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+
+      {/* =====================================================
+          FOOTER TOP
+      ===================================================== */}
+
+      <div className="footer-top">
+        <div className="container">
+
+          <div className="footer-grid">
+
+            {/* =================================================
+                COLUMN 1 - BRAND
+            ================================================= */}
+
+            <div className="footer-col footer-brand">
+
+              <div className="footer-col-content">
+
+                {/* Logo */}
+                <Link to="/" className="footer-logo">
+                  <img
+                    src="/logo.png"
+                    alt="Dynamic Solar"
+                  />
+                </Link>
+
+                {/* Description */}
+                <p className="footer-tagline">
+                  Discover a Sustainable Lifestyle with
+                  cutting-edge power systems. Empowering
+                  Tamil Nadu with clean, affordable solar
+                  energy since 1995.
+                </p>
+
+                {/* Social Media */}
+                <div className="socials">
+
+                  {socials.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.link}
+                      className="social-link"
+                      aria-label={social.name}
+                    >
+                      {social.short}
+                    </a>
+                  ))}
 
                 </div>
-            </div>
 
-            {/* Bottom Bar */}
-            <div className="footer-bottom">
-                <div className="container footer-bottom-inner">
-                    <p className="footer-copyright">
-                        © {new Date().getFullYear()} Dynamic Solar. All rights reserved.
+                {/* Tambaram Address */}
+                <div className="brand-address">
+
+                  <MapPin size={17} />
+
+                  <div>
+                    <strong>Tambaram</strong>
+
+                    <p>
+                      1, Gandhi Rd, Tambaram West,
+                      <br />
+                      Tambaram, Chennai – 600045
                     </p>
-                    <div className="footer-bottom-links">
-                        <a href="#">Privacy Policy</a>
-                        <span>·</span>
-                        <a href="#">Terms of Service</a>
-                        <span>·</span>
-                        <a href="#">Sitemap</a>
-                    </div>
+                  </div>
+
                 </div>
+
+              </div>
+
             </div>
-        </footer>
-    );
-}
+
+
+            {/* =================================================
+                COLUMN 2 - QUICK LINKS
+            ================================================= */}
+
+            <div className="footer-col">
+
+              <div className="footer-col-content">
+
+                <h3 className="footer-title">
+                  Quick Links
+                </h3>
+
+                <ul className="footer-list">
+
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+
+                      <NavLink
+                        to={link.path}
+                        className="footer-link"
+                      >
+                        {link.name}
+                      </NavLink>
+
+                    </li>
+                  ))}
+
+                </ul>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+                COLUMN 3 - PRODUCTS
+            ================================================= */}
+
+            <div className="footer-col">
+
+              <div className="footer-col-content">
+
+                <h3 className="footer-title">
+                  Our Products
+                </h3>
+
+                <ul className="footer-list">
+
+                  {services.map((service) => (
+                    <li key={service}>
+
+                      <Link
+                        to="/products"
+                        className="footer-link"
+                      >
+                        {service}
+                      </Link>
+
+                    </li>
+                  ))}
+
+                </ul>
+
+              </div>
+
+            </div>
+
+
+            {/* =================================================
+                COLUMN 4 - CONTACT
+            ================================================= */}
+
+            <div className="footer-col footer-contact">
+
+              <div className="footer-col-content">
+
+                <h3 className="footer-title">
+                  Contact Us
+                </h3>
+
+
+                {/* ================= PHONE NUMBERS ================= */}
+
+                <div className="contact-group">
+
+                  {contactNumbers.map((item) => (
+                    <a
+                      href={item.link}
+                      className="contact-item contact-link"
+                      key={item.label}
+                    >
+
+                      <Phone size={16} />
+
+                      <div>
+
+                        <strong>
+                          {item.label}
+                        </strong>
+
+                        <span>
+                          {item.number}
+                        </span>
+
+                      </div>
+
+                    </a>
+                  ))}
+
+                </div>
+
+
+                {/* ================= EMAILS ================= */}
+
+                <div className="contact-group">
+
+                  {emails.map((item) => (
+                    <a
+                      href={item.link}
+                      className="contact-item contact-link"
+                      key={item.label}
+                    >
+
+                      <Mail size={16} />
+
+                      <div>
+
+                        <strong>
+                          {item.label}
+                        </strong>
+
+                        <span>
+                          {item.email}
+                        </span>
+
+                      </div>
+
+                    </a>
+                  ))}
+
+                </div>
+
+
+                {/* ================= WORKING HOURS ================= */}
+
+                <div className="contact-item working-hours">
+
+                  <Clock size={16} />
+
+                  <div>
+
+                    <strong>
+                      Working Hours
+                    </strong>
+
+                    <span>
+                      Mon – Sat: 9:00 AM – 6:00 PM
+                    </span>
+
+                    <span>
+                      Sunday: Closed
+                    </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+
+              {/* ================= QUOTE BUTTON ================= */}
+
+              <Link
+                to="/contact"
+                className="quote-btn"
+              >
+                Get a Free Quote
+              </Link>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      {/* =====================================================
+          FOOTER BOTTOM
+      ===================================================== */}
+
+      <div className="footer-bottom">
+
+        <div className="container footer-bottom-inner">
+
+          <p>
+            © {new Date().getFullYear()} Dynamic Solar.
+            All rights reserved.
+          </p>
+
+          <div className="footer-bottom-links">
+
+            <Link to="/privacy-policy">
+              Privacy Policy
+            </Link>
+
+            <Link to="/terms">
+              Terms
+            </Link>
+
+            <Link to="/sitemap">
+              Sitemap
+            </Link>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+  );
+};
 
 export default Footer;

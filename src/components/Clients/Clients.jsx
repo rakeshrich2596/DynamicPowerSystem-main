@@ -1,16 +1,19 @@
 import "./Clients.css";
 
-import eastmanLogo from "../../assets/images/clients/eastman.png";
-import vguardLogo from "../../assets/images/clients/vguard.png";
-import havellsLogo from "../../assets/images/clients/havells.png";
+import eastmanLogo from "../../assets/images/clients/Eastmans.png";
+import vguardLogo from "../../assets/images/clients/vguard.jpg";
+import havellsLogo from "../../assets/images/clients/Havells1.png";
+import racoldLogo from "../../assets/images/clients/racolds.jpg";
+import ashaPowerLogo from "../../assets/images/clients/asha.webp";
+import cromptonLogo from "../../assets/images/clients/cromptons.png";
 
 const clients = [
     { name: "Havells", type: "image", logo: havellsLogo },
-    { name: "Eastman", type: "image", logo: eastmanLogo, className: "eastman-img" },
-    { name: "V-Guard", type: "image", logo: vguardLogo, className: "vguard-img" },
-    { name: "Racold", text: "Racold", type: "box", bg: "#e31e24", color: "#fff" },
-    { name: "Asha Power", text: "ASHA POWER", type: "icon", bg: "#fff", color: "#0b5b9e", icon: "triangle" },
-    { name: "Crompton", text: "Crompton", type: "box", bg: "#004785", color: "#fff" },
+    { name: "Eastman", type: "image", logo: eastmanLogo },
+    { name: "V-Guard", type: "image", logo: vguardLogo  },
+    { name: "Racold",  type: "image", logo: racoldLogo },
+    { name: "Asha Power", type: "image", logo: ashaPowerLogo },
+    { name: "Crompton", type: "image", logo: cromptonLogo },
 ];
 
 function Clients() {

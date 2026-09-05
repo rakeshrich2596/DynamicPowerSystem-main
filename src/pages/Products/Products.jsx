@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import { useInView } from "../../hooks/useInView";
-import eastmanLogo   from "../../assets/images/clients/eastman.png";
-import ashapowerLogo from "../../assets/images/clients/ashapower.png";
-import havellsLogo   from "../../assets/images/clients/havells.png";
+import eastmanLogo   from "../../assets/images/clients/Eastmans.png";
+import ashapowerLogo from "../../assets/images/clients/asha.webp";
+import havellsLogo   from "../../assets/images/clients/Havells1.png";
 import vguardLogo    from "../../assets/images/clients/vguard.png";
-import racoldLogo    from "../../assets/images/clients/racold.png";
-import cromptonLogo  from "../../assets/images/clients/crompton.png";
+import racoldLogo    from "../../assets/images/clients/racolds.jpg";
+import cromptonLogo  from "../../assets/images/clients/cromptons.png";
 import "./Products.css";
 
 const BRANDS = [

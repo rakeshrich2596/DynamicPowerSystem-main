@@ -13,19 +13,19 @@ import "./Contact.css";
 const addresses = [
   {
     Icon: MapPin,
-    label: "Tambaram Address",
+    label: "Tambaram",
     value:
       "1,Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
   },
   {
     Icon: MapPin,
-    label: "Urapakkam Address",
+    label: "Urapakkam",
     value:
       "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
   },
   {
     Icon: MapPin,
-    label: "Kanchipuram Address",
+    label: "Kanchipuram",
     value:
       "Pallikkoodathan St,\nKanchipuram, Tamilnadu – 631501",
   },

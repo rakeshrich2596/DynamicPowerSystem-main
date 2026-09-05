@@ -90,7 +90,7 @@
     cursor: pointer;
 }
 
-.testi-collage-grid {
+/* .testi-collage-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -114,14 +114,30 @@
 .testi-collage-icon {
     font-size: 1.6rem;
     opacity: 0.55;
+} */
+
+/* ─── Actual Video Preview ───────────────────────────── */
+
+.testi-preview-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
 }
 
 /* Dark overlay so play button pops */
 .testi-collage-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(180, 85, 10, 0.45);
+    background: rgba(180, 85, 10, 0.28);
     border-radius: 20px;
+
+    pointer-events: none;
 }
 
 /* Brand watermark */

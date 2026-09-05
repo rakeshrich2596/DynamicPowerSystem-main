@@ -1,519 +1,1710 @@
-/* ══════════════════════════════════════════════════════
-   Enquiry + Calculator Section  
-   Eastman Solar–inspired split layout
-   ══════════════════════════════════════════════════════ */
+/* =========================================================
+   SOLAR CALCULATOR
+   ========================================================= */
 
-.enquiry-calc {
-    position: relative;
-    overflow: hidden;
-    padding: 0;
+.solar-calculator-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 70px 20px;
+  box-sizing: border-box;
+
+  /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Light orange transparent overlay */
+  position: relative;
+  isolation: isolate;
 }
 
-/* ── Background ── */
-.enquiry-calc__bg {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
+/* Transparent light-orange overlay */
+.solar-calculator-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(255, 237, 213, 0.58);
+
+  z-index: 0;
+  pointer-events: none;
 }
 
-.enquiry-calc__bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+.solar-calculator-container {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+
+  gap: 55px;
+  align-items: start;
+
+  position: relative;
+  z-index: 1;
 }
 
-.enquiry-calc__bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        110deg,
-        rgba(245, 240, 230, 0.92) 0%,
-        rgba(245, 240, 230, 0.85) 45%,
-        rgba(245, 240, 230, 0.70) 70%,
-        rgba(245, 240, 230, 0.55) 100%
-    );
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.solar-intro {
+  min-height: 650px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 35px 10px;
+  box-sizing: border-box;
 }
 
-/* ── Grid Layout ── */
-.enquiry-calc__grid {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    min-height: 600px;
+.solar-intro-content {
+  width: 100%;
+  max-width: 560px;
 }
 
-/* ── Left Side: Enquiry Info ── */
-.enquiry-calc__left {
-    padding-right: 20px;
+.solar-small-title {
+  display: inline-block;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #f97316;
+
+  margin-bottom: 18px;
 }
 
-.enquiry-calc__heading {
-    font-family: var(--font-heading, 'Inter', sans-serif);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    color: var(--dark, #1a1a1a);
-    line-height: 1.2;
-    margin: 0 0 20px;
+.solar-intro h1 {
+  margin: 0;
+
+  font-size: 52px;
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  color: #172033;
 }
 
-.enquiry-calc__heading-accent {
-    color: var(--primary-orange, #f47b20);
+.solar-intro h1 span {
+  display: block;
+  color: #f97316;
 }
 
-.enquiry-calc__sub {
-    font-family: var(--font-body, 'Poppins', sans-serif);
-    font-size: 1.05rem;
-    color: var(--gray, #666);
-    line-height: 1.7;
-    margin-bottom: 24px;
+.solar-description {
+  margin: 22px 0 28px;
+
+  max-width: 510px;
+
+  font-size: 17px;
+  line-height: 1.7;
+
+  color: #475569;
 }
 
-.enquiry-calc__phone {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    font-family: var(--font-heading, 'Inter', sans-serif);
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 800;
-    color: var(--dark, #1a1a1a);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.solar-contact-block {
+  margin-top: 12px;
 }
 
-.enquiry-calc__phone:hover {
-    color: var(--primary-orange, #f47b20);
+.solar-contact-heading {
+  margin: 0 0 18px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: #475569;
 }
 
-.enquiry-calc__phone-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 48px;
-    height: 48px;
-    background: var(--primary-orange, #f47b20);
-    border-radius: 50%;
-    color: #fff;
-    flex-shrink: 0;
+.solar-contact-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 18px;
+  max-width: 560px;
 }
 
-.enquiry-calc__phone-icon svg {
-    width: 22px;
-    height: 22px;
+.solar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  padding: 7px 0;
+
+  color: inherit;
+  text-decoration: none;
+
+  transition: transform 0.2s ease;
 }
 
-/* ── Right Side: Calculator Card ── */
-.enquiry-calc__right {
-    display: flex;
-    justify-content: flex-end;
+.solar-contact-item:hover {
+  transform: translateX(4px);
 }
 
-.enquiry-calc__card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 32px;
-    box-shadow:
-        0 8px 32px rgba(0, 0, 0, 0.08),
-        0 2px 8px rgba(0, 0, 0, 0.04);
-    width: 100%;
-    max-width: 520px;
+.solar-contact-icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
 }
 
-/* Card Header */
-.enquiry-calc__card-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 24px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #f0f0f0;
+.solar-contact-icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f97316;
+  color: #ffffff;
+
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.18);
 }
 
-.enquiry-calc__card-header-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--primary-orange-light, #fef0e3);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--primary-orange, #f47b20);
-    flex-shrink: 0;
+.solar-contact-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
-.enquiry-calc__card-title {
-    font-family: var(--font-heading, 'Inter', sans-serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--dark, #1a1a1a);
-    margin: 0 0 4px;
+.whatsapp-icon-left {
+  background: #16a34a;
 }
 
-.enquiry-calc__card-subtitle {
-    font-size: 0.85rem;
-    color: var(--gray, #666);
-    margin: 0;
+.mail-icon {
+  background: #f97316;
 }
 
-.enquiry-calc__subsidy-amt {
-    color: var(--primary-orange, #f47b20);
-    font-weight: 700;
+.solar-contact-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
-/* ── Type Toggle ── */
-.enquiry-calc__type-toggle {
-    display: flex;
+.solar-contact-text small {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.solar-contact-text strong {
+  color: #172033;
+
+  font-size: 15px;
+  line-height: 1.3;
+  font-weight: 800;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================================
+   BENEFITS
+   ========================================================= */
+
+.solar-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 16px;
+}
+
+.benefit-icon {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #fff7ed;
+  color: #f97316;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.benefit-item h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #172033;
+}
+
+.benefit-item p {
+  margin: 0;
+
+  font-size: 14px;
+  line-height: 1.5;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   RIGHT FORM
+   ORANGE BACKGROUND ONLY
+   ========================================================= */
+
+.solar-form-wrapper {
+  width: 100%;
+}
+
+.solar-form-card {
+  width: 100%;
+
+  background: #f97316;
+
+  border-radius: 26px;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 20px 45px rgba(249, 115, 22, 0.18);
+}
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.step-progress {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.progress-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.progress-step.active {
+  color: #ffffff;
+}
+
+.step-number {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.5);
+
+  font-size: 13px;
+}
+
+.progress-step.active .step-number {
+  background: #ffffff;
+  color: #f97316;
+
+  border-color: #ffffff;
+}
+
+.progress-line {
+  flex: 1;
+
+  height: 1px;
+
+  margin: 0 10px;
+
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================================================
+   STEP CONTENT
+   ========================================================= */
+
+.calculator-step {
+  animation: slideStep 0.3s ease;
+}
+
+@keyframes slideStep {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.step-heading {
+  margin-bottom: 25px;
+}
+
+.step-heading > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+.step-heading h2 {
+  margin: 0 0 8px;
+
+  color: #ffffff;
+
+  font-size: 28px;
+  line-height: 1.2;
+
+  font-weight: 800;
+}
+
+.step-heading p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CALCULATION OPTIONS
+   ========================================================= */
+
+.calculation-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin-bottom: 24px;
+}
+
+.calculation-option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 14px 16px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    border 0.2s ease,
+    transform 0.2s ease;
+}
+
+.calculation-option:hover {
+  background: rgba(255, 255, 255, 0.18);
+
+  transform: translateY(-1px);
+}
+
+.calculation-option.selected {
+  background: #ffffff;
+
+  border-color: #ffffff;
+
+  color: #172033;
+}
+
+.option-symbol {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.calculation-option.selected
+  .option-symbol {
+  background: #fff7ed;
+  color: #f97316;
+}
+
+.option-text {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.option-text strong {
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.option-text span {
+  font-size: 12px;
+
+  opacity: 0.75;
+}
+
+.option-radio {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.6);
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.calculation-option.selected
+  .option-radio {
+  background: #f97316;
+  color: #ffffff;
+  border-color: #f97316;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.dynamic-input-area {
+  margin-top: 10px;
+}
+
+.dynamic-input-area label,
+.form-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.input-with-prefix {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  border: 1px solid transparent;
+}
+
+.input-with-prefix span {
+  padding: 0 13px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-with-prefix input {
+  min-width: 0;
+  flex: 1;
+
+  border: 0;
+  outline: 0;
+
+  padding: 15px 5px;
+
+  font-size: 15px;
+
+  color: #172033;
+
+  background: transparent;
+}
+
+.input-with-prefix input::placeholder {
+  color: #94a3b8;
+}
+
+.roof-input-row {
+  display: grid;
+  grid-template-columns: 1fr 115px;
+
+  gap: 10px;
+}
+
+.roof-input-row input,
+.roof-input-row select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 0;
+  outline: 0;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  color: #172033;
+
+  font-size: 14px;
+}
+
+.roof-percentage-label {
+  margin-top: 18px !important;
+}
+
+.range-input {
+  width: 100%;
+
+  accent-color: #ffffff;
+
+  cursor: pointer;
+}
+
+.range-value {
+  text-align: right;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 15px;
+
+  border: 0;
+  outline: 0;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   CATEGORY BUTTONS
+   ========================================================= */
+
+.category-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.category-buttons button {
+  padding: 14px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.4);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.category-buttons button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.category-buttons button.category-selected {
+  background: #ffffff;
+
+  color: #f97316;
+
+  border-color: #ffffff;
+}
+
+/* =========================================================
+   FIELD HELP
+   ========================================================= */
+
+.field-help {
+  display: block;
+
+  margin-top: 7px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.calculation-summary {
+  margin-top: 24px;
+
+  padding: 18px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.2);
+}
+
+.calculation-summary h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 9px 0;
+
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.15);
+}
+
+.summary-row:last-child {
+  border-bottom: 0;
+}
+
+.summary-row span {
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 12px;
+}
+
+.summary-row strong {
+  color: #ffffff;
+
+  font-size: 12px;
+
+  text-align: right;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.primary-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding: 15px 20px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: #172033;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(23, 32, 51, 0.2);
+}
+
+.primary-button span {
+  font-size: 18px;
+}
+
+.button-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.button-row .primary-button {
+  margin-top: 0;
+}
+
+.back-button {
+  border: 1px solid
+    rgba(255, 255, 255, 0.4);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.form-error {
+  margin-top: 14px;
+
+  padding: 11px 13px;
+
+  border-radius: 9px;
+
+  background: rgba(127, 29, 29, 0.28);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.solar-result-card {
+  margin-top: 0;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow:
+    0 15px 40px rgba(15, 23, 42, 0.08);
+
+  animation: resultAppear 0.4s ease;
+}
+
+@keyframes resultAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-header span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #f97316;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.result-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 27px;
+}
+
+/* =========================================================
+   MAIN RESULT
+   ========================================================= */
+
+.result-main {
+  margin-top: 25px;
+
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+
+  gap: 15px;
+}
+
+.main-result-box {
+  padding: 25px;
+
+  border-radius: 17px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+}
+
+.main-result-box span {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #9a3412;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.main-result-box strong {
+  color: #f97316;
+
+  font-size: 39px;
+  line-height: 1;
+}
+
+.main-result-box small {
+  font-size: 18px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+}
+
+.result-item {
+  padding: 16px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 13px;
+}
+
+.result-item span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.result-item strong {
+  color: #172033;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   SAVINGS
+   ========================================================= */
+
+.savings-section,
+.investment-section {
+  margin-top: 25px;
+
+  padding-top: 23px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.savings-section h3,
+.investment-section h3 {
+  margin: 0 0 14px;
+
+  color: #172033;
+
+  font-size: 16px;
+}
+
+.savings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+
+.savings-grid > div,
+.investment-grid > div {
+  padding: 15px;
+
+  border-radius: 13px;
+
+  background: #f8fafc;
+}
+
+.savings-grid span,
+.investment-grid span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.savings-grid strong {
+  color: #16a34a;
+
+  font-size: 17px;
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 10px;
+}
+
+.investment-grid strong {
+  color: #172033;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   ENVIRONMENT
+   ========================================================= */
+
+.environment-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.environment-section > div {
+  padding: 15px;
+
+  border-radius: 13px;
+
+  background: #f0fdf4;
+
+  border: 1px solid #dcfce7;
+}
+
+.environment-section span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.environment-section strong {
+  color: #15803d;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   REPORT BUTTON
+   ========================================================= */
+
+.report-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-top: 25px;
+
+  padding: 16px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: #f97316;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.report-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(249, 115, 22, 0.25);
+}
+
+.result-button-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.result-button-row .report-button {
+  margin-top: 0;
+}
+
+.result-back-button {
+  min-height: 50px;
+
+  border: 1px solid #fed7aa;
+  border-radius: 12px;
+
+  background: #fff7ed;
+  color: #9a3412;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.result-back-button:hover {
+  background: #ffedd5;
+  transform: translateY(-1px);
+}
+
+.calculator-result-step {
+  animation: slideResultStep 0.35s ease;
+}
+
+@keyframes slideResultStep {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.report-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  backdrop-filter: blur(5px);
+}
+
+.report-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 470px;
+
+  padding: 35px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 70px rgba(15, 23, 42, 0.25);
+
+  animation: modalAppear 0.25s ease;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #f1f5f9;
+
+  color: #475569;
+
+  font-size: 22px;
+
+  cursor: pointer;
+}
+
+.modal-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 14px;
+
+  background: #fff7ed;
+
+  font-size: 22px;
+}
+
+.modal-small-title {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #f97316;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.report-modal h2 {
+  margin: 0 0 8px;
+
+  color: #172033;
+
+  font-size: 25px;
+}
+
+.report-modal > p {
+  margin: 0 0 24px;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.modal-field {
+  margin-bottom: 18px;
+}
+
+.modal-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #172033;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.modal-field input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  color: #172033;
+
+  font-size: 14px;
+
+  transition: border 0.2s ease;
+}
+
+.modal-field input:focus {
+  border-color: #f97316;
+
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+/* =========================================================
+   WHATSAPP INPUT
+   ========================================================= */
+
+.whatsapp-input {
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 11px;
+
+  background: #ffffff;
+}
+
+.whatsapp-input:focus-within {
+  border-color: #f97316;
+
+  box-shadow:
+    0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.whatsapp-input span {
+  padding-left: 14px;
+
+  color: #475569;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.whatsapp-input input {
+  border: 0;
+
+  box-shadow: none;
+
+  padding-left: 8px;
+}
+
+.whatsapp-input input:focus {
+  border: 0;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   WHATSAPP BUTTON
+   ========================================================= */
+
+.whatsapp-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border: 0;
+  border-radius: 11px;
+
+  background: #16a34a;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp-button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 20px rgba(22, 163, 74, 0.2);
+}
+
+.whatsapp-icon {
+  font-size: 16px;
+}
+
+.modal-note {
+  margin: 13px 0 0 !important;
+
+  text-align: center;
+
+  color: #94a3b8 !important;
+
+  font-size: 11px !important;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .solar-calculator-container {
+    grid-template-columns: 1fr;
+
+    max-width: 720px;
+
+    gap: 25px;
+  }
+
+  .solar-intro {
+    min-height: auto;
+
+    padding: 20px 0;
+  }
+
+  .solar-intro-content {
+    max-width: 100%;
+  }
+
+  .solar-intro h1 {
+    font-size: 42px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .solar-calculator-section {
+    padding: 40px 14px;
+  }
+
+  .solar-intro {
+    padding: 5px 0 20px;
+  }
+
+  .solar-intro h1 {
+    font-size: 34px;
+  }
+
+  .solar-description {
+    font-size: 15px;
+
+    margin: 18px 0 25px;
+  }
+
+  .solar-contact-heading {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .solar-contact-list {
+    grid-template-columns: 1fr;
     gap: 8px;
-    margin-bottom: 20px;
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 4px;
-}
+  }
 
-.enquiry-calc__type-btn {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-family: var(--font-body, 'Poppins', sans-serif);
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--gray, #666);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
+  .solar-contact-item {
+    padding: 5px 0;
+  }
 
-.enquiry-calc__type-btn--active {
-    background: #ffffff;
-    color: var(--primary-orange, #f47b20);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-}
+  .solar-contact-icon {
+    width: 36px;
+    height: 36px;
+  }
 
-.enquiry-calc__type-btn svg {
+  .solar-contact-icon svg {
     width: 16px;
     height: 16px;
-}
+  }
 
-/* ── Fields ── */
-.enquiry-calc__field {
-    margin-bottom: 18px;
-}
+  .solar-contact-text strong {
+    font-size: 14px;
+  }
 
-.enquiry-calc__label {
-    display: block;
-    font-family: var(--font-body, 'Poppins', sans-serif);
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--dark-gray, #333);
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
-}
+  .solar-benefits {
+    gap: 16px;
+  }
 
-/* Location buttons */
-.enquiry-calc__loc-row {
-    display: flex;
-    gap: 8px;
-}
+  .benefit-item {
+    gap: 11px;
+  }
 
-.enquiry-calc__loc-btn {
-    flex: 1;
-    padding: 9px 16px;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 8px;
-    background: #fff;
-    font-family: var(--font-body, 'Poppins', sans-serif);
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--gray, #666);
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
+  .benefit-icon {
+    width: 36px;
+    height: 36px;
 
-.enquiry-calc__loc-btn--active {
-    border-color: var(--primary-orange, #f47b20);
-    background: rgba(244, 123, 32, 0.06);
-    color: var(--primary-orange, #f47b20);
-    font-weight: 600;
-}
+    border-radius: 9px;
 
-.enquiry-calc__loc-btn:hover:not(.enquiry-calc__loc-btn--active) {
-    border-color: #ccc;
-}
+    font-size: 15px;
+  }
 
-/* Bill Input */
-.enquiry-calc__bill-row {
-    display: flex;
-    align-items: center;
-    border: 1.5px solid #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: border-color 0.3s ease;
-}
+  .benefit-item h3 {
+    font-size: 14px;
+  }
 
-.enquiry-calc__bill-row:focus-within {
-    border-color: var(--primary-orange, #f47b20);
-    box-shadow: 0 0 0 3px rgba(244, 123, 32, 0.1);
-}
+  .benefit-item p {
+    font-size: 12px;
+  }
 
-.enquiry-calc__bill-prefix {
-    padding: 0 4px 0 14px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--dark, #1a1a1a);
-}
+  .solar-form-card {
+    padding: 22px 17px;
 
-.enquiry-calc__bill-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-family: var(--font-heading, 'Inter', sans-serif);
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--dark, #1a1a1a);
-    padding: 12px 4px;
-    background: transparent;
-}
+    border-radius: 20px;
+  }
 
-.enquiry-calc__bill-suffix {
-    padding: 0 14px 0 4px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    color: var(--gray, #999);
-}
+  .step-progress {
+    margin-bottom: 25px;
+  }
 
-/* Slider */
-.enquiry-calc__slider-wrap {
-    margin-top: 12px;
-}
+  .progress-step {
+    gap: 5px;
 
-.enquiry-calc__slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%;
-    height: 6px;
-    border-radius: 3px;
-    background: linear-gradient(
-        to right,
-        var(--primary-orange, #f47b20) 0%,
-        var(--primary-orange, #f47b20) var(--pct, 50%),
-        #e8e8e8 var(--pct, 50%),
-        #e8e8e8 100%
-    );
-    outline: none;
-    cursor: pointer;
-}
+    font-size: 9px;
+  }
 
-.enquiry-calc__slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--primary-orange, #f47b20);
-    border: 3px solid #fff;
-    box-shadow: 0 2px 8px rgba(244, 123, 32, 0.35);
-    cursor: pointer;
-    transition: transform 0.2s ease;
-}
+  .step-number {
+    width: 27px;
+    height: 27px;
 
-.enquiry-calc__slider::-webkit-slider-thumb:hover {
-    transform: scale(1.15);
-}
+    font-size: 11px;
+  }
 
-.enquiry-calc__slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--primary-orange, #f47b20);
-    border: 3px solid #fff;
-    box-shadow: 0 2px 8px rgba(244, 123, 32, 0.35);
-    cursor: pointer;
-}
+  .progress-line {
+    margin: 0 5px;
+  }
 
-.enquiry-calc__slider-ends {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.72rem;
-    color: #999;
-    margin-top: 6px;
-}
+  .step-heading h2 {
+    font-size: 23px;
+  }
 
-/* ── Results ── */
-.enquiry-calc__results {
-    background: #fafbfc;
-    border: 1px solid #f0f0f0;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 20px;
-    animation: fadeInResults 0.4s ease;
-}
+  .step-heading p {
+    font-size: 12px;
+  }
 
-@keyframes fadeInResults {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+  .option-symbol {
+    width: 36px;
+    height: 36px;
+  }
 
-.enquiry-calc__result-row {
-    display: grid;
+  .option-text strong {
+    font-size: 13px;
+  }
+
+  .option-text span {
+    font-size: 10px;
+  }
+
+  .result-main {
+    grid-template-columns: 1fr;
+  }
+
+  .result-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin-bottom: 10px;
+  }
+
+  .savings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investment-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .solar-result-card {
+    padding: 22px 17px;
+  }
+
+  .result-button-row {
+    grid-template-columns: 1fr;
+  }
+
+  .result-back-button {
+    min-height: 46px;
+  }
+
+  .main-result-box strong {
+    font-size: 34px;
+  }
+
+  .report-modal {
+    padding: 28px 20px;
+  }
 }
 
-.enquiry-calc__result-row:last-of-type {
-    margin-bottom: 0;
-}
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
-.enquiry-calc__result-item {
-    display: flex;
+@media (max-width: 430px) {
+  .solar-intro h1 {
+    font-size: 30px;
+  }
+
+  .step-progress {
+    align-items: flex-start;
+  }
+
+  .progress-step {
     flex-direction: column;
-    gap: 2px;
-}
+  }
 
-.enquiry-calc__result-label {
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: #999;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+  .progress-line {
+    margin-top: 13px;
+  }
 
-.enquiry-calc__result-value {
-    font-family: var(--font-heading, 'Inter', sans-serif);
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--dark, #1a1a1a);
-}
+  .category-buttons {
+    grid-template-columns: 1fr;
+  }
 
-.enquiry-calc__result-value--green {
-    color: #16a34a;
-}
+  .button-row {
+    grid-template-columns: 1fr;
+  }
 
-.enquiry-calc__result-value--blue {
-    color: #2563eb;
-}
+  .back-button {
+    min-height: 46px;
+  }
 
-.enquiry-calc__subsidy-badge {
-    margin-top: 12px;
-    padding: 10px 14px;
-    background: linear-gradient(135deg, rgba(22, 163, 74, 0.06), rgba(22, 163, 74, 0.12));
-    border: 1px solid rgba(22, 163, 74, 0.2);
-    border-radius: 8px;
-    font-size: 0.82rem;
-    color: #15803d;
-}
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
 
-.enquiry-calc__subsidy-badge strong {
-    color: #16a34a;
-}
+  .investment-grid {
+    grid-template-columns: 1fr;
+  }
 
-/* ── Submit Button ── */
-.enquiry-calc__submit-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    background: var(--primary-orange, #f47b20);
-    color: #ffffff;
-    font-family: var(--font-body, 'Poppins', sans-serif);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 15px 24px;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 16px rgba(244, 123, 32, 0.25);
-}
+  .environment-section {
+    grid-template-columns: 1fr;
+  }
 
-.enquiry-calc__submit-btn:hover {
-    background: var(--primary-orange-dark, #d9670f);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(244, 123, 32, 0.4);
-}
-
-/* ══════════════════════════════
-   Responsive
-   ══════════════════════════════ */
-
-@media (max-width: 1024px) {
-    .enquiry-calc__grid {
-        gap: 40px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    .enquiry-calc__heading {
-        font-size: clamp(1.8rem, 4vw, 2.4rem);
-    }
-
-    .enquiry-calc__card {
-        padding: 26px;
-    }
-}
-
-@media (max-width: 768px) {
-    .enquiry-calc__grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        min-height: auto;
-    }
-
-    .enquiry-calc__left {
-        padding-right: 0;
-        text-align: center;
-    }
-
-    .enquiry-calc__phone {
-        justify-content: center;
-    }
-
-    .enquiry-calc__right {
-        justify-content: center;
-    }
-
-    .enquiry-calc__card {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .enquiry-calc__grid {
-        padding-top: 40px;
-        padding-bottom: 40px;
-    }
-
-    .enquiry-calc__card {
-        padding: 20px;
-        border-radius: 12px;
-    }
-
-    .enquiry-calc__card-header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .enquiry-calc__type-toggle {
-        flex-direction: column;
-    }
-
-    .enquiry-calc__result-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
-    .enquiry-calc__phone {
-        font-size: 1.3rem;
-    }
+  .roof-input-row {
+    grid-template-columns: 1fr;
+  }
 }
