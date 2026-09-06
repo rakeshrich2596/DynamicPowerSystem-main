@@ -329,14 +329,14 @@ function TamilNaduMap() {
 
             {/* City labels are outside the image but
                 positioned relative to the map visual */}
-            <div className="city-labels-layer">
+            {/* <div className="city-labels-layer">
                 {CITY_LABELS.map((city, index) => (
                     <CityLabel
                         city={city}
                         key={`${city.name}-${index}`}
                     />
                 ))}
-            </div>
+            </div> */}
 
             {/* EXACT MAP STAGE */}
             <div className="map-image-stage">

@@ -35,62 +35,67 @@ const quickLinks = [
 const socials = [
   {
     name: "Facebook",
-    short: "f",
     link: "#",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M13.5 8H16V4.5h-2.5C10.46 4.5 9 6.02 9 9.12V11H6.5v3.5H9V21h3.5v-6.5H15L15.5 11h-3V9.45c0-1 .28-1.45 1-1.45Z"
+        />
+      </svg>
+    ),
   },
   {
     name: "Instagram",
-    short: "in",
     link: "#",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          ry="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <circle cx="17.3" cy="6.8" r="1.1" fill="currentColor" />
+      </svg>
+    ),
   },
   {
     name: "YouTube",
-    short: "▶",
     link: "#",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"
+        />
+      </svg>
+    ),
   },
   {
     name: "LinkedIn",
-    short: "li",
     link: "#",
-  },
-];
-
-/* =========================================================
-   PHONE NUMBERS
-========================================================= */
-
-const contactNumbers = [
-  {
-    label: "Sales",
-    number: "+91 72999 85357",
-    link: "tel:+917299985357",
-  },
-  {
-    label: "Support",
-    number: "+91 98416 85357",
-    link: "tel:+919841685357",
-  },
-  {
-    label: "Enquiry",
-    number: "+91 90030 85357",
-    link: "tel:+919003085357",
-  },
-];
-
-/* =========================================================
-   EMAILS
-========================================================= */
-
-const emails = [
-  {
-    label: "Admin",
-    email: "admin@dynamicsolar.in",
-    link: "mailto:admin@dynamicsolar.in",
-  },
-  {
-    label: "Enquiry",
-    email: "Enquiry@dynamicsolar.in",
-    link: "mailto:Enquiry@dynamicsolar.in",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M5.2 7.3A2.2 2.2 0 1 0 5.2 3a2.2 2.2 0 0 0 0 4.3ZM3.3 21h3.8V9H3.3v12ZM9.3 9v12H13v-5.9c0-1.55.3-3.05 2.2-3.05 1.87 0 1.9 1.77 1.9 3.17V21H21v-6.55c0-3.22-.7-5.7-4.5-5.7-1.83 0-3.05 1-3.55 1.95h-.05V9H9.3Z"
+        />
+      </svg>
+    ),
   },
 ];
 
@@ -145,28 +150,53 @@ const Footer = () => {
                       className="social-link"
                       aria-label={social.name}
                     >
-                      {social.short}
+                      {social.icon}
                     </a>
                   ))}
 
                 </div>
 
-                {/* Tambaram Address */}
-                <div className="brand-address">
+                {/* =================================================
+                    SALES / WHATSAPP
+                ================================================= */}
 
-                  <MapPin size={17} />
+                <a
+                  href="tel:+917299985357"
+                  className="brand-contact-row"
+                >
+                  <span className="whatsapp-icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.5 4.1 1.6 5.9L.1 24l6.4-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.9 0-3.1-1.2-6.1-3.5-8.3ZM12.1 21.7c-1.8 0-3.6-.5-5.1-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.3 6.6 1.9 12.1 1.9c2.6 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.5-4.4 9.9-9.9 9.9Zm5.4-7.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.4-3.8-3.2-.3-.5.3-.5.8-1.6.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.2 2.2 3.4 5.4 4.8.8.3 1.4.5 1.9.7.8.2 1.5.2 2 .1.6-.1 1.7-.7 1.9-1.3.2-.6.2-1.2.1-1.3-.2-.2-.4-.3-.7-.4Z"
+                      />
+                    </svg>
+                  </span>
 
-                  <div>
-                    <strong>Tambaram</strong>
+                  <span className="brand-contact-text">
+                    {/* <small>Sales / WhatsApp</small> */}
+                    <strong>+91 72999 85357</strong>
+                  </span>
+                </a>
 
-                    <p>
-                      1, Gandhi Rd, Tambaram West,
-                      <br />
-                      Tambaram, Chennai – 600045
-                    </p>
-                  </div>
+                {/* =================================================
+                    ENQUIRY EMAIL
+                ================================================= */}
 
-                </div>
+                <a
+                  href="mailto:Enquiry@dynamicsolar.in"
+                  className="brand-contact-row"
+                >
+                  <Mail size={19} />
+
+                  <span className="brand-contact-text">
+                    {/* <small>Enquiry Email</small> */}
+                    <strong>Enquiry@dynamicsolar.in</strong>
+                  </span>
+                </a>
 
               </div>
 
@@ -253,97 +283,63 @@ const Footer = () => {
                   Contact Us
                 </h3>
 
+                {/* Office Phone */}
+                <a
+                  href="tel:04442044405"
+                  className="contact-row"
+                >
+                  <Phone size={16} />
 
-                {/* ================= PHONE NUMBERS ================= */}
+                  <span>
+                    <small>Office</small>
+                    044 42044405
+                  </span>
+                </a>
 
-                <div className="contact-group">
+                {/* Support */}
+                <a
+                  href="tel:+919841685357"
+                  className="contact-row"
+                >
+                  <Phone size={16} />
 
-                  {contactNumbers.map((item) => (
-                    <a
-                      href={item.link}
-                      className="contact-item contact-link"
-                      key={item.label}
-                    >
+                  <span>
+                    <small>Support</small>
+                    +91 98416 85357
+                  </span>
+                </a>
 
-                      <Phone size={16} />
+                {/* Admin Email */}
+                <a
+                  href="mailto:admin@dynamicsolar.in"
+                  className="contact-row"
+                >
+                  <Mail size={16} />
 
-                      <div>
+                  <span>
+                    <small>Admin</small>
+                    admin@dynamicsolar.in
+                  </span>
+                </a>
 
-                        <strong>
-                          {item.label}
-                        </strong>
-
-                        <span>
-                          {item.number}
-                        </span>
-
-                      </div>
-
-                    </a>
-                  ))}
-
-                </div>
-
-
-                {/* ================= EMAILS ================= */}
-
-                <div className="contact-group">
-
-                  {emails.map((item) => (
-                    <a
-                      href={item.link}
-                      className="contact-item contact-link"
-                      key={item.label}
-                    >
-
-                      <Mail size={16} />
-
-                      <div>
-
-                        <strong>
-                          {item.label}
-                        </strong>
-
-                        <span>
-                          {item.email}
-                        </span>
-
-                      </div>
-
-                    </a>
-                  ))}
-
-                </div>
-
-
-                {/* ================= WORKING HOURS ================= */}
-
-                <div className="contact-item working-hours">
+                {/* Working Hours */}
+                <div className="contact-row working-hours">
 
                   <Clock size={16} />
 
-                  <div>
-
-                    <strong>
-                      Working Hours
-                    </strong>
-
-                    <span>
-                      Mon – Sat: 9:00 AM – 6:00 PM
-                    </span>
-
-                    <span>
-                      Sunday: Closed
-                    </span>
-
-                  </div>
+                  <span>
+                    <small>Working Hours</small>
+                    Mon – Sat: 9:00 AM – 7:00 PM
+                    <br />
+                    Sunday: Closed
+                  </span>
 
                 </div>
 
               </div>
 
 
-              {/* ================= QUOTE BUTTON ================= */}
+              {/* Quote Button */}
 
               <Link
                 to="/contact"

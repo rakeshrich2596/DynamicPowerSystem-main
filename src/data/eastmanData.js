@@ -27,7 +27,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Bestseller',
                 range:       '3kW – 6kW',
                 warranty:    '10',
-                image:       '/images/products/gridxcel-grid-tie-full.jpg',
+                image:       '/images/products/solar-grid.png',
                 description: 'Eastman GridXcel converts rooftop solar power directly to grid-compatible AC power and exports surplus energy for income. Enables morning start-up at low irradiance and is eligible for the ₹78,000 PM Surya Ghar subsidy.',
                 specs: [
                     { label: 'Capacity',        value: '3 kW – 6 kW'              },

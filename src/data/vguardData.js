@@ -12,7 +12,7 @@ import imgvguard6 from '../assets/images/vguard/vguard6.png';
 export const VGUARD_NAV = [
     {
         id: 'section-heat-pumps',
-        label: 'Heat Pump Water Heaters'
+        label: 'Heat Pump & Water Heaters'
     },
     {
         id: 'section-solar-heaters',
@@ -27,7 +27,7 @@ export const VGUARD_SECTIONS = [
 
         tag: 'V-Guard Heat Pumps',
 
-        title: 'Heat Pump Water Heaters',
+        title: 'Heat Pump & Water Heaters',
 
         tagline:
             'Energy-efficient and innovative heat pump water heating solutions for domestic, commercial, swimming pool, and extreme cold climate applications',

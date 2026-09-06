@@ -1,6 +1,18 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+} from "lucide-react";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { useInView } from "../../hooks/useInView";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
@@ -13,21 +25,18 @@ import "./Contact.css";
 const addresses = [
   {
     Icon: MapPin,
-    label: "Tambaram",
-    value:
-      "1,Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
+    label: "Tambaram Address",
+    value: "1,Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
   },
   {
     Icon: MapPin,
-    label: "Urapakkam",
-    value:
-      "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
+    label: "Urapakkam Address",
+    value: "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
   },
   {
     Icon: MapPin,
-    label: "Kanchipuram",
-    value:
-      "Pallikkoodathan St,\nKanchipuram, Tamilnadu – 631501",
+    label: "Kanchipuram Address",
+    value: "Pallikkoodathan St,\nKanchipuram, Tamilnadu – 631501",
   },
 ];
 
@@ -116,7 +125,7 @@ function AnimSection({ children, className = "" }) {
           if (entry.isIntersecting) {
             entry.target
               .querySelectorAll(
-                ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up"
+                ".fade-in-up, .fade-in-left, .fade-in-right, .scale-up",
               )
               .forEach((el) => {
                 el.classList.add("visible");
@@ -126,7 +135,7 @@ function AnimSection({ children, className = "" }) {
       },
       {
         threshold: 0.1,
-      }
+      },
     );
 
     if (ref.current) {
@@ -178,10 +187,7 @@ function Contact() {
       e.email = "Valid email required";
     }
 
-    if (
-      !form.phone.trim() ||
-      !/^\+?[\d\s\-()]{8,15}$/.test(form.phone)
-    ) {
+    if (!form.phone.trim() || !/^\+?[\d\s\-()]{8,15}$/.test(form.phone)) {
       e.phone = "Valid phone number required";
     }
 
@@ -236,23 +242,15 @@ function Contact() {
       `📧 *Email:* ${form.email}\n` +
       `📞 *Phone:* ${form.phone}\n` +
       `🔧 *Service:* ${form.service}\n` +
-      (form.budget
-        ? `💰 *Budget:* ${form.budget}\n`
-        : "") +
-      (form.ebNumber
-        ? `🔢 *EB Number:* ${form.ebNumber}\n`
-        : "") +
+      (form.budget ? `💰 *Budget:* ${form.budget}\n` : "") +
+      (form.ebNumber ? `🔢 *EB Number:* ${form.ebNumber}\n` : "") +
       `\n💬 *Message:*\n${form.message}`;
 
     const url =
       `https://wa.me/${WHATSAPP_NUMBER}` +
       `?text=${encodeURIComponent(message)}`;
 
-    window.open(
-      url,
-      "_blank",
-      "noopener,noreferrer"
-    );
+    window.open(url, "_blank", "noopener,noreferrer");
 
     setSubmitted(true);
   };
@@ -298,23 +296,16 @@ function Contact() {
         <div className="page-hero-overlay"></div>
 
         <div className="container page-hero-content">
-          <span className="page-hero-tag">
-            Get In Touch
-          </span>
+          <span className="page-hero-tag">Get In Touch</span>
 
-          <h1 className="page-hero-title">
-            Contact Dynamic Solar
-          </h1>
+          <h1 className="page-hero-title">Contact Dynamic Solar</h1>
 
           <p className="page-hero-sub">
-            Ready to go solar? Our experts are here to
-            help you every step of the way.
+            Ready to go solar? Our experts are here to help you every step of
+            the way.
           </p>
 
-          <nav
-            className="breadcrumb"
-            aria-label="Breadcrumb"
-          >
+          <nav className="breadcrumb" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
 
             <span>›</span>
@@ -329,18 +320,14 @@ function Contact() {
       =================================================== */}
 
       <section className="contact-section">
-
         {/* =================================================
             CENTER INTRO
         ================================================= */}
 
         <div className="container contact-intro">
+          <span className="section-tag">Reach Us</span>
 
-          <span className="section-tag">
-            Reach Us
-          </span>
-
-          <h2 className="contact-info-heading">
+          {/* <h2 className="contact-info-heading">
             Let's Build Your{" "}
             <span>Solar Future</span>{" "}
             Together
@@ -352,8 +339,7 @@ function Contact() {
             system, our certified solar consultants are
             ready to assist with a free assessment and
             personalised quote.
-          </p>
-
+          </p> */}
         </div>
 
         {/* =================================================
@@ -361,53 +347,35 @@ function Contact() {
         ================================================= */}
 
         <div className="contact-address-section">
-
           <div className="container contact-address-grid">
-
             {addresses.map((address) => {
               const Icon = address.Icon;
 
               return (
-                <div
-                  className="contact-address-card"
-                  key={address.label}
-                >
-
+                <div className="contact-address-card" key={address.label}>
                   <div className="contact-card-icon">
-                    <Icon
-                      size={22}
-                      strokeWidth={1.8}
-                    />
+                    <Icon size={22} strokeWidth={1.8} />
                   </div>
 
                   <div className="contact-address-content">
-
-                    <div className="contact-card-label">
-                      {address.label}
-                    </div>
+                    <div className="contact-card-label">{address.label}</div>
 
                     <p className="contact-card-value">
-                      {address.value
-                        .split("\n")
-                        .map((line, index) => (
-                          <span key={index}>
-                            {line}
+                      {address.value.split("\n").map((line, index) => (
+                        <span key={index}>
+                          {line}
 
-                            {index <
-                              address.value.split("\n").length -
-                                1 && <br />}
-                          </span>
-                        ))}
+                          {index < address.value.split("\n").length - 1 && (
+                            <br />
+                          )}
+                        </span>
+                      ))}
                     </p>
-
                   </div>
-
                 </div>
               );
             })}
-
           </div>
-
         </div>
 
         {/* =================================================
@@ -415,36 +383,23 @@ function Contact() {
         ================================================= */}
 
         <div className="container contact-main-grid">
-
           {/* ===============================================
               LEFT SIDE
           =============================================== */}
 
           <AnimSection className="contact-details-column">
-
             <div className="contact-cards">
-
               {contactInfo.map((contact) => {
                 const Icon = contact.Icon;
 
                 return (
-                  <div
-                    className="contact-card"
-                    key={contact.label}
-                  >
-
+                  <div className="contact-card" key={contact.label}>
                     <div className="contact-card-icon">
-                      <Icon
-                        size={20}
-                        strokeWidth={1.8}
-                      />
+                      <Icon size={20} strokeWidth={1.8} />
                     </div>
 
                     <div>
-
-                      <div className="contact-card-label">
-                        {contact.label}
-                      </div>
+                      <div className="contact-card-label">{contact.label}</div>
 
                       {contact.link ? (
                         <a
@@ -455,26 +410,21 @@ function Contact() {
                         </a>
                       ) : (
                         <p className="contact-card-value">
-                          {contact.value
-                            .split("\n")
-                            .map((line, index) => (
-                              <span key={index}>
-                                {line}
+                          {contact.value.split("\n").map((line, index) => (
+                            <span key={index}>
+                              {line}
 
-                                {index <
-                                  contact.value.split("\n").length -
-                                    1 && <br />}
-                              </span>
-                            ))}
+                              {index < contact.value.split("\n").length - 1 && (
+                                <br />
+                              )}
+                            </span>
+                          ))}
                         </p>
                       )}
-
                     </div>
-
                   </div>
                 );
               })}
-
             </div>
 
             {/* =============================================
@@ -482,31 +432,48 @@ function Contact() {
             ============================================= */}
 
             <div className="contact-social">
+  <span className="contact-social-label">Follow Us</span>
 
-              <span className="contact-social-label">
-                Follow Us
-              </span>
+  <a
+    href="#"
+    className="contact-social-btn facebook"
+    aria-label="Facebook"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaFacebookF />
+  </a>
 
-              {[
-                "Facebook",
-                "Instagram",
-                "YouTube",
-                "LinkedIn",
-              ].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="contact-social-btn"
-                  aria-label={social}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {social[0]}
-                </a>
-              ))}
+  <a
+    href="#"
+    className="contact-social-btn instagram"
+    aria-label="Instagram"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaInstagram />
+  </a>
 
-            </div>
+  <a
+    href="#"
+    className="contact-social-btn youtube"
+    aria-label="YouTube"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaYoutube />
+  </a>
 
+  <a
+    href="#"
+    className="contact-social-btn linkedin"
+    aria-label="LinkedIn"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <FaLinkedinIn />
+  </a>
+</div>
           </AnimSection>
 
           {/* ===============================================
@@ -514,74 +481,44 @@ function Contact() {
           =============================================== */}
 
           <AnimSection className="contact-form-panel">
-
             {submitted ? (
-
               <div className="contact-success">
+                <div className="success-icon">✅</div>
 
-                <div className="success-icon">
-                  ✅
-                </div>
-
-                <h3>
-                  Thank You!
-                </h3>
+                <h3>Thank You!</h3>
 
                 <p>
-                  Your inquiry has been received.
-                  A Dynamic Solar consultant will
-                  contact you within 24 hours to
-                  schedule your free site assessment.
+                  Your inquiry has been received. A Dynamic Solar consultant
+                  will contact you within 24 hours to schedule your free site
+                  assessment.
                 </p>
 
-                <button
-                  className="btn-primary"
-                  onClick={resetForm}
-                >
+                <button className="btn-primary" onClick={resetForm}>
                   Submit Another Inquiry
                 </button>
-
               </div>
-
             ) : (
-
-              <form
-                className="contact-form"
-                onSubmit={handleSubmit}
-                noValidate
-              >
-
+              <form className="contact-form" onSubmit={handleSubmit} noValidate>
                 {/* FORM HEADER */}
 
                 <div className="form-header">
-
-                  <h3 className="form-title">
-                    Request a Free Quote
-                  </h3>
+                  <h3 className="form-title">Request a Free Quote</h3>
 
                   <p className="form-subtitle">
-                    Fill in the details below and
-                    we'll get back to you within
+                    Fill in the details below and we'll get back to you within
                     24 hours.
                   </p>
-
                 </div>
 
                 {/* NAME + EMAIL */}
 
                 <div className="form-row">
-
                   <div
                     className={`form-group ${
-                      errors.name
-                        ? "form-group--error"
-                        : ""
+                      errors.name ? "form-group--error" : ""
                     }`}
                   >
-
-                    <label htmlFor="contact-name">
-                      Full Name *
-                    </label>
+                    <label htmlFor="contact-name">Full Name *</label>
 
                     <input
                       id="contact-name"
@@ -594,24 +531,16 @@ function Contact() {
                     />
 
                     {errors.name && (
-                      <span className="form-error">
-                        {errors.name}
-                      </span>
+                      <span className="form-error">{errors.name}</span>
                     )}
-
                   </div>
 
                   <div
                     className={`form-group ${
-                      errors.email
-                        ? "form-group--error"
-                        : ""
+                      errors.email ? "form-group--error" : ""
                     }`}
                   >
-
-                    <label htmlFor="contact-email">
-                      Email Address *
-                    </label>
+                    <label htmlFor="contact-email">Email Address *</label>
 
                     <input
                       id="contact-email"
@@ -624,30 +553,20 @@ function Contact() {
                     />
 
                     {errors.email && (
-                      <span className="form-error">
-                        {errors.email}
-                      </span>
+                      <span className="form-error">{errors.email}</span>
                     )}
-
                   </div>
-
                 </div>
 
                 {/* PHONE + SERVICE */}
 
                 <div className="form-row">
-
                   <div
                     className={`form-group ${
-                      errors.phone
-                        ? "form-group--error"
-                        : ""
+                      errors.phone ? "form-group--error" : ""
                     }`}
                   >
-
-                    <label htmlFor="contact-phone">
-                      Phone Number *
-                    </label>
+                    <label htmlFor="contact-phone">Phone Number *</label>
 
                     <input
                       id="contact-phone"
@@ -660,24 +579,16 @@ function Contact() {
                     />
 
                     {errors.phone && (
-                      <span className="form-error">
-                        {errors.phone}
-                      </span>
+                      <span className="form-error">{errors.phone}</span>
                     )}
-
                   </div>
 
                   <div
                     className={`form-group ${
-                      errors.service
-                        ? "form-group--error"
-                        : ""
+                      errors.service ? "form-group--error" : ""
                     }`}
                   >
-
-                    <label htmlFor="contact-service">
-                      Service Required *
-                    </label>
+                    <label htmlFor="contact-service">Service Required *</label>
 
                     <select
                       id="contact-service"
@@ -685,36 +596,24 @@ function Contact() {
                       value={form.service}
                       onChange={handleChange}
                     >
-
-                      <option value="">
-                        Select a service…
-                      </option>
+                      <option value="">Select a service…</option>
 
                       {services.map((service) => (
-                        <option
-                          key={service}
-                          value={service}
-                        >
+                        <option key={service} value={service}>
                           {service}
                         </option>
                       ))}
-
                     </select>
 
                     {errors.service && (
-                      <span className="form-error">
-                        {errors.service}
-                      </span>
+                      <span className="form-error">{errors.service}</span>
                     )}
-
                   </div>
-
                 </div>
 
                 {/* BUDGET */}
 
                 <div className="form-group">
-
                   <label htmlFor="contact-budget">
                     Approximate Budget (Optional)
                   </label>
@@ -725,42 +624,24 @@ function Contact() {
                     value={form.budget}
                     onChange={handleChange}
                   >
+                    <option value="">Select a budget range…</option>
 
-                    <option value="">
-                      Select a budget range…
-                    </option>
+                    <option value="Under ₹1 Lakh">Under ₹1 Lakh</option>
 
-                    <option value="Under ₹1 Lakh">
-                      Under ₹1 Lakh
-                    </option>
+                    <option value="₹1 – ₹3 Lakhs">₹1 – ₹3 Lakhs</option>
 
-                    <option value="₹1 – ₹3 Lakhs">
-                      ₹1 – ₹3 Lakhs
-                    </option>
+                    <option value="₹3 – ₹10 Lakhs">₹3 – ₹10 Lakhs</option>
 
-                    <option value="₹3 – ₹10 Lakhs">
-                      ₹3 – ₹10 Lakhs
-                    </option>
+                    <option value="₹10 – ₹50 Lakhs">₹10 – ₹50 Lakhs</option>
 
-                    <option value="₹10 – ₹50 Lakhs">
-                      ₹10 – ₹50 Lakhs
-                    </option>
-
-                    <option value="Above ₹50 Lakhs">
-                      Above ₹50 Lakhs
-                    </option>
-
+                    <option value="Above ₹50 Lakhs">Above ₹50 Lakhs</option>
                   </select>
-
                 </div>
 
                 {/* EB NUMBER */}
 
                 <div className="form-group">
-
-                  <label htmlFor="contact-ebNumber">
-                    EB Number (Optional)
-                  </label>
+                  <label htmlFor="contact-ebNumber">EB Number (Optional)</label>
 
                   <input
                     id="contact-ebNumber"
@@ -770,22 +651,16 @@ function Contact() {
                     value={form.ebNumber}
                     onChange={handleChange}
                   />
-
                 </div>
 
                 {/* MESSAGE */}
 
                 <div
                   className={`form-group ${
-                    errors.message
-                      ? "form-group--error"
-                      : ""
+                    errors.message ? "form-group--error" : ""
                   }`}
                 >
-
-                  <label htmlFor="contact-message">
-                    Your Message *
-                  </label>
+                  <label htmlFor="contact-message">Your Message *</label>
 
                   <textarea
                     id="contact-message"
@@ -797,36 +672,24 @@ function Contact() {
                   />
 
                   {errors.message && (
-                    <span className="form-error">
-                      {errors.message}
-                    </span>
+                    <span className="form-error">{errors.message}</span>
                   )}
-
                 </div>
 
                 {/* SUBMIT */}
 
-                <button
-                  type="submit"
-                  className="btn-primary form-submit"
-                >
+                <button type="submit" className="btn-primary form-submit">
                   📲 Send via WhatsApp
                 </button>
 
                 <p className="form-note">
-                  💬 Clicking Send will open WhatsApp
-                  with your details pre-filled so
-                  our team can respond instantly.
+                  💬 Clicking Send will open WhatsApp with your details
+                  pre-filled so our team can respond instantly.
                 </p>
-
               </form>
-
             )}
-
           </AnimSection>
-
         </div>
-
       </section>
 
       {/* ===================================================
@@ -834,26 +697,20 @@ function Contact() {
       =================================================== */}
 
       <div className="contact-map-placeholder">
-
         <div className="map-overlay-text">
-
           <span>📍</span>
 
-          <strong>
-            1, Gandhi Rd, Tambaram West, Chennai
-          </strong>
+          <strong>1, Gandhi Rd, Tambaram West, Chennai</strong>
 
           <a
-            href="https://wa.me/919841582874"
+            href="https://www.google.com/maps/search/?api=1&query=1%20Gandhi%20Rd%2C%20Tambaram%20West%2C%20Tambaram%2C%20Chennai%20600045"
             target="_blank"
             rel="noopener noreferrer"
             className="map-directions-btn"
           >
             Get Directions →
           </a>
-
         </div>
-
       </div>
 
       <Footer />
