@@ -146,7 +146,7 @@ const products = [
       "Pure sine wave output for all appliances",
       "Scalable battery bank capacity",
     ],
-    imgs: [imgUPS, imgUPS1, imgEastmanYellowBattery],
+    imgs: [imgUPS, imgUPS1],
     bg: "#150a2e",
     accent: "#f47b20",
     fit: "contain",

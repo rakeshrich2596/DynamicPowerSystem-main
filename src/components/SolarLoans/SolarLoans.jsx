@@ -9,7 +9,7 @@ function SolarLoans() {
             <div className="container">
                 <div className="sl-header">
                     <h2 className="sl-title">Solar loans at your door step</h2>
-                    <p className="sl-subtitle">Get interest rates as low as <span>6.75%*</span></p>
+                    <p className="sl-subtitle">Get interest rates as low as <span>5.76%*</span></p>
                     <Link to="/contact" className="sl-get-quote">Get Quote</Link>
                 </div>
 
