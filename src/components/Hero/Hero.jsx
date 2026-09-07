@@ -197,7 +197,7 @@ function Hero() {
                             </div>
                         )}
                         {slide.hashtag && (
-                            <div className="hero-banner__hashtag">Power For Ever</div>
+                            <div className="hero-banner__hashtag">PowerForEver</div>
                         )}
                     </div>
                 </div>
