@@ -1,34 +1,41 @@
 /* =========================================================
    SOLAR CALCULATOR
    ========================================================= */
-
-.solar-calculator-section {
-  width: 100%;
-  min-height: 100vh;
-  padding: 70px 20px;
-  box-sizing: border-box;
-
-  /* Background image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  /* Light orange transparent overlay */
-  position: relative;
-  isolation: isolate;
+.enquiry-calc {
+    position: relative;
+    overflow: hidden;
+    padding: 0;
 }
 
-/* Transparent light-orange overlay */
-.solar-calculator-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: rgba(255, 237, 213, 0.58);
-
-  z-index: 0;
-  pointer-events: none;
+/* ── Background ── */
+.enquiry-calc__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
+
+.enquiry-calc__bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.enquiry-calc__bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        110deg,
+        rgba(245, 240, 230, 0.92) 0%,
+        rgba(245, 240, 230, 0.85) 45%,
+        rgba(245, 240, 230, 0.70) 70%,
+        rgba(245, 240, 230, 0.55) 100%
+    );
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
 
 .solar-calculator-container {
   width: 100%;

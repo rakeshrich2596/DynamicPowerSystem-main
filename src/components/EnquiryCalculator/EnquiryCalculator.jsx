@@ -625,8 +625,11 @@ const EnquiryCalculator = () => {
   return (
     <section
       className="solar-calculator-section"
-      style={{ backgroundImage: `url(${enquiryBg})` }}
     >
+      <div className="enquiry-calc__bg">
+                      <img src={enquiryBg} alt="" className="enquiry-calc__bg-img" loading="lazy" />
+                      <div className="enquiry-calc__bg-overlay" />
+                  </div>
       <div className="solar-calculator-container">
 
         {/* LEFT CONTENT */}
