@@ -13,6 +13,7 @@ const services = [
   "Solar Water Pumping",
   "Solar Street Lights",
   "Solar Home UPS",
+  "Solar Inverter & Battery "
 ];
 
 /* =========================================================
@@ -341,12 +342,12 @@ const Footer = () => {
 
               {/* Quote Button */}
 
-              <Link
+              {/* <Link
                 to="/contact"
                 className="quote-btn"
               >
                 Get a Free Quote
-              </Link>
+              </Link> */}
 
             </div>
 

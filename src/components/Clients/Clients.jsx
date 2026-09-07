@@ -3,7 +3,7 @@ import "./Clients.css";
 import eastmanLogo from "../../assets/images/clients/Eastmans.png";
 import vguardLogo from "../../assets/images/clients/vguard.jpg";
 import havellsLogo from "../../assets/images/clients/Havells1.png";
-import racoldLogo from "../../assets/images/clients/racolds.jpg";
+import racoldLogo from "../../assets/images/clients/racold.png";
 import ashaPowerLogo from "../../assets/images/clients/asha.webp";
 import cromptonLogo from "../../assets/images/clients/cromptons.png";
 

@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import "./CompanyIntro.css";
 
 
-
 function CompanyIntro() {
     const ref = useRef(null);
 

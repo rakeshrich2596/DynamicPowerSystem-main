@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BookHomeVisit.css';
-import homeVisitImage from '../../assets/images/home-visit.jpg';
+import homeVisitImage from '../../assets/images/home-visit.png';
 
 const WHATSAPP_NUMBER = '919841582874'; // Business WhatsApp number
 

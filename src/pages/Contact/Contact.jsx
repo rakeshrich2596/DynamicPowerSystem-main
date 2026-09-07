@@ -1,11 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import {
   FaInstagram,
   FaFacebookF,
@@ -25,17 +20,17 @@ import "./Contact.css";
 const addresses = [
   {
     Icon: MapPin,
-    label: "Tambaram Address",
+    label: "Tambaram",
     value: "1,Gandhi Rd, Tambaram West,\nTambaram, Chennai – 600045",
   },
   {
     Icon: MapPin,
-    label: "Urapakkam Address",
+    label: "Urapakkam",
     value: "No.20, Priya Nagar Main Road,\nUrapakkam, Chennai – 603210",
   },
   {
     Icon: MapPin,
-    label: "Kanchipuram Address",
+    label: "Kanchipuram",
     value: "Pallikkoodathan St,\nKanchipuram, Tamilnadu – 631501",
   },
 ];
@@ -432,48 +427,48 @@ function Contact() {
             ============================================= */}
 
             <div className="contact-social">
-  <span className="contact-social-label">Follow Us</span>
+              <span className="contact-social-label">Follow Us</span>
 
-  <a
-    href="#"
-    className="contact-social-btn facebook"
-    aria-label="Facebook"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaFacebookF />
-  </a>
+              <a
+                href="#"
+                className="contact-social-btn facebook"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaFacebookF />
+              </a>
 
-  <a
-    href="#"
-    className="contact-social-btn instagram"
-    aria-label="Instagram"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaInstagram />
-  </a>
+              <a
+                href="#"
+                className="contact-social-btn instagram"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaInstagram />
+              </a>
 
-  <a
-    href="#"
-    className="contact-social-btn youtube"
-    aria-label="YouTube"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaYoutube />
-  </a>
+              <a
+                href="#"
+                className="contact-social-btn youtube"
+                aria-label="YouTube"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaYoutube />
+              </a>
 
-  <a
-    href="#"
-    className="contact-social-btn linkedin"
-    aria-label="LinkedIn"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <FaLinkedinIn />
-  </a>
-</div>
+              <a
+                href="#"
+                className="contact-social-btn linkedin"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
           </AnimSection>
 
           {/* ===============================================
@@ -693,12 +688,25 @@ function Contact() {
       </section>
 
       {/* ===================================================
-          MAP
-      =================================================== */}
+    GOOGLE MAP
+=================================================== */}
 
-      <div className="contact-map-placeholder">
+      <div className="contact-map-section">
+        {/* Google Maps Background */}
+        <iframe
+          className="contact-google-map"
+          src="https://www.google.com/maps?q=1%20Gandhi%20Rd%2C%20Tambaram%20West%2C%20Tambaram%2C%20Chennai%20600045&output=embed"
+          title="Dynamic Solar Location"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+
+        {/* Dark overlay */}
+        <div className="contact-map-overlay"></div>
+
+        {/* Content on top of map */}
         <div className="map-overlay-text">
-          <span>📍</span>
+          <div className="map-pin-icon">📍</div>
 
           <strong>1, Gandhi Rd, Tambaram West, Chennai</strong>
 

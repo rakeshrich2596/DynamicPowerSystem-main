@@ -51,6 +51,8 @@ const MAP_PINS = [
     { name: "Chennai", x: 92.0, y: 19.5 },
     { name: "Chennai", x: 86.0, y: 21.0 },
     { name: "Chennai", x: 90.0, y: 22.0 },
+    { name: "Chennai", x: 93.0, y: 15.0 },
+    { name: "Chennai", x: 93.0, y: 13.0 },
 
     /* ───── NORTH ───── */
 
@@ -195,8 +197,6 @@ function MapPin({ pin, index }) {
             }}
             title={pin.name}
         >
-            <span className="map-pin-pulse"></span>
-
             <span className="map-pin-icon">
                 <svg
                     viewBox="0 0 24 24"
@@ -358,16 +358,6 @@ function TamilNaduMap() {
                     ))}
                 </div>
 
-                {/* Chennai highlight */}
-                <div
-                    className="chennai-highlight"
-                    style={{
-                        left: "87.5%",
-                        top: "9.5%",
-                    }}
-                >
-                    <span className="chennai-ring"></span>
-                </div>
             </div>
 
             {/* Legend */}

@@ -13,8 +13,8 @@ import imgPump2 from "../../assets/images/prod-water-pump2.png";
 import imgStreet from "../../assets/images/prod-street-light.png";
 import imgStreet1 from "../../assets/images/prod-street-light1.png";
 import imgStreet2 from "../../assets/images/prod-street-light2.png";
-import imgUPS1 from "../../assets/images/prod-solar-ups1.jpg";
-import imgUPS from "../../assets/images/prod-solar-ups.jpg";
+import imgUPS1 from "../../assets/images/solar-home-ups2.png";
+import imgUPS from "../../assets/images/prod-solar-ups.png";
 import imgInverter from "../../assets/images/prod-inverter.png";
 import imgEastman from "../../assets/images/prod-eastman-inverter.png";
 import imgEastmanYellowBattery from "../../assets/images/prod-eastman-yellow-battery.png";
@@ -101,8 +101,7 @@ const products = [
     points: [
       "DC & AC solar pump systems",
       "Submersible & surface pump options",
-      "No fuel cost, fully autonomous operation",
-      "PM-KUSUM scheme eligible",
+      "No fuel cost, fully autonomous operation"
     ],
     imgs: [imgPump, imgPump1, imgPump2],
     bg: "#0f2027",

@@ -158,11 +158,15 @@
    MAP PIN
 ========================================================= */
 
+/* =========================================================
+   MAP PIN — PIN ONLY
+   ========================================================= */
+
 .map-pin {
   position: absolute;
 
-  width: 22px;
-  height: 28px;
+  width: 18px;
+  height: 22px;
 
   transform: translate(-50%, -100%);
 
@@ -170,101 +174,79 @@
   justify-content: center;
   align-items: center;
 
-  pointer-events: auto;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 
+  pointer-events: auto;
   z-index: 6;
 
   animation: pin-float 3s ease-in-out infinite;
 }
 
-/* Actual pin icon */
+/* Stop any inherited pseudo-element from creating the white oval */
+.map-pin::before,
+.map-pin::after {
+  content: none !important;
+  display: none !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
 
+/* Actual orange location pin */
 .map-pin-icon {
   position: relative;
 
-  width: 24px;
-  height: 29px;
+  width: 18px;
+  height: 22px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  filter: drop-shadow(0 3px 4px rgba(180, 80, 0, 0.28));
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  filter: drop-shadow(0 2px 3px rgba(180, 80, 0, 0.22));
 
   z-index: 3;
+}
+
+.map-pin-icon::before,
+.map-pin-icon::after {
+  content: none !important;
+  display: none !important;
 }
 
 .map-pin-icon svg {
   width: 100%;
   height: 100%;
-
   display: block;
+  overflow: visible;
 }
 
-/* =========================================================
-   PIN PULSE
-========================================================= */
-
-.map-pin-pulse {
-  position: absolute;
-
-  width: 18px;
-  height: 18px;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background: rgba(244, 123, 32, 0.2);
-
-  animation: pin-pulse 2.2s ease-out infinite;
-
-  z-index: 1;
+/* Pulse and Chennai ring are intentionally disabled */
+.map-pin-pulse,
+.chennai-highlight,
+.chennai-ring {
+  display: none !important;
 }
-
-/* Major installation */
 
 .map-pin-major {
-  width: 27px;
-  height: 33px;
+  width: 19px;
+  height: 23px;
 }
 
 .map-pin-major .map-pin-icon {
-  width: 29px;
-  height: 34px;
+  width: 19px;
+  height: 23px;
 }
 
-.map-pin-major .map-pin-pulse {
-  width: 24px;
-  height: 24px;
-
-  background: rgba(232, 93, 4, 0.26);
-}
-
-/* =========================================================
-   PIN ANIMATIONS
-========================================================= */
-
-@keyframes pin-pulse {
-  0% {
-    opacity: 0.75;
-    transform: translate(-50%, -50%) scale(0.6);
-  }
-
-  70% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.1);
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(2.1);
-  }
-}
-
+/* Small natural movement only */
 @keyframes pin-float {
   0%,
   100% {
@@ -272,60 +254,7 @@
   }
 
   50% {
-    transform: translate(-50%, -100%) translateY(-2px);
-  }
-}
-
-/* =========================================================
-   CHENNAI HIGHLIGHT
-========================================================= */
-
-.chennai-highlight {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-
-  transform: translate(-50%, -50%);
-
-  z-index: 8;
-
-  pointer-events: none;
-}
-
-.chennai-ring {
-  position: absolute;
-
-  width: 42px;
-  height: 42px;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
-
-  border: 2px solid rgba(244, 123, 32, 0.45);
-
-  border-radius: 50%;
-
-  animation: chennai-ring-animation 2.2s ease-out infinite;
-}
-
-@keyframes chennai-ring-animation {
-  0% {
-    opacity: 0.75;
-
-    transform: translate(-50%, -50%) scale(0.65);
-  }
-
-  70% {
-    opacity: 0;
-
-    transform: translate(-50%, -50%) scale(1.5);
-  }
-
-  100% {
-    opacity: 0;
+    transform: translate(-50%, -100%) translateY(-1px);
   }
 }
 
@@ -851,23 +780,23 @@
   /* Smaller pins */
 
   .map-pin {
-    width: 17px;
-    height: 22px;
+    width: 15px;
+    height: 19px;
   }
 
   .map-pin-icon {
-    width: 19px;
-    height: 23px;
+    width: 15px;
+    height: 19px;
   }
 
   .map-pin-major {
-    width: 21px;
-    height: 26px;
+    width: 16px;
+    height: 20px;
   }
 
   .map-pin-major .map-pin-icon {
-    width: 23px;
-    height: 27px;
+    width: 16px;
+    height: 20px;
   }
 
   /* City labels */
@@ -987,5 +916,3 @@
     }
 
 }
-
-
