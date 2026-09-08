@@ -43,21 +43,29 @@ const MAP_PINS = [
     { name: "Chennai", x: 87.5, y: 9.5, major: true },
     { name: "Chennai", x: 84.5, y: 11.5 },
     { name: "Chennai", x: 89.5, y: 12.5 },
+    { name: "Chennai", x: 93.5, y: 8.5 },
+    { name: "Chennai", x: 89.5, y: 10.5 },
     { name: "Chennai", x: 82.5, y: 14.0 },
     { name: "Chennai", x: 87.0, y: 15.0 },
     { name: "Chennai", x: 91.0, y: 16.0 },
-    { name: "Chennai", x: 84.0, y: 17.5 },
+    { name: "Chennai", x: 84.0, y: 16.5 },
     { name: "Chennai", x: 88.0, y: 18.5 },
     { name: "Chennai", x: 92.0, y: 19.5 },
     { name: "Chennai", x: 86.0, y: 21.0 },
     { name: "Chennai", x: 90.0, y: 22.0 },
+    { name: "Chennai", x: 90.0, y: 20.0 },
+    { name: "Chennai", x: 84.0, y: 24.0 },
+    { name: "Chennai", x: 89.0, y: 24.0 },
+    { name: "Chennai", x: 85.0, y: 26.0 },
     { name: "Chennai", x: 93.0, y: 15.0 },
     { name: "Chennai", x: 93.0, y: 13.0 },
+    { name: "Chennai", x: 93.0, y: 10.0 },
 
     /* ───── NORTH ───── */
 
     { name: "Tiruvallur", x: 76.0, y: 13.5, major: true },
     { name: "Tiruvallur", x: 73.0, y: 17.0 },
+    { name: "Tiruvallur", x: 73.0, y: 19.0 },
     { name: "Tiruvallur", x: 78.0, y: 19.0 },
 
     { name: "Kanchipuram", x: 70.0, y: 25.0, major: true },
@@ -66,32 +74,35 @@ const MAP_PINS = [
 
     { name: "Vellore", x: 57.0, y: 20.5, major: true },
     { name: "Vellore", x: 61.0, y: 24.0 },
-    { name: "Ranipet", x: 65.0, y: 23.0 },
+    // { name: "Ranipet", x: 65.0, y: 23.0 },
+
+    { name: "Tiruvannamalai", x: 79.0, y: 30.0 },
 
     { name: "Tirupattur", x: 53.0, y: 29.0 },
     { name: "Tiruvannamalai", x: 61.0, y: 35.0 },
+    { name: "Tiruvannamalai", x: 79.0, y: 38.0 },
 
     { name: "Krishnagiri", x: 45.0, y: 25.0 },
     { name: "Hosur", x: 39.0, y: 29.0 },
-    { name: "Dharmapuri", x: 47.0, y: 35.0 },
+    // { name: "Dharmapuri", x: 47.0, y: 35.0 },
 
     /* ───── WEST ───── */
 
     { name: "Salem", x: 45.0, y: 43.0, major: true },
-    { name: "Salem", x: 50.0, y: 46.0 },
-    { name: "Salem", x: 42.0, y: 48.0 },
+     { name: "Salem", x: 45.0, y: 34.0 },
+    // { name: "Salem", x: 42.0, y: 48.0 },
 
-    { name: "Erode", x: 34.0, y: 46.0, major: true },
-    { name: "Erode", x: 38.0, y: 50.0 },
+    { name: "Erode", x: 34.0, y: 40.0, major: true },
+    // { name: "Erode", x: 38.0, y: 50.0 },
 
-    { name: "Tiruppur", x: 32.0, y: 53.0, major: true },
-    { name: "Tiruppur", x: 36.0, y: 56.0 },
+    // { name: "Tiruppur", x: 32.0, y: 53.0, major: true },
+    // { name: "Tiruppur", x: 36.0, y: 56.0 },
 
     { name: "Coimbatore", x: 23.0, y: 51.0, major: true },
     { name: "Coimbatore", x: 27.0, y: 55.0 },
-    { name: "Coimbatore", x: 30.0, y: 58.0 },
+    // { name: "Coimbatore", x: 30.0, y: 58.0 },
 
-    { name: "Ooty", x: 23.0, y: 43.0 },
+    { name: "Ooty", x: 13.0, y: 40.0 },
 
     /* ───── CENTRAL ───── */
 
@@ -99,35 +110,35 @@ const MAP_PINS = [
     { name: "Karur", x: 42.0, y: 58.0 },
 
     { name: "Trichy", x: 51.0, y: 62.0, major: true },
-    { name: "Trichy", x: 47.0, y: 65.0 },
-    { name: "Trichy", x: 54.0, y: 66.0 },
+    // { name: "Trichy", x: 47.0, y: 65.0 },
+    // { name: "Trichy", x: 54.0, y: 66.0 },
 
     { name: "Perambalur", x: 55.0, y: 55.0 },
-    { name: "Ariyalur", x: 59.0, y: 58.0 },
+    // { name: "Ariyalur", x: 59.0, y: 58.0 },
 
     /* ───── EAST / DELTA ───── */
 
     { name: "Cuddalore", x: 69.0, y: 50.0, major: true },
-    { name: "Cuddalore", x: 67.0, y: 54.0 },
+    // { name: "Cuddalore", x: 67.0, y: 54.0 },
 
-    { name: "Chidambaram", x: 69.0, y: 58.0 },
+    // { name: "Chidambaram", x: 69.0, y: 58.0 },
 
     { name: "Thanjavur", x: 62.0, y: 66.0, major: true },
-    { name: "Thanjavur", x: 65.0, y: 69.0 },
+    // { name: "Thanjavur", x: 65.0, y: 69.0 },
 
     { name: "Kumbakonam", x: 68.0, y: 64.0 },
     // { name: "Mayiladuthurai", x: 73.0, y: 63.0 },
 
     // { name: "Nagapattinam", x: 75.0, y: 69.0 },
-    { name: "Puducherry", x: 74.0, y: 56.0 },
+    // { name: "Puducherry", x: 74.0, y: 56.0 },
 
     /* ───── SOUTH ───── */
 
-    { name: "Dindigul", x: 43.0, y: 67.0 },
+    // { name: "Dindigul", x: 43.0, y: 67.0 },
 
     { name: "Madurai", x: 47.0, y: 73.0, major: true },
-    { name: "Madurai", x: 43.0, y: 76.0 },
-    { name: "Madurai", x: 51.0, y: 77.0 },
+    // { name: "Madurai", x: 43.0, y: 76.0 },
+    // { name: "Madurai", x: 51.0, y: 77.0 },
 
     { name: "Sivagangai", x: 57.0, y: 75.0 },
 
