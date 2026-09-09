@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
-import bannerResidential from "../../assets/images/hero/banner-residential.png";
+import bannerResidential from "../../assets/images/hero/banner-residential.webp";
 import bannerOngrid from "../../assets/images/hero/banner-ongrid.png";
-import bannerOffgrid from "../../assets/images/hero/banner-offgrid.png";
-import bannerSubsidy from "../../assets/images/hero/banner-subsidy.png";
-import bannerSaveElectricity from "../../assets/images/hero/banner-save-electricity.png";
+import bannerOffgrid from "../../assets/images/hero/banner-offgrid.webp";
+import bannerSubsidy from "../../assets/images/hero/banner-subsidy.webp";
+import bannerSaveElectricity from "../../assets/images/hero/banner-save-electricity.webp";
 
 const slides = [
     {

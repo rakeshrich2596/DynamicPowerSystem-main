@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { jsPDF } from "jspdf";
 import "./SolarCalculator.css";
-import enquiryBg from "../../assets/images/hero/hero2.jpg";
+import enquiryBg from "../../assets/images/hero/hero2.webp";
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 

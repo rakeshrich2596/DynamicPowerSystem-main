@@ -1,11 +1,11 @@
 const ASHA_IMG = 'https://ashapower.in:300/images';
-import imgasha from '../assets/images/asha/asha.png';
-import imgasha1 from '../assets/images/asha/asha1.png';
-import imgasha2 from '../assets/images/asha/asha2.png';
-import imgasha3 from '../assets/images/asha/asha3.png';
-import imgasha4 from '../assets/images/asha/asha4.png';
-import imgasha5 from '../assets/images/asha/asha5.png';
-import imgasha6 from '../assets/images/asha/asha6.png';
+import imgasha from '../assets/images/asha/asha.webp';
+import imgasha1 from '../assets/images/asha/asha1.webp';
+import imgasha2 from '../assets/images/asha/asha2.webp';
+import imgasha3 from '../assets/images/asha/asha3.webp';
+import imgasha4 from '../assets/images/asha/asha4.webp';
+import imgasha5 from '../assets/images/asha/asha5.webp';
+import imgasha6 from '../assets/images/asha/asha6.webp';
 
 export const ASHA_NAV = [
 

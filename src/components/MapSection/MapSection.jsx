@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./MapSection.css";
-import tamilnaduMap from "../../assets/images/tamilnadu-map-orange.png";
+import tamilnaduMap from "../../assets/images/tamilnadu-map-orange.webp";
 
 /* ─────────────────────────────────────────
    STATS DATA

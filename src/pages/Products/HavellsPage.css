@@ -2,7 +2,7 @@
 .havells-hero {
     background:
         linear-gradient(135deg, rgba(30, 5, 5, 0.82) 0%, rgba(120, 10, 10, 0.55) 55%, rgba(10, 5, 5, 0.88) 100%),
-        url("../../assets/images/hero/hero2.jpg");
+        url("../../assets/images/hero/hero2.webp");
     background-size: cover;
     background-position: center;
     margin-top: 0;

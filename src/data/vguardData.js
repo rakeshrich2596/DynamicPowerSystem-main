@@ -1,12 +1,12 @@
 /* ── V-Guard Heat Pump Water Heaters Product Data ── */
 /* Source: https://www.vguard.in/product-categories/vguard-heat-pump-water-heaters */
 
-import imgvguard1 from '../assets/images/vguard/vguard1.png';
-import imgvguard2 from '../assets/images/vguard/vguard2.png';
-import imgvguard3 from '../assets/images/vguard/vguard3.png';
-import imgvguard4 from '../assets/images/vguard/vguard4.png';
-import imgvguard5 from '../assets/images/vguard/vguard5.png';
-import imgvguard6 from '../assets/images/vguard/vguard6.png';
+import imgvguard1 from '../assets/images/vguard/vguard1.webp';
+import imgvguard2 from '../assets/images/vguard/vguard2.webp';
+import imgvguard3 from '../assets/images/vguard/vguard3.webp';
+import imgvguard4 from '../assets/images/vguard/vguard4.webp';
+import imgvguard5 from '../assets/images/vguard/vguard5.webp';
+import imgvguard6 from '../assets/images/vguard/vguard6.webp';
 
 
 export const VGUARD_NAV = [

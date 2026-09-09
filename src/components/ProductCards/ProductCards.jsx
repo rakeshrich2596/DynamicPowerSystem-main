@@ -2,24 +2,20 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./ProductCards.css";
 
-import imgPm1 from "../../assets/images/prod-pm1.png";
-import imgPm2 from "../../assets/images/prod-pm2.png";
-import imgPlant from "../../assets/images/prod-solar-plant.png";
-import imgHeater from "../../assets/images/prod-water-heater.png";
-import imgHeater2 from "../../assets/images/prod-water-heater-2.png";
-import imgPump from "../../assets/images/prod-water-pump.png";
-import imgPump1 from "../../assets/images/prod-water-pump1.png";
-import imgPump2 from "../../assets/images/prod-water-pump2.png";
-import imgStreet from "../../assets/images/prod-street-light.png";
-import imgStreet1 from "../../assets/images/prod-street-light1.png";
-import imgStreet2 from "../../assets/images/prod-street-light2.png";
-import imgUPS1 from "../../assets/images/solar-home-ups2.png";
-import imgUPS from "../../assets/images/prod-solar-ups.png";
-import imgInverter from "../../assets/images/prod-inverter.png";
-import imgEastman from "../../assets/images/prod-eastman-inverter.png";
-import imgEastmanYellowBattery from "../../assets/images/prod-eastman-yellow-battery.png";
-import imgCommercial from "../../assets/images/prod-commercial-ups.png";
-import imgVGuardBattery from "../../assets/images/prod-vguard-battery.png";
+import imgPm1 from "../../assets/images/prod-pm1.webp";
+import imgPm2 from "../../assets/images/prod-pm2.webp";
+import imgPlant from "../../assets/images/prod-solar-plant.webp";
+import imgHeater from "../../assets/images/prod-water-heater.webp";
+import imgHeater2 from "../../assets/images/prod-water-heater-2.webp";
+import imgPump from "../../assets/images/prod-water-pump.webp";
+import imgPump1 from "../../assets/images/prod-water-pump1.webp";
+import imgPump2 from "../../assets/images/prod-water-pump2.webp";
+import imgStreet from "../../assets/images/prod-street-light.webp";
+import imgStreet1 from "../../assets/images/prod-street-light1.webp";
+import imgStreet2 from "../../assets/images/prod-street-light2.webp";
+import imgUPS1 from "../../assets/images/solar-home-ups2.webp";
+import imgUPS from "../../assets/images/prod-solar-ups.webp";
+import imgCommercial from "../../assets/images/prod-commercial-ups.webp";
 
 
 const products = [

@@ -106,24 +106,21 @@ const testimonials = [
   },
 ];
 
-// Collage grid images — colored placeholder boxes representing customer photos
-const collageItems = [
-  { bg: "#e8730e", label: "Customer 1" },
-  { bg: "#f47b20", label: "Customer 2" },
-  { bg: "#d96b15", label: "Customer 3" },
-  { bg: "#c55c0e", label: "Customer 4" },
-  { bg: "#f08c3a", label: "Customer 5" },
-  { bg: "#b85210", label: "Customer 6" },
-  { bg: "#e07018", label: "Customer 7" },
-  { bg: "#cc6317", label: "Customer 8" },
-  { bg: "#d46a12", label: "Customer 9" },
-];
+/* ─────────────────────────────────────────────
+   Star Rating
+───────────────────────────────────────────── */
 
 function StarRating({ count }) {
   return (
-    <div className="testi-stars" aria-label={`${count} out of 5 stars`}>
+    <div
+      className="testi-stars"
+      aria-label={`${count} out of 5 stars`}
+    >
       {Array.from({ length: 5 }, (_, i) => (
-        <span key={i} className={i < count ? "star star--filled" : "star"}>
+        <span
+          key={i}
+          className={i < count ? "star star--filled" : "star"}
+        >
           ★
         </span>
       ))}
@@ -131,139 +128,280 @@ function StarRating({ count }) {
   );
 }
 
+/* ─────────────────────────────────────────────
+   Video Section
+
+   IMPORTANT:
+   Video is NOT loaded when page opens.
+
+   It is created only after clicking Play.
+───────────────────────────────────────────── */
+
 function VideoCollage() {
   const [playing, setPlaying] = useState(false);
 
+  const handlePlay = () => {
+    setPlaying(true);
+  };
+
+  const handleVideoEnd = () => {
+    setPlaying(false);
+  };
+
   return (
     <div className="testi-video-panel">
+
+      {/* ───────────────
+          VIDEO PLAYER
+      ─────────────── */}
       {playing ? (
         <div className="testi-video-player">
+
           <video
             autoPlay
             controls
             playsInline
+            preload="auto"
             className="testi-video-el"
-            onEnded={() => setPlaying(false)}
+            onEnded={handleVideoEnd}
           >
-            <source src={dynamicWebsiteVideo} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      ) : (
-        <div className="testi-collage">
-          {/* Actual Video Preview */}
-          <video
-            className="testi-preview-video"
-            muted
-            playsInline
-            loop
-          >
-            <source src={dynamicWebsiteVideo} type="video/mp4" />
+            <source
+              src={dynamicWebsiteVideo}
+              type="video/mp4"
+            />
+
             Your browser does not support the video tag.
           </video>
 
-          {/* Orange transparent overlay */}
+        </div>
+      ) : (
+
+        /* ───────────────
+           LIGHTWEIGHT PREVIEW
+        ─────────────── */
+
+        <div className="testi-collage">
+
+          {/* Preview background */}
+          <div className="testi-video-placeholder">
+
+            <div className="testi-preview-content">
+
+              <div className="testi-preview-play-circle">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="30"
+                  height="30"
+                  aria-hidden="true"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+
+              <span className="testi-preview-text">
+                Watch Our Customer Stories
+              </span>
+
+            </div>
+
+          </div>
+
+          {/* Orange overlay */}
           <div className="testi-collage-overlay" />
 
           {/* Brand */}
           <div className="testi-collage-brand">
-            <span className="testi-brand-dot">●</span>
+            <span className="testi-brand-dot">
+              ●
+            </span>
 
-            <span className="testi-brand-text">DYNAMIC&nbsp;SOLAR</span>
+            <span className="testi-brand-text">
+              DYNAMIC&nbsp;SOLAR
+            </span>
           </div>
 
-          {/* Play button */}
+          {/* Main Play Button */}
           <button
+            type="button"
             className="testi-play-btn"
-            onClick={() => setPlaying(true)}
+            onClick={handlePlay}
             aria-label="Play video testimonial"
             id="testi-play-button"
           >
-            <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+            <svg
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              width="28"
+              height="28"
+              aria-hidden="true"
+            >
               <path d="M8 5v14l11-7z" />
             </svg>
           </button>
+
         </div>
       )}
+
     </div>
   );
 }
 
+/* ─────────────────────────────────────────────
+   Testimonials Component
+───────────────────────────────────────────── */
+
 function Testimonials() {
   const [current, setCurrent] = useState(0);
-  const [animDir, setAnimDir] = useState(null); // 'up' | 'down'
+  const [animDir, setAnimDir] = useState(null);
   const [animating, setAnimating] = useState(false);
+
   const sectionRef = useRef(null);
+
   const total = testimonials.length;
+
+  /* ───────────────
+     Change testimonial
+  ─────────────── */
 
   const goTo = useCallback(
     (idx, dir) => {
       if (animating) return;
+
       setAnimDir(dir);
       setAnimating(true);
+
       setTimeout(() => {
         setCurrent((idx + total) % total);
         setAnimating(false);
         setAnimDir(null);
       }, 350);
     },
-    [animating, total],
+    [animating, total]
   );
 
-  const next = useCallback(() => goTo(current + 1, "down"), [current, goTo]);
-  const prev = useCallback(() => goTo(current - 1, "up"), [current, goTo]);
+  /* ───────────────
+     Next
+  ─────────────── */
+
+  const next = useCallback(() => {
+    goTo(current + 1, "down");
+  }, [current, goTo]);
+
+  /* ───────────────
+     Previous
+  ─────────────── */
+
+  const prev = useCallback(() => {
+    goTo(current - 1, "up");
+  }, [current, goTo]);
+
+  /* ───────────────
+     Auto testimonial rotation
+  ─────────────── */
 
   useEffect(() => {
     const timer = setInterval(next, 5000);
+
     return () => clearInterval(timer);
   }, [next]);
 
+  /* ───────────────
+     Intersection Observer
+  ─────────────── */
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          const els = e.target.querySelectorAll(
-            ".fade-in-up, .fade-in-left, .fade-in-right",
-          );
-          if (e.isIntersecting) {
-            els.forEach((el) => el.classList.add("visible"));
+      (entries) => {
+        entries.forEach((entry) => {
+
+          const elements =
+            entry.target.querySelectorAll(
+              ".fade-in-up, .fade-in-left, .fade-in-right"
+            );
+
+          if (entry.isIntersecting) {
+            elements.forEach((element) => {
+              element.classList.add("visible");
+            });
           } else {
-            els.forEach((el) => el.classList.remove("visible"));
+            elements.forEach((element) => {
+              element.classList.remove("visible");
+            });
           }
-        }),
-      { threshold: 0.1 },
+
+        });
+      },
+      {
+        threshold: 0.1,
+      }
     );
-    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
     return () => observer.disconnect();
   }, []);
 
-  const t = testimonials[current];
+  const testimonial = testimonials[current];
 
   return (
-    <section className="testimonials-sr" ref={sectionRef} id="testimonials">
+    <section
+      className="testimonials-sr"
+      ref={sectionRef}
+      id="testimonials"
+    >
+
       <div className="container">
-        {/* Header */}
+
+        {/* ─────────────────────────
+            HEADER
+        ───────────────────────── */}
+
         <div className="sr-header fade-in-up">
-          <span className="sr-tag">Testimonials</span>
+
+          <span className="sr-tag">
+            Testimonials
+          </span>
+
           <h2 className="sr-title">
-            90% of customers <span>recommend us!</span>
+            90% of customers{" "}
+            <span>recommend us!</span>
           </h2>
+
           <p className="sr-subtitle">
-            Don&apos;t just believe us, see the reviews for yourself.
+            Don&apos;t just believe us, see the reviews
+            for yourself.
           </p>
+
         </div>
 
-        {/* Two-column body */}
+        {/* ─────────────────────────
+            BODY
+        ───────────────────────── */}
+
         <div className="sr-body">
-          {/* Left — video collage */}
+
+          {/* ───────────────
+              LEFT VIDEO
+          ─────────────── */}
+
           <div className="sr-left fade-in-left delay-1">
+
             <VideoCollage />
+
           </div>
 
-          {/* Right — vertical carousel */}
+          {/* ───────────────
+              RIGHT TESTIMONIAL
+          ─────────────── */}
+
           <div className="sr-right fade-in-right delay-2">
-            {/* Up arrow */}
+
+            {/* Previous button */}
             <button
+              type="button"
               className="sr-nav-btn sr-nav-btn--up"
               onClick={prev}
               aria-label="Previous testimonial"
@@ -276,32 +414,55 @@ function Testimonials() {
                 strokeWidth="2.5"
                 width="18"
                 height="18"
+                aria-hidden="true"
               >
                 <path d="M18 15l-6-6-6 6" />
               </svg>
             </button>
 
-            {/* Testimonial card */}
+            {/* ───────────────
+                TESTIMONIAL CARD
+            ─────────────── */}
+
             <div
-              className={`sr-card ${animating ? (animDir === "down" ? "sr-card--exit-up" : "sr-card--exit-down") : "sr-card--enter"}`}
+              className={`sr-card ${
+                animating
+                  ? animDir === "down"
+                    ? "sr-card--exit-up"
+                    : "sr-card--exit-down"
+                  : "sr-card--enter"
+              }`}
               key={current}
             >
-              {/* Card header */}
+
+              {/* Card Header */}
+
               <div className="sr-card-header">
+
                 <div className="sr-card-header-left">
+
                   <span className="sr-thumb-icon">
+
                     <svg
                       viewBox="0 0 24 24"
                       fill="currentColor"
                       width="18"
                       height="18"
+                      aria-hidden="true"
                     >
                       <path d="M2 20h2c.55 0 1-.45 1-1v-9c0-.55-.45-1-1-1H2v11zm19.83-7.12c.11-.25.17-.52.17-.8V11c0-1.1-.9-2-2-2h-5.5l.92-4.65c.05-.22.02-.46-.08-.66-.23-.45-.52-.86-.88-1.22L14 2 7.59 8.41C7.21 8.79 7 9.3 7 9.83V19c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.08-.2.14-.42.14-.65v-.08l-.01-.01.84-.11z" />
                     </svg>
+
                   </span>
-                  <span className="sr-card-label">Testimonial</span>
+
+                  <span className="sr-card-label">
+                    Testimonial
+                  </span>
+
                 </div>
+
                 <span className="sr-card-ext-icon">
+
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -309,43 +470,78 @@ function Testimonials() {
                     strokeWidth="2"
                     width="15"
                     height="15"
+                    aria-hidden="true"
                   >
                     <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
                     <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" y1="14" x2="21" y2="3" />
+                    <line
+                      x1="10"
+                      y1="14"
+                      x2="21"
+                      y2="3"
+                    />
                   </svg>
+
                 </span>
+
               </div>
 
-              {/* White inner content area */}
+              {/* White body */}
+
               <div className="sr-card-body">
+
                 {/* Avatar */}
+
                 <div
                   className="sr-avatar"
-                  style={{ background: t.color }}
-                  aria-label={t.name}
+                  style={{
+                    background: testimonial.color,
+                  }}
+                  aria-label={testimonial.name}
                 >
-                  {t.initials}
+                  {testimonial.initials}
                 </div>
 
                 {/* Stars */}
-                <StarRating count={t.rating} />
+
+                <StarRating
+                  count={testimonial.rating}
+                />
 
                 {/* Quote */}
+
                 <div className="sr-quote-wrap">
-                  <p className="sr-quote">&ldquo;{t.quote}&rdquo;</p>
+
+                  <p className="sr-quote">
+                    &ldquo;
+                    {testimonial.quote}
+                    &rdquo;
+                  </p>
+
                 </div>
 
-                {/* Name & date */}
+                {/* Reviewer */}
+
                 <div className="sr-reviewer">
-                  <div className="sr-reviewer-name">{t.name}</div>
-                  <div className="sr-reviewer-time">{t.timeAgo}</div>
+
+                  <div className="sr-reviewer-name">
+                    {testimonial.name}
+                  </div>
+
+                  <div className="sr-reviewer-time">
+                    {testimonial.timeAgo}
+                  </div>
+
                 </div>
+
               </div>
+
             </div>
 
-            {/* Down arrow */}
+            {/* Next button */}
+
             <button
+              type="button"
               className="sr-nav-btn sr-nav-btn--down"
               onClick={next}
               aria-label="Next testimonial"
@@ -358,25 +554,45 @@ function Testimonials() {
                 strokeWidth="2.5"
                 width="18"
                 height="18"
+                aria-hidden="true"
               >
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
 
             {/* Dot indicators */}
+
             <div className="sr-dots">
+
               {testimonials.map((_, i) => (
                 <button
+                  type="button"
                   key={i}
-                  className={`sr-dot ${i === current ? "sr-dot--active" : ""}`}
-                  onClick={() => goTo(i, i > current ? "down" : "up")}
-                  aria-label={`Go to testimonial ${i + 1}`}
+                  className={`sr-dot ${
+                    i === current
+                      ? "sr-dot--active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    goTo(
+                      i,
+                      i > current ? "down" : "up"
+                    )
+                  }
+                  aria-label={`Go to testimonial ${
+                    i + 1
+                  }`}
                 />
               ))}
+
             </div>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }

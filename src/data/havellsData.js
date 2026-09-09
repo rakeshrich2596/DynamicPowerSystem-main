@@ -2,10 +2,10 @@
 /* Source: havells.com/business/for-industrial/solar/solar-residential.html */
 
 const IMG_CACHE = 'https://havells.com/media/catalog/product/cache/bebb556ccaa04236261d8ba5676ddf4d';
-import imghavells1 from '../assets/images/havells/havells10.png';
-import imghavells2 from '../assets/images/havells/havells20.png';
-import imghavells3 from '../assets/images/havells/havells30.png';
-import imghavells4 from '../assets/images/havells/havells40.png';
+import imghavells1 from '../assets/images/havells/havells10.webp';
+import imghavells2 from '../assets/images/havells/havells20.webp';
+import imghavells3 from '../assets/images/havells/havells30.webp';
+import imghavells4 from '../assets/images/havells/havells40.webp';
 
 export const HAVELLS_NAV = [
     { id: 'section-solar-panels',   label: 'Solar Panels'          },

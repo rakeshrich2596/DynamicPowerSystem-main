@@ -1,3 +1,19 @@
+
+import imgeastman1 from '../assets/images/eastman/eastman1.webp';
+import imgeastman2 from '../assets/images/eastman/eastman2.webp';
+import imgeastman3 from '../assets/images/eastman/eastman3.webp';
+import imgeastman4 from '../assets/images/eastman/eastman4.webp';
+import imgeastman5 from '../assets/images/eastman/eastman5.webp';
+import imgeastman6 from '../assets/images/eastman/eastman6.webp';
+import imgeastman7 from '../assets/images/eastman/eastman7.webp';
+import imgeastman8 from '../assets/images/eastman/eastman8.webp';
+import imgeastman9 from '../assets/images/eastman/eastman9.webp';
+import imgeastman10 from '../assets/images/eastman/eastman10.webp';
+import imgeastman11 from '../assets/images/eastman/eastman11.webp';
+import imgeastman12 from '../assets/images/eastman/eastman12.webp';
+import imgeastman13 from '../assets/images/eastman/eastman13.webp';
+import imgeastman14 from '../assets/images/eastman/eastman14.webp';
+
 const IMG = 'https://eastmansolar.in/sites/default/files/styles/large/public';
 const IMG2 = 'https://eastmansolar.in/sites/default/files';
 const IMG_COM = 'https://www.eastmansolar.com/sites/default/files';
@@ -27,7 +43,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Bestseller',
                 range:       '3kW – 6kW',
                 warranty:    '10',
-                image:       '/images/products/solar-grid.png',
+                image:       '/images/products/solar-grid.webp',
                 description: 'Eastman GridXcel converts rooftop solar power directly to grid-compatible AC power and exports surplus energy for income. Enables morning start-up at low irradiance and is eligible for the ₹78,000 PM Surya Ghar subsidy.',
                 specs: [
                     { label: 'Capacity',        value: '3 kW – 6 kW'              },
@@ -53,7 +69,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Commercial',
                 range:       '30kW – 110kW',
                 warranty:    '10',
-                image:       `${IMG}/2026-06/grid-excel-three-phase.png`,
+                image:       imgeastman1,
                 description: 'Designed for large commercial and industrial rooftops, the SolarLink Three Phase handles high-capacity string arrays with robust anti-islanding protection and real-time monitoring via the EastmanONE platform.',
                 specs: [
                     { label: 'Capacity',        value: '30 kW – 110 kW'           },
@@ -88,7 +104,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Top Pick',
                 range:       '3kW & 5kW',
                 warranty:    '10',
-                image:       `${IMG}/2026-05/Solar-Hybrid-Inverter-IP65--Low-Voltage-sun-bridge.png`,
+                image:       imgeastman2,
                 description: 'All-weather IP65-rated single-phase hybrid inverter with dual MPPT and unity power factor. Supports parallel stacking up to 10 units and is compatible with both lithium-ion and lead-acid battery banks.',
                 specs: [
                     { label: 'Capacity',         value: '3 kW & 5 kW'              },
@@ -114,7 +130,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Commercial',
                 range:       '5kW & 10kW',
                 warranty:    '10',
-                image:       `${IMG}/2026-05/solar-hybrid-inverter-low-voltage-opti-grid.png`,
+                image:       imgeastman3,
                 description: 'Three-phase IP65 hybrid inverter for commercial buildings and industrial facilities. Manages grid, solar, and battery simultaneously with smart load prioritisation and EastmanONE cloud monitoring.',
                 specs: [
                     { label: 'Capacity',         value: '5 kW & 10 kW'             },
@@ -150,7 +166,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Industrial',
                 range:       '5kW – 15kW',
                 warranty:    '10',
-                image:       `${IMG}/2026-05/Solar-Hybrid-Inverter-IP65--Low-Voltage-sun-bridge%20%281%29.png`,
+                image:       imgeastman2,
                 description: 'Three-phase high-voltage hybrid inverter supporting a wide DC battery range of 120 V – 480 V. Dual MPPT and 97% peak efficiency make this the choice for commercial and industrial energy storage projects with large battery banks.',
                 specs: [
                     { label: 'Capacity',         value: '5 kW / 10 kW / 15 kW'     },
@@ -185,7 +201,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '500VA – 2,500VA',
                 warranty:    '5',
-                image:       `${IMG}/2026-05/solar-smart.png`,
+                image:       imgeastman4,
                 description: 'A reliable and affordable PWM solar PCU for homes and small offices. Delivers stable pure sine wave output with built-in overload and short-circuit protection — plug in solar panels and get protected backup instantly.',
                 specs: [
                     { label: 'Capacity',      value: '500 VA – 2,500 VA'         },
@@ -210,7 +226,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Popular',
                 range:       '500VA – 10,000VA',
                 warranty:    '5',
-                image:       `${IMG}/2026-05/solar-smart-ma.png`,
+                image:       imgeastman5,
                 description: 'IntelliTrack MPPT technology maximises energy harvest across a wide range of solar input voltages. Ideal for homes and businesses with frequent power cuts that need reliable, efficient backup power.',
                 specs: [
                     { label: 'Capacity',      value: '500 VA – 10,000 VA'        },
@@ -235,7 +251,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '1,000VA – 5,000VA',
                 warranty:    '3',
-                image:       `${IMG}/2026-05/solar-prime%20%281%29_0.png`,
+                image:       imgeastman6,
                 description: 'Solar Prime PWM is Eastman\'s value-focused off-grid PCU range for residential installations. Delivers clean pure sine wave power with straightforward setup and dependable solar charge management.',
                 specs: [
                     { label: 'Capacity',      value: '1,000 VA – 5,000 VA'       },
@@ -259,7 +275,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '1,000VA – 10,000VA',
                 warranty:    '3',
-                image:       `${IMG}/2026-06/solar-prime-ma.png`,
+                image:       imgeastman7,
                 description: 'MPPT efficiency in a cost-effective off-grid solution. Broad capacity range suits everything from small shops to mid-scale commercial loads. Smart switching between solar, grid, and battery keeps critical appliances powered.',
                 specs: [
                     { label: 'Capacity',      value: '1,000 VA – 10,000 VA'      },
@@ -294,7 +310,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Most Popular',
                 range:       '100Ah / 150Ah',
                 warranty:    '10',
-                image:       `${IMG}/2026-06/Lithium-Batteries-100aH-%281%29.png`,
+                image:       imgeastman8,
                 description: 'Space-saving wall-mount LiFePO₄ battery for residential and small-commercial solar systems. 3× longer cycle life than conventional tubular batteries — zero maintenance and no harmful fumes or acid leakage.',
                 specs: [
                     { label: 'Capacity',    value: '100 Ah / 150 Ah'            },
@@ -320,7 +336,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Commercial',
                 range:       '100Ah @ 51.2V',
                 warranty:    '10',
-                image:       `${IMG}/2026-05/solar-lithium-batteries-rack-type.png`,
+                image:       imgeastman9,
                 description: 'Modular rack-mounted LiFePO₄ battery for commercial, industrial, telecom, and data-centre applications. Stackable units with CAN Bus / RS485 inverter integration and Eastman Assure extended service support.',
                 specs: [
                     { label: 'Capacity',       value: '100 Ah'                    },
@@ -345,7 +361,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '100Ah – 280Ah',
                 warranty:    '5',
-                image:       `${IMG}/2026-06/EM-LIB-640.png`,
+                image:       imgeastman10,
                 description: 'Flexible dual-voltage LFP battery covering 100–280 Ah for diverse residential and light-commercial needs. Smart BMS guards against overcharge, over-temperature, and short circuits for worry-free operation.',
                 specs: [
                     { label: 'Voltage',     value: '25.6 V or 51.2 V'           },
@@ -379,7 +395,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '150Ah – 260Ah',
                 warranty:    '10+10',
-                image:       `${IMG2}/2026-06/solar-conventional-tubular-batteries-regular-series.png`,
+                image:       imgeastman11,
                 description: 'Eastman\'s conventional tubular battery range built for deep-cycle solar applications. Specially formulated positive tubular plates and robust PE separators ensure reliable performance across Indian climatic conditions.',
                 specs: [
                     { label: 'Capacity',       value: '150 Ah – 260 Ah'          },
@@ -404,7 +420,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Enhanced',
                 range:       '150Ah – 225Ah',
                 warranty:    '10+10',
-                image:       `${IMG2}/2026-06/solar-conventional-tubular-batteries-smart-series.png`,
+                image:       imgeastman12,
                 description: 'Enhanced tubular battery range with improved electrolyte formulation and reinforced plates for longer service life. Suitable for solar PCU, UPS, and hybrid inverter installations in residential and commercial setups.',
                 specs: [
                     { label: 'Capacity',       value: '150 Ah – 225 Ah'          },
@@ -439,7 +455,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       null,
                 range:       '50W – 210W',
                 warranty:    '25',
-                image:       `${IMG}/2026-06/210W-NDCR_0.png`,
+                image:       imgeastman13,
                 description: 'Compact monocrystalline modules for off-grid portable systems, solar lanterns, rural electrification, and small hybrid setups. PID-resistant construction with strong low-light performance across Indian weather conditions.',
                 specs: [
                     { label: 'Power Range',   value: '50 W – 210 W'              },
@@ -464,7 +480,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Bestseller',
                 range:       '550Wp',
                 warranty:    '27',
-                image:       `${IMG}/2026-06/550W-NDCR_0.png`,
+                image:       imgeastman14,
                 description: 'The EBP550W glass-glass bifacial panel captures light from both front and rear surfaces, adding 5–15% extra energy from ground-reflected irradiance. Ideal for residential rooftops, commercial setups, and agri-solar installations.',
                 specs: [
                     { label: 'Power Output',   value: '550 Wp'                   },
@@ -489,7 +505,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Subsidy Eligible',
                 range:       '550Wp',
                 warranty:    '27',
-                image:       `${IMG}/2026-06/550W-DCR_0.png`,
+                image:          imgeastman14,
                 description: 'DCR-certified version of the 550 Wp bifacial panel — qualifies for the ₹78,000 PM Surya Ghar subsidy. Same premium glass-glass bifacial construction with rear-side energy gain for faster return on investment.',
                 specs: [
                     { label: 'Power Output',   value: '550 Wp'                   },
@@ -513,7 +529,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'New Technology',
                 range:       '630W+',
                 warranty:    '30',
-                image:       `${IMG}/2026-06/topcon-product.png`,
+                image:       imgeastman14,
                 description: 'N-Type TOPCon cells deliver a lower temperature coefficient and superior performance in high-heat conditions. Industry-leading 30-year warranty makes this the smart long-term choice for residential villas, large commercial, and industrial rooftops.',
                 specs: [
                     { label: 'Power Output',   value: '630 W+'                   },
@@ -538,7 +554,7 @@ export const EASTMAN_SECTIONS = [
                 badge:       'Subsidy Eligible',
                 range:       '600W – 635W',
                 warranty:    '30',
-                image:       `${IMG}/2026-06/topcon-product.png`,
+                image:       imgeastman14,
                 description: 'DCR-certified N-Type TOPCon panels enabling full PM Surya Ghar subsidy eligibility. Bifacial construction with high mechanical load rating for use in high-wind and coastal environments.',
                 specs: [
                     { label: 'Power Range',    value: '600 W – 635 W'            },
