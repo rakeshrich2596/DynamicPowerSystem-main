@@ -92,7 +92,7 @@ const CALCULATOR_CONTACTS = [
   {
     type: "email",
     label: "Enquiry Email",
-    value: "Enquiry@dynamicsolar.in",
+    value: "enquiry@dynamicsolar.in",
     href: "mailto:Enquiry@dynamicsolar.in",
   },
 ];

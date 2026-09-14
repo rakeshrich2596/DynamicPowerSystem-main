@@ -11,12 +11,14 @@ import BlogPreview from "../../components/BlogPreview/BlogPreview";
 import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
 import WhatsAppWidget from "../../components/WhatsAppWidget/WhatsAppWidget";
+import HomePopup from "../../components/HomePopup/HomePopup";
 
 function Home() {
     return (
         <>
             <Navbar />
             <div className="home-page">
+                 <HomePopup />
                 <Hero />
                 <EnquiryCalculator />
                 <BookHomeVisit />
